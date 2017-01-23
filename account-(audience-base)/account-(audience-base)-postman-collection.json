@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Account (DMP)",
+		"name": "Account (Audience Base)",
 		"_postman_id": "a850b815-39f8-9e89-2294-9d8f04b369a0",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
