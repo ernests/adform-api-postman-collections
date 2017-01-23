@@ -1,0 +1,97 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Account (Buyer Side)",
+		"_postman_id": "2c468197-993e-9675-2326-6a27e7770a11",
+		"description": "To use Account service you need to have:\r\n\r\n1. Adform Agency account.\r\n\r\n2. User account (with enabled External API module). \r\n\r\nHIGHLY IMPORTANT: External API module gives authorisation to use API services.\r\n\r\nIn case it's your first time using our services, please contact our Adform Traffic: traffic@adform.com or Adform Help:help@adform.com teams for assistance. \r\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Content-Type is application/json\"] =",
+									"  request.headers[\"Content-Type\"] === \"application/json\";",
+									"",
+									"tests[\"Request was successful\"] = ",
+									"  responseCode.code === 200;",
+									"",
+									"if(responseCode.code === 200) {",
+									"  var jsonData = JSON.parse(responseBody);",
+									"  postman.setGlobalVariable('Ticket', jsonData.Ticket);",
+									"    tests[\"Ticket was set as a global variable\"] =",
+									"      globals.Ticket !== undefined;",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/Services/Security/Login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"UserName\": \"ppasBillingIntegrationTest\",\r\n  \"Password\": \"Biling@123Integration\"\r\n}"
+						},
+						"description": "This request allows you to get authentication token that can then be used to access all other Adform API services.\n\nThe token itself has a total lifetime of 24 hours and expires after 3 hours of inactivity.\n\nAuthentication token is set as a global 'Ticket' variable and it can be reused in further requests - headers and json body.\n\nIf you want to use global variables please write them in double curly brackets: {{Ticket}}\n\nRequest body fields:\n1. UserName - mandatory\n2. Password - mandatory"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Has Ticket\"] = ",
+									"  request.headers.Ticket;",
+									"    ",
+									"tests[\"Request was successful\"] = ",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/Services/User/Users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method returns a list of all users which are under the same client as you have logged in.\n\nCurrently no filtering is enabled."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
