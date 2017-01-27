@@ -1,9 +1,9 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Account (Seller Side)",
-		"_postman_id": "a5c2c297-c790-af22-d00e-7be154b60d64",
-		"description": "To use Account service you need to have:\r\n\r\n1. Adform Agency account.\r\n\r\n2. User account (with enabled External API module). \r\n\r\nHIGHLY IMPORTANT: External API module gives authorisation to use API services.\r\n\r\nIn case it's your first time using our services, please contact our API support: api@adform.com for assistance. \r\n",
+		"name": "Account (Buyer and Seller Side)",
+		"_postman_id": "29113ddb-8eec-160b-5499-b98c033d9c5a",
+		"description": "To use Account service you need to have:\r\n\r\n1. Adform Agency or Publisher account.\r\n\r\n2. User account (with enabled External API module). \r\n\r\nHIGHLY IMPORTANT: External API module gives authorisation to use API services.\r\n\r\nIn case it's your first time using our services, please contact our Adform Traffic: traffic@adform.com or api@adform.com for assistance. \r\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
