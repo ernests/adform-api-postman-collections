@@ -1,0 +1,78 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Account (Audience Base)",
+		"_postman_id": "a850b815-39f8-9e89-2294-9d8f04b369a0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Content-Type is application/json\"] =",
+									"  request.headers[\"Content-Type\"] === \"application/x-www-form-urlencoded\";",
+									"",
+									"tests[\"Request was successful\"] = ",
+									"  responseCode.code === 200;",
+									"",
+									"if(responseCode.code === 200) {",
+									"  var jsonData = JSON.parse(responseBody);",
+									"  postman.setGlobalVariable('AccessToken', jsonData.access_token);",
+									"    tests[\"Access token was set as a global variable\"] =",
+									"      globals.AccessToken !== undefined;",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://dmp-api.adform.com/v1/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

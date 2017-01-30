@@ -1,45 +1,12 @@
 {
 	"variables": [],
 	"info": {
-		"name": "DMP",
-		"_postman_id": "4dd342cb-3338-2d57-10b7-f51da048f62c",
+		"name": "Audience Base",
+		"_postman_id": "bf1a1cfb-ae0a-f5a1-9ff8-d3ce8a08ea97",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "https://api.adform.com/v1/token",
-			"request": {
-				"url": "https://api.adform.com/v1/token",
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "password",
-							"type": "text",
-							"enabled": true
-						},
-						{
-							"key": "password",
-							"value": "",
-							"type": "text",
-							"enabled": true
-						},
-						{
-							"key": "username",
-							"value": "",
-							"type": "text",
-							"enabled": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
 		{
 			"name": "https://api.adform.com/v1/segments",
 			"request": {
@@ -52,7 +19,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -69,7 +39,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -136,7 +109,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
