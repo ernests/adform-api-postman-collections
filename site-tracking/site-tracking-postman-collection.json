@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Site Tracking",
-		"_postman_id": "84fa4838-5a56-d9b0-9b56-cd63c152c19f",
+		"_postman_id": "b0400b1b-4e7b-2bb9-2a9b-6f9851e5f6cd",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -309,10 +309,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method allows you to search for tracking points.\n\nYou need to parse advertiserId on your request URL.\n\nEXAMPLE: /v1/tracking/points?advertiserId=00000"
 					},
 					"response": []
@@ -344,10 +341,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method allows you to get specific tracking point details.\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000\n(00000 - tracking point ID)"
 					},
 					"response": []
@@ -374,6 +368,130 @@
 							"raw": "{\r\n  \"active\": true\r\n}"
 						},
 						"description": "This method allows you to update tracking point status (\"active\": true || false).\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000/active\n(00000 - tracking point ID)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variables",
+			"description": "",
+			"item": [
+				{
+					"name": "List of available variable definitions",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars/definitions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This endpoint returns a list of available variable definitions.\nPlease do not forget to include ticket in the request Header\n?limit= and ?offset= can be used to manipulate list of result that is returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete variable's custom name",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars/00000",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{[Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows you to delete variable's custom name that you created.\n\nhttps://api.adform.com/v1/tracking/vars/00000\n00000- variable ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Campaign's variable custom name",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars/00000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows you to retrieve a campaign's custom variable name\n\nhttps://api.adform.com/v1/tracking/vars/00000\n00000 - variable ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update custom name for variable",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars/00000",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"changed-name\",\r\n  \"definitionId\": \"1\",\r\n  \"varType\": \"subItem\"\r\n}"
+						},
+						"description": "This method allows you to change custom names for variables\n\nIn the body of request you have to provide \nname - new custom name for variable\ndefinitionId - definition ID\nvarType - variable Type\n\nhttps://api.adform.com/v1/tracking/vars/00000\n00000 - variable ID"
+					},
+					"response": []
+				},
+				{
+					"name": "List of campaign's variables",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars?trackingSetupId=00000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method return a list of campaign's variables.\n\nhttps://api.adform.com/v1/tracking/vars?trackingSetupId=00000\n\n00000 - campaign ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new custom name for a variable",
+					"request": {
+						"url": "https://api.adform.com/v1/tracking/vars",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"definitionId\": 42,\r\n  \"varType\": \"item\",\r\n  \"trackingSetupId\": 24119,\r\n  \"name\": \"ProductFullDescription\"\r\n}"
+						},
+						"description": "This method allows to assign a new custom name for a variable\n\nIn the body of request you have to provide:\ndefinitionId - definition ID\nvarType - variable type\ntrackingSetupId - campaign ID\nname - new custom name of a variable"
 					},
 					"response": []
 				}
