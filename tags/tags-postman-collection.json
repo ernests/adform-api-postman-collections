@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Tags",
-		"_postman_id": "aba98091-edb1-28c6-bffa-a1699d0bfb6d",
+		"_postman_id": "b44212ef-9f46-76a2-2030-ebe4b691da05",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -46,7 +46,7 @@
 					"mode": "raw",
 					"raw": "{\r\n  \"campaignId\": 00000,\r\n  \"adUuid\": \"\",\r\n  \"lineItemId\": 11111,\r\n  \"name\": \"AG Tag\"\r\n}"
 				},
-				"description": "This method allows you to create an AG tag.\n\nIn order to create an AG tag you must parse these parameters in your reqest body:\n1. CampaignId\n2. AdUuid\n3. LineItemId\n4. Name for your tag"
+				"description": "This method allows you to create an AG tag.\n\nIn order to create an AG tag you must parse these parameters in your reqest body:\n1. CampaignId\n2. AdUuid\n3. LineItemId (placementId) \n4. Name for your tag"
 			},
 			"response": []
 		},
