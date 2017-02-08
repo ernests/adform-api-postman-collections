@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Campaign",
-		"_postman_id": "8d04eff5-da09-5f1e-8bd5-a772083f2303",
+		"_postman_id": "a76a6157-edde-24c0-8486-6a78486dd44d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -88,7 +88,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns list of own and inherited alerts for specified client/campaign/agency.\n\nYou can filter alerts by parsing AgencyId, AdvertiserID or CampaignId in your request URL. One and only one item can be specified. E.g. both AdvertiserId and CampaignId are not allowed.\n\nEXAMPLE: \nv1/alerts?agencyId={{AgencyId}} or v1/alerts?advertiserId={{AdvertiserId}} or\nv1/alerts?campaignId={{CampaignId}}\n\n\nYou can retrieve AgencyId and set it as a Global variable using \"Get Advertiser\" method.\n\nYou can retrieve AdvertiserId using \"Get Advertiser\" method.\n\nYou can retrieve CampaignId using \"Get Campaigns\" method."
 					},
 					"response": []
@@ -229,7 +232,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of campaign attributes, filtered by specified CampaignId. \n\nCampaignId is required in your request url. \n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nNOTE: You can filter campaign attributes by parsing CampaignAttributeId.\n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/11111\n(00000 - CampaignId, 11111 - CampaignAttributesId)"
 					},
 					"response": []
@@ -261,7 +267,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of values from a certain campaign attribute.\n\nCampaignId and CampaignAttributeIdis required in your request url. \n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/11111/Values\n(00000 - CampaignId, 11111 - CampaignAttributesId)\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve CampaignAttributesId using \"GET Campaign Attributes\" method.\n\nNOTE: You can filter campaign attribute values by parsing CampaignAttributeValueId.\n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/11111/Values/22222\n(00000 - CampaignId, 11111 - CampaignAttributesId, 22222 - ValueId)"
 					},
 					"response": []
@@ -511,6 +520,122 @@
 			]
 		},
 		{
+			"name": "Default Banner Attribute Value",
+			"description": "",
+			"item": [
+				{
+					"name": "Campaign Attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/CampaignSettings/00000/CampaignAttributes/111111/Values/default",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method returns a default attribute value.\n\nCampaignId is required in your request url. \n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/111111/Values/default\n(00000 - CampaignId, 11111 - CampaignAttributesId)"
+					},
+					"response": []
+				},
+				{
+					"name": "Ad New Campaign Attribute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/CampaignSettings/00000/CampaignAttributes/1111111/Values/default",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Title\": \"TestName\",\r\n  \"AttributeValues\": [\r\n    {\r\n      \"Title\": \"Title1\"\r\n    },\r\n    {\r\n      \"Title\": \"Title2\"\r\n    }\r\n  ],\r\n  \"IsActive\": true\r\n}"
+						},
+						"description": "This method sets attribute value as default.\n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/1111111/Values/default\n(00000 - CampaignId, 1111111 - CampaignAttributeId)\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Campaign Attribute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/CampaignSettings/00000/CampaignAttributes/11111",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method resets attribute default value to none.\n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/111111/Values/default\n(00000 - CampaignId, 11111 - CampaignAttributeId)\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve CampaignAttributeId using \"Get Campaign Attributes\" method.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Dictionaries",
 			"description": "",
 			"item": [
@@ -541,7 +666,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves a dictionary of possible pair values: Managers and their ID's."
 					},
 					"response": []
@@ -573,7 +701,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves a dictionary of possible pair values: Comanagers and their ID's."
 					},
 					"response": []
@@ -605,7 +736,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves a dictionary of possible pair values: Labels and Label ID's."
 					},
 					"response": []
@@ -637,7 +771,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves a dictionary of possible pair values: Advertisers and their ID's."
 					},
 					"response": []
@@ -675,7 +812,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of all label groups, filtered by specified CampaignId. \n\nCampaignId parameter is required in your request url. \n\nEXAMPLE: ?CampaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
 					},
 					"response": []
@@ -760,7 +900,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of campaign landing pages. \n\nCampaignId is required in your request url.\n\nEXAMPLE: api/v1/LandingPages/00000\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method."
 					},
 					"response": []
@@ -796,7 +939,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a campaign landing page by id. \n\nCampaignId is required in your request url.\n\nNOTE: You can retrieve a specific landing page by parsing LandingPageId on the request url.\n\nEXAMPLE: api/v1/LandingPages/00000/LandingPage/11111\n(00000 - CampaignId, 11111 - LandingPageId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method."
 					},
 					"response": []
@@ -914,7 +1060,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method deletes an existing landing page for a specified campaign (unless it is default landing page).\n\nNOTE: You need to parse CampaignId and LandingPageId on your request URL.\n\nEXAMPLE: /v1/LandingPages/00000/LandingPage/11111\n(00000 - CampaignId, 11111 - LandingPageId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method. \nYou can retrive LandingPageId using \"Get Landing Pages\" method."
 					},
 					"response": []
@@ -992,7 +1141,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of campaigns that the user has access to at the agency level. When no filter parameters are specified, list contains of 100 active campaigns.\n\nMore information about possible query parameters: \nhttp://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/Campaigns_GetList"
 					},
 					"response": []
@@ -1025,7 +1177,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of Advertiser's tracking campaigns.\n\nAdvertiser ID parameter is required in your request url. \n\nEXAMPLE: ?advertiserId=00000\n\nYou can retrieve Advertiser ID using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
 					},
 					"response": []
@@ -1144,7 +1299,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of enabled features for campaigns which are under the same client as you have logged in.\n\nEXAMPLE: You can retrieve on which agencies alerts are enabled."
 					},
 					"response": []
@@ -1226,7 +1384,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns campaign RTB settings. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
 					},
 					"response": []

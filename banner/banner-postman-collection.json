@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Banner",
-		"_postman_id": "0b092ce5-0a8f-73ad-5f46-a13f2bd226db",
+		"_postman_id": "b27102ee-efc2-d9e5-921d-06ea799928b0",
 		"description": "In this section you can find information on how to create and manage various types of banners and all related objects. If the banner is hosted in Adform, the asset is created first which can be reused to create various banners. The created banners can then be used to create rotators or schedules for additional level of control or simply served through Direct or RTB.\r\n\r\nAdform is also offering DCO (Dynamic Content Optimization) banners that are displaying different content depending on a predefined set of rules.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -38,7 +38,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves all banners under specified campaign.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /api/v1/AdsOverview/Ads?campaignId=00000"
 					},
 					"response": []
@@ -70,7 +73,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves banners by banner uuid or by AdId.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLE: /api/v1/AdsOverview/Banners/00000\n(00000 - Banner uuid or Ad ID)"
 					},
 					"response": []
@@ -102,7 +108,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves rotators by AdId or uuid.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPlE: /api/v1/AdsOverview/Rotators/000000"
 					},
 					"response": []
@@ -134,7 +143,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves shedules by AdId.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLES: /api/v1/AdsOverview/Schedules/000000"
 					},
 					"response": []
@@ -166,7 +178,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrievesnested rotators by AdId.\n\nYou need to parse banner uuid on your request URL."
 					},
 					"response": []
@@ -248,7 +263,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves possible backup image determination rules with default marked.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: v1/adsmanagement/BannerDefaultValues/00000/BackupImages\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -322,7 +340,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method sets default backup image recognition rules as none.\n\nYou need to parse CampaignId on your request URL.\n\nEXMAPLE: /adsmanagement/BannerDefaultValues/00000/BackupImages/Current\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -355,7 +376,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves banner attributes with possible sub attributes with default marked. \n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/BannerAttributes\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -429,7 +453,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method sets default banner attribute as none.\n\nYou need to parse CampaignId and BannerAttributeId on your request URL.\n\nEXMAPLE: /adsmanagement/BannerDefaultValues/00000/BannerAttributes/111111/Values/Current\n(00000 - CampaignId, 11111 - BannerAttributeId)"
 					},
 					"response": []
@@ -462,7 +489,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves available landing pages with default marked. \n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLES: /adsmanagement/BannerDefaultValues/00000/LandingPages"
 					},
 					"response": []
@@ -536,7 +566,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method resert default landing page to none.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/LandingPages/Current\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -569,7 +602,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method retrieves available banner name formats for the specified campaignwith default marked.\n\nYou need to parse CampaignId onyour request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/NameFormats\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -1261,7 +1297,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"Asset\": {\r\n    \"ClickUrls\": [\r\n      {\r\n        \"ClickTag\": \"http://www.adform.com\",\r\n        \"Title\": \"http://www.adform.com\",\r\n        \"Url\": \"http://www.adform.com\"\r\n      }\r\n    ],\r\n    \"Uuid\": \"86e1199e-fc98-40d6-984a-56bf227929f7\"\r\n  },\r\n  \"Backup\": {\r\n    \"ClickUrl\": {\r\n      \"Title\": \"http://www.adform.com\",\r\n      \"Url\": \"http://www.adform.com\"\r\n    },\r\n    \"Uuid\": \"05f75000-e7e1-428b-a939-a6ee1038052e\"\r\n  },\r\n  \"GraphicSettings\": {\r\n    \"Align\": 0,\r\n    \"LandingTarget\": 0,\r\n    \"AdMeasure\": 0\r\n  },\r\n  \"CampaignId\": 628971,\r\n  \"Title\": \"Kubas per api\",\r\n  \"CommonSettings\": {\r\n    \"FormatId\": 0\r\n  }\r\n}"
+							"raw": ""
 						},
 						"description": "This method deletes HTML banner.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/HtmlBanners/00000\n(00000 - banner uuid)"
 					},
@@ -3035,6 +3071,463 @@
 			]
 		},
 		{
+			"name": "Native Ads (From Assets)",
+			"description": "These services allow you to manage and create Native Ads. \r\n\r\nNOTE: After the banner is created the returned value refers to the operation but not the object itself.\r\n\r\nNOTE: If you are constructing a banner from an asset, you need to upload an asset first or retrieve the existing asset's UUID. Please refer to Banner Asset Service for more information.",
+			"item": [
+				{
+					"name": "Create Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Icon\": {\r\n    \"Uuid\": \"string\"\r\n  },\r\n  \"Thumbnail\": {\r\n    \"Uuid\": \"string\"\r\n  },\r\n  \"ClickUrl\": {\r\n    \"Url\": \"http://www.adform.com\",\r\n    \"CampaignClickUrlId\": 0\r\n  },\r\n  \"NativeAdSettings\": {\r\n    \"Headline\": \"string\",\r\n    \"Description\": \"string\",\r\n    \"Brand\": \"string\"\r\n  },\r\n  \"CampaignId\": 00000,\r\n  \"Title\": \"Native Ad\"\r\n}"
+						},
+						"description": "This method creates Native Ad.\n\nYou need to define CampaignId, Native Ad settings and ClickUrls in your request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Banner by uuid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method deletes Native Ad.\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Banner by uuid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Asset\": {\r\n    \"ClickUrls\": [\r\n      {\r\n        \"ClickTag\": \"http://www.adform.com\",\r\n        \"Title\": \"http://www.adform.com\",\r\n        \"Url\": \"http://www.adform.com\"\r\n      }\r\n    ],\r\n    \"Uuid\": \"86e1199e-fc98-40d6-984a-56bf227929f7\"\r\n  },\r\n  \"Backup\": {\r\n    \"ClickUrl\": {\r\n      \"Title\": \"http://www.adform.com\",\r\n      \"Url\": \"http://www.adform.com\"\r\n    },\r\n    \"Uuid\": \"05f75000-e7e1-428b-a939-a6ee1038052e\"\r\n  },\r\n  \"GraphicSettings\": {\r\n    \"Align\": 0,\r\n    \"LandingTarget\": 0,\r\n    \"AdMeasure\": 0\r\n  },\r\n  \"CampaignId\": 628971,\r\n  \"Title\": \"Kubas per api\",\r\n  \"CommonSettings\": {\r\n    \"FormatId\": 0\r\n  }\r\n}"
+						},
+						"description": "This method retrieves a Native Ad by uuid.\n\nYou need to parse Ad uuid on you request URL.\n\nEXAMPLE: /api/v1/NativeAds/00000\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Banner uuid by internal id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									" \r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/uuid",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Asset\": {\r\n    \"ClickUrls\": [\r\n      {\r\n        \"ClickTag\": \"http://www.adform.com\",\r\n        \"Title\": \"http://www.adform.com\",\r\n        \"Url\": \"http://www.adform.com\"\r\n      }\r\n    ],\r\n    \"Uuid\": \"86e1199e-fc98-40d6-984a-56bf227929f7\"\r\n  },\r\n  \"Backup\": {\r\n    \"ClickUrl\": {\r\n      \"Title\": \"http://www.adform.com\",\r\n      \"Url\": \"http://www.adform.com\"\r\n    },\r\n    \"Uuid\": \"05f75000-e7e1-428b-a939-a6ee1038052e\"\r\n  },\r\n  \"GraphicSettings\": {\r\n    \"Align\": 0,\r\n    \"LandingTarget\": 0,\r\n    \"AdMeasure\": 0\r\n  },\r\n  \"CampaignId\": 628971,\r\n  \"Title\": \"Kubas per api\",\r\n  \"CommonSettings\": {\r\n    \"FormatId\": 0\r\n  }\r\n}"
+						},
+						"description": "This method retrieves a Native Ad uuid by internal Id.\n\nYou need to parse AdId on you request URL.\n\nEXAMPLE: /api/v1/NativeAds/00000/uuid\n(00000 - AdId)"
+					},
+					"response": []
+				},
+				{
+					"name": "Rename Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/Title",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Title\": \"New Title\"\r\n}"
+						},
+						"description": "This method updates Native Ad title.\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/Title\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner ClickUrls",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/ClickUrls",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ClickUrls\": [\r\n    {\r\n      \"ClickTag\": \"string\",\r\n      \"Title\": \"string\",\r\n      \"Url\": \"string\",\r\n      \"CampaignClickUrlId\": 380808\r\n    }\r\n  ],\r\n  \"BackupClickUrl\": {\r\n    \"Title\": \"string\",\r\n    \"Url\": \"string\",\r\n    \"CampaignClickUrlId\": 380808\r\n  }\r\n}"
+						},
+						"description": "This method updates Native Ad ClickUrls.\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/ClickUrls\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner Attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/Attributes",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Attributes\": [\r\n    {\r\n      \"Id\": 0,\r\n      \"ValueId\": 0\r\n    }\r\n  ]\r\n}"
+						},
+						"description": "This method updates Native Ad Attributes.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/Attributes\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner Settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/Settings",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"HtmlSettings\": {\r\n    \"Align\": 0,\r\n    \"LandingTarget\": 0,\r\n    \"AdMeasure\": 0\r\n  },\r\n  \"CommonSettings\": {\r\n    \"FormatId\": 0\r\n  }\r\n}"
+						},
+						"description": "This method updates Native Ad Settings.\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/Settings\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner Assets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/Asset",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"BackupId\": \"string\",\r\n  \"AssetId\": \"string\"\r\n}"
+						},
+						"description": "This method asigns new asset to a Native Ad.\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/Asset\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner Activation Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"    \r",
+									"tests[\"Content-Type is application/json\"] =\r",
+									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 202;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/NativeAds/00000/ActivationStatus",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"IsActive\": true\r\n}"
+						},
+						"description": "This method updates Native Ad activation status (active/not active).\n\nYou need to parse Ad uuid on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/NativeAds/00000/ActivationStatus\n(00000 - banner uuid)"
+					},
+					"response": []
+				},
+				{
+					"name": "Operation Results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/api/v1/AssetBanners/OperationResults/00000",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method returns the object that was created and its information.\n\nYou need to parse correlationId on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/OperationResults/00000"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Operation Results",
 			"description": "This service returns the object that was created and its information.",
 			"item": [
@@ -3066,7 +3559,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns results by CorrelationId which is generated in banner request responses.\n\nPlease note, that if operation results retrieves no content, it should be re-sent as this operation is asynchronious from other operations. Therefore, it may be in process of generating once it is requested.\n\nEXAMPLE: /api/v1/OperationResults/00000\n(00000 - CorrelationId)"
 					},
 					"response": []
