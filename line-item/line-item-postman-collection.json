@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Line Item",
-		"_postman_id": "9079c6c3-7aca-b41c-667f-d41949aeb5e6",
+		"_postman_id": "c94dc7e7-5d01-9389-7cd4-1f2bf53a8d75",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -38,10 +38,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of selected placement/line item labels.\n\nYou need to parse PlacementId on your request URL.\n\nEXAMPLE: /Services/Label/PlacementLabels?placementIds=00000\n\nYou can retrieve PlacementId using \"GET Placements\" method."
 					},
 					"response": []
@@ -116,10 +113,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of all placements that belong to a specified campaign's active mediaplan.\n\nYou have to parse CampaignId parameter on your request URL.\n\nEXAMPLE: /Placement/Placements?CampaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\"."
 					},
 					"response": []
@@ -237,10 +231,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns placement schedule information.\n\nYou have to parse PlacementId in your request URL.\n\nEXAMPLE: /Placement/PlacementSchedules?PlacementIds=11111\n\nYou can retrieve CampaignId using \"GET Placements\"."
 					},
 					"response": []
@@ -315,10 +306,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns placement comment information.\n\nYou need to parse PlacementId in your request URL.\n\nEXAMPLE: /Placement/PlacementComments?PlacementIds=11111\n\nYou can retrieve PlacementId using \"GET Placements\" method."
 					},
 					"response": []
@@ -390,7 +378,7 @@
 						}
 					],
 					"request": {
-						"url": "https://api.adform.com/v1/buyer/rtb/lineitems?campaignIds=742090",
+						"url": "https://api.adform.com/v1/buyer/rtb/lineitems?campaignIds=00000",
 						"method": "GET",
 						"header": [
 							{
@@ -399,10 +387,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns line items available in user's agency scope. In order to access line items, user should have granted access to agency campaigns.\n\nAt least one campaign, order, line item or placement identifier should be specified.\n\nFiltering parameter names:\n1. campaignIds (comma separated list of campaign identifiers)\n2. orderIds (comma separated list of order identifiers)\n3. lineitemIds (comma separated list of line item identifiers/0\n4. placementIds (comma separated list of placement identifiers)\n5. types (comma separated list of line item types. Available values: Display, Mobile, Video)\n6. fields (comma separated list of fields to return in response. Available values: \nId, PlacementId, OrderId, CampaignId, AgencyId, Name, Type, Budget)\n7. paused (filter by paused attribute)\n8. deleted (fiter by deleted attribute)\n9. search (search by line item name)\n10. sort (comma separated sort settings, e.g. sort=id+asc,name+desc. Available fields for sorting: id, name)\n11. offset (Starting index of items to return. Default value = 0)\n11. limit (Default value = 100)\n\nExample: /v1/buyer/rtb/lineitems?campaignIds=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
 					},
 					"response": []
@@ -425,7 +410,7 @@
 						}
 					],
 					"request": {
-						"url": "https://api.adform.com/Services/RTBActivity/v20141111/Activities?campaignId=742090&ActivityId=499578",
+						"url": "https://api.adform.com/Services/RTBActivity/v20141111/Activities?campaignId=00000&ActivityId=11111",
 						"method": "GET",
 						"header": [
 							{
@@ -434,10 +419,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a specific RTB line item.\n\nYou need to parse CampaignId and ActivityId on your request URL.\n\nEXAMPLE: /Activities?campaignId=00000&ActivityId=11111"
 					},
 					"response": []
@@ -522,7 +504,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"Id\": 469045,\r\n  \"CampaignId\": 628971, \r\n  \"PlacementId\": 2374789,\r\n  \"Name\": \"RTB Activity Nallme3\",\r\n  \"SchedulingType\": 1,\r\n  \"CappingSettings\": [\r\n    {\r\n      \"Id\": 2325686,\r\n      \"FrequencyCap\": 6,\r\n      \"InScreenDuration\": 6000\r\n    }],\r\n  \"Inventories\": [\r\n    {\r\n      \"Id\": 23331668,\r\n      \"InventorySourceId\": 31,\r\n      \"SourceType\": 1,\r\n      \"SourceName\": \"Rubicon\",\r\n      \"SourceId\": 31,\r\n      \"DealId\": null,\r\n      \"State\": 1,\r\n      \"CpmPrice\": null,\r\n      \"PriceMultiplier\": 1,\r\n      \"InventoryBuyingType\": 0\r\n  }],\r\n  \"SchedulerStartDate\": \"2016-05-04T23:00:00Z\",\r\n  \"SchedulerEndDate\": \"2016-12-31T00:00:00Z\",\r\n  \"PeriodStartDate\": \"2016-05-05T14:23:00Z\",\r\n  \"PeriodEndDate\": \"2016-05-04T23:00:00Z\",\r\n  \"FullPeriodStartDate\": \"2016-05-04T23:00:00Z\",\r\n  \"FullPeriodEndDate\": \"2016-12-31T00:00:00Z\",\r\n  \"BuyingType\": 2\r\n}"
+							"raw": "{\r\n  \"Id\": 11111,\r\n  \"CampaignId\": 00000, \r\n  \"PlacementId\": 22222,\r\n  \"Name\": \"RTB Activity Name\",\r\n  \"SchedulingType\": 1,\r\n  \"CappingSettings\": [\r\n    {\r\n      \"Id\": 2325686,\r\n      \"FrequencyCap\": 6,\r\n      \"InScreenDuration\": 6000\r\n    }],\r\n  \"Inventories\": [\r\n    {\r\n      \"Id\": 23331668,\r\n      \"InventorySourceId\": 31,\r\n      \"SourceType\": 1,\r\n      \"SourceName\": \"Rubicon\",\r\n      \"SourceId\": 31,\r\n      \"DealId\": null,\r\n      \"State\": 1,\r\n      \"CpmPrice\": null,\r\n      \"PriceMultiplier\": 1,\r\n      \"InventoryBuyingType\": 0\r\n  }],\r\n  \"SchedulerStartDate\": \"2016-05-04T23:00:00Z\",\r\n  \"SchedulerEndDate\": \"2016-12-31T00:00:00Z\",\r\n  \"PeriodStartDate\": \"2016-05-05T14:23:00Z\",\r\n  \"PeriodEndDate\": \"2016-05-04T23:00:00Z\",\r\n  \"FullPeriodStartDate\": \"2016-05-04T23:00:00Z\",\r\n  \"FullPeriodEndDate\": \"2016-12-31T00:00:00Z\",\r\n  \"BuyingType\": 2\r\n}"
 						},
 						"description": "This method updates an existing RTB Line Item.\n\nYou need to specify ActivityId,CampaignId and PlacementId in your request body.\n\nEXAMPLE: \"Id\": 11111, \"CampaignId\": 00000, \"PlacementId\": 2222222\n(Id stand for ActivityId).\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
 					},
@@ -832,10 +814,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns Trading Desk Fee Change Log."
 					},
 					"response": []
@@ -873,10 +852,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of locations for targeting.\n\nYou can use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/locations?limit=0"
 					},
 					"response": []
@@ -908,10 +884,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of languages for targeting.\n\nYou can use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/languages?limit=0"
 					},
 					"response": []
@@ -943,46 +916,8 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available tracking points for targeting.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /dictionaries/trackingPoints?campaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/trackingPoints?campaignId=00000&limit=0"
-					},
-					"response": []
-				},
-				{
-					"name": "Tracking Point Filters",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Request header includes authentication Ticket\"] = \r",
-									"  request.headers.Ticket;\r",
-									"\r",
-									"tests[\"Request was successful\"] = \r",
-									"  responseCode.code === 200;"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://api.adform.com/dsp/v1/dictionaries/trackingPointFilters?campaignId=00000",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Ticket",
-								"value": "{{Ticket}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"description": "This method returns a list of available tracking point filters.\n\nYou need to parse CampaingId on your request URL.\n\nEXAMPLE: /dictionaries/trackingPointFilters?campaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/trackingPointFilters?campaignId=00000&limit=0"
 					},
 					"response": []
 				},
@@ -1013,10 +948,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available audiences for targeting.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /dictionaries/audiences?campaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/audiences?campaignId=00000&limit=0"
 					},
 					"response": []
@@ -1048,10 +980,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available campaigns for targeting.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /dictionaries/campaigns?campaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/campaigns?campaignId=00000&limit=0"
 					},
 					"response": []
@@ -1083,10 +1012,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available devices types and operating systems.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. filter (search term. Filters the result list to return service providers where name matches term)\n2. limit (limits the result amount, default is 100, to get all results use 0)\n\nExample: /v1/dictionaries/deviceTargeting/deviceTypes?limit=0"
 					},
 					"response": []
@@ -1118,10 +1044,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available devices types and operating systems.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. filter (search term. Filters the result list to return service providers where name matches term)\n2. limit (limits the result amount, default is 100, to get all results use 0)\n\nExample: /v1/dictionaries/deviceTargeting/deviceVendors?limit=0"
 					},
 					"response": []
@@ -1153,10 +1076,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available devices types and operating systems.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. filter (search term. Filters the result list to return service providers where name matches term)\n2. limit (limits the result amount, default is 100, to get all results use 0)\n\nExample: /v1/dictionaries/deviceTargeting/deviceModels?limit=0"
 					},
 					"response": []
@@ -1188,10 +1108,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available devices types and operating systems.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. filter (search term. Filters the result list to return service providers where name matches term)\n2. limit (limits the result amount, default is 100, to get all results use 0)\n\nExample: /v1/dictionaries/deviceTargeting/browsers?limit=0"
 					},
 					"response": []
@@ -1223,10 +1140,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available devices types and operating systems.\n\nYou can also use filtering parameters (which are optional) with such key names:\n\n1. filter (search term. Filters the result list to return service providers where name matches term)\n2. limit (limits the result amount, default is 100, to get all results use 0)\n\nExample: /v1/dictionaries/deviceTargeting/platforms?limit=0"
 					},
 					"response": []
@@ -1258,10 +1172,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available engagements for targeting."
 					},
 					"response": []
@@ -1293,10 +1204,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available external data providers for targeting.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /dictionaries/externalDataProviders?campaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
 					},
 					"response": []
@@ -1328,10 +1236,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of available categories and segments for the specified external data provider.\n\nYou need to parse CampaignId and DataProviderId on your request URL.\n\nEXAMPLE: /dictionaries/externalDataCategories?campaignId=00000&dataProviderId=11111\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve ProviderId using \"GET External Data Providers\" method."
 					},
 					"response": []
@@ -1363,10 +1268,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of internet service for targeting.\n\nYou can use filtering parameters (which are optional) with such key names:\n\n1. term\n2. filter (search term. Optional. Filters the result list to return service providers where name matches term)\n3. limit (limits the result amount, default is 100, to get all results use 0)\n4. startIndex (default value is 0. Optional. Defines start index, from which element to start)\n\nExample: /v1/dictionaries/internetServiceProviders?limit=0"
 					},
 					"response": []
@@ -1398,10 +1300,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a list of inventory source types."
 					},
 					"response": []
@@ -1439,16 +1338,13 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns detailed information about creative settings for specified inventory.\n\nYou need to parse source ID, source type and parent source ID on your request URL.\n\nExample: /v1/creativesettings?sourceid=780&sourcetype=1&parentsourceid=780"
 					},
 					"response": []
 				},
 				{
-					"name": "Classificators list for specified",
+					"name": "Classificators list for specified type",
 					"event": [
 						{
 							"listen": "test",
@@ -1474,16 +1370,13 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns classificators list for specified type.\n\nYou need to parse \"type\" parameter on your request URL.\n\nType can be bannertype, richmediasubtype, iabcategory and etc.\n\nExample: /v1/creativesettings/classificator/xxxx\n(where xxxx is type)"
 					},
 					"response": []
 				},
 				{
-					"name": "Inventory Sources 2",
+					"name": "Inventory Sources",
 					"event": [
 						{
 							"listen": "test",
@@ -1840,10 +1733,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns default targeting settings for a new line item."
 					},
 					"response": []
@@ -1875,10 +1765,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns RTB Line Item targeting settings.\n\nYou need to parse ActivityId on your request URL.\n\nEXAMPLE: /dsp/v1/activities/11111/targeting\n(11111 - ActivityId)"
 					},
 					"response": []

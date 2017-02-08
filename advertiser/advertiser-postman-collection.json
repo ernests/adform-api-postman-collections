@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Advertiser",
-		"_postman_id": "2fda2fa7-fc1b-d2c8-9e30-406dee63f0c6",
+		"_postman_id": "84c4d10c-1aec-09cf-d628-8bb0a62cd068",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -170,6 +170,31 @@
 						"description": "This method deletes a specified alert.\n\nNOTE: You need to define AlertId on request URL.\n\nEXAMPLE: \"v1/buyer/alerts/{{AlertId}}\"\n{{AlertId}} is taken from global variables if set, if not get it from \"GET Alerts\" method and insert it here without {{}}.\n"
 					},
 					"response": []
+				},
+				{
+					"name": "Enable/Disable alert",
+					"request": {
+						"url": "https://api.adform.com/v1/alerts/00000/isenabled?advertiserId=111111",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method allows you to enable or disable alert inherited from other level.\n\nEXAMPLES:\n\nExamples:\nv1/alerts/111111/isenabled?advertiserId=00000 (where 11111 is alert id and 00000 advertiser id)"
+					},
+					"response": []
 				}
 			]
 		},
@@ -204,7 +229,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of default banner attributes for a predefined advertiser.\n\nAdvertiserId parameter is required in your request url. \n\nEXAMPLE (00000 stands for advertiser id): //api.adform.com/api/v1/Advertisers/DefaultBannerAttributes/00000\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
 					},
 					"response": []
@@ -363,7 +391,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a list of all label groups, filtered by specified AdvertiserId. \n\nAdvertiserId parameter is required in your request url. \n\nEXAMPLE: \napi.adform.com/Services/Label/AdvertiserLabels?AdvertiserId=00000\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
 					},
 					"response": []
@@ -412,7 +443,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"GroupId\": 1842,\r\n  \"LabelName\": \"Bandymas2\"\r\n}"
+							"raw": "{\r\n  \"GroupId\": 1842,\r\n  \"LabelName\": \"TestLabel\"\r\n}"
 						},
 						"description": "This method allows you to create labels at advertiser level according to your specific needs. These labels can then be used across multiple campaigns and clients.\n\nLabelGroupId is required in the request body that you are parsing.\n\nEXAMPLE: \"GroupId\": 00000\n\nYou can retrieve LabelGroupId using \"GET Labels\" method."
 					},
@@ -493,7 +524,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "To use Advertiser service you need to have advertisers created.\n\nIn case it's your first time using our services, please contact our Adform Traffic: traffic@adform.com or Adform Help:help@adform.com teams for assistance.\n\nThis method returns a list of all advertisers which are under the same client as you have logged in.\n\nNOTE: You can filter advertisers by parsing \"Names\" parameter in your request URL. \"Names\" parameter is of string array type. \n\nEXAMPLE: ?Names=AdvertiserName1,AdvertiserName2...."
 					},
 					"response": []

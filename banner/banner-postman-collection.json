@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Banner",
-		"_postman_id": "d81fd9b7-534d-7b04-13a6-dfc8247d7472",
+		"_postman_id": "0b092ce5-0a8f-73ad-5f46-a13f2bd226db",
 		"description": "In this section you can find information on how to create and manage various types of banners and all related objects. If the banner is hosted in Adform, the asset is created first which can be reused to create various banners. The created banners can then be used to create rotators or schedules for additional level of control or simply served through Direct or RTB.\r\n\r\nAdform is also offering DCO (Dynamic Content Optimization) banners that are displaying different content depending on a predefined set of rules.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -38,10 +38,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves all banners under specified campaign.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /api/v1/AdsOverview/Ads?campaignId=00000"
 					},
 					"response": []
@@ -73,10 +70,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves banners by banner uuid or by AdId.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLE: /api/v1/AdsOverview/Banners/00000\n(00000 - Banner uuid or Ad ID)"
 					},
 					"response": []
@@ -108,10 +102,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves rotators by AdId or uuid.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPlE: /api/v1/AdsOverview/Rotators/000000"
 					},
 					"response": []
@@ -143,10 +134,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves shedules by AdId.\n\nYou need to parse banner uuid on your request URL.\n\nEXAMPLES: /api/v1/AdsOverview/Schedules/000000"
 					},
 					"response": []
@@ -178,10 +166,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrievesnested rotators by AdId.\n\nYou need to parse banner uuid on your request URL."
 					},
 					"response": []
@@ -263,10 +248,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves possible backup image determination rules with default marked.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: v1/adsmanagement/BannerDefaultValues/00000/BackupImages\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -297,11 +279,16 @@
 								"key": "Ticket",
 								"value": "{{Ticket}}",
 								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"description": "This method sets certain backup image recognition rules as default. \n\nYou need to parse CampaignId and BackupImageId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/BackupImages/1/Current\n(00000 - CampaignId, 1 - BackupImageId)"
 					},
@@ -335,10 +322,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method sets default backup image recognition rules as none.\n\nYou need to parse CampaignId on your request URL.\n\nEXMAPLE: /adsmanagement/BannerDefaultValues/00000/BackupImages/Current\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -371,10 +355,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves banner attributes with possible sub attributes with default marked. \n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/BannerAttributes\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -405,11 +386,16 @@
 								"key": "Ticket",
 								"value": "{{Ticket}}",
 								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"description": "This method sets certain banner attribute values as default.\n\nYou need to parse CampaignId, BannerAttributeId and BannerAttributeValueId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/BannerAttributes/11111/Values/22222/Current\n(00000 - CampaignId, 11111 - BannerAttributeId, 22222 - BannerAttributeValueId)"
 					},
@@ -443,10 +429,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method sets default banner attribute as none.\n\nYou need to parse CampaignId and BannerAttributeId on your request URL.\n\nEXMAPLE: /adsmanagement/BannerDefaultValues/00000/BannerAttributes/111111/Values/Current\n(00000 - CampaignId, 11111 - BannerAttributeId)"
 					},
 					"response": []
@@ -479,10 +462,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves available landing pages with default marked. \n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLES: /adsmanagement/BannerDefaultValues/00000/LandingPages"
 					},
 					"response": []
@@ -513,11 +493,16 @@
 								"key": "Ticket",
 								"value": "{{Ticket}}",
 								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"description": "This method sets certain landing page as default.\n\nYou need to parse CampaignId and LandingPageId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/LandingPages/11111/Current\n(00000 - CampaignId, 11111 - LandingPageId)"
 					},
@@ -551,10 +536,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method resert default landing page to none.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/LandingPages/Current\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -587,10 +569,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method retrieves available banner name formats for the specified campaignwith default marked.\n\nYou need to parse CampaignId onyour request URL.\n\nEXAMPLE: /BannerDefaultValues/00000/NameFormats\n(00000 - CampaignId)"
 					},
 					"response": []
@@ -621,11 +600,16 @@
 								"key": "Ticket",
 								"value": "{{Ticket}}",
 								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"description": "This method sets certain name format rule as defualt.\n\nYou need to parse CampaignId and NameFormatId on your request URL.\n\nEXAPLE: /BannerDefaultValues/00000/NameFormats/4/Current\n(00000 - CampaignId, 4 - NameFormatId)\n"
 					},
@@ -3082,10 +3066,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns results by CorrelationId which is generated in banner request responses.\n\nPlease note, that if operation results retrieves no content, it should be re-sent as this operation is asynchronious from other operations. Therefore, it may be in process of generating once it is requested.\n\nEXAMPLE: /api/v1/OperationResults/00000\n(00000 - CorrelationId)"
 					},
 					"response": []
@@ -3395,7 +3376,7 @@
 						}
 					],
 					"request": {
-						"url": "https://api.adform.com/api/v1/ThirdPartyBanners/{uuid}",
+						"url": "https://api.adform.com/api/v1/ThirdPartyBanners/00000",
 						"method": "DELETE",
 						"header": [
 							{
@@ -3966,7 +3947,7 @@
 						}
 					],
 					"request": {
-						"url": "https://api.adform.com/api/v1/VideoInstream/{uuid}/OriginalVideoSource",
+						"url": "https://api.adform.com/api/v1/VideoInstream/00000/OriginalVideoSource",
 						"method": "PUT",
 						"header": [
 							{

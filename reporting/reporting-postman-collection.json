@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Reporting",
-		"_postman_id": "dc639eba-b9f8-b917-22e0-3016051c3e01",
+		"_postman_id": "10b6153e-74f0-1d8a-b75f-e03f0c0fdcc7",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -38,10 +38,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method filters all data exports.\n\nYou can filter DataExports using these filter parameters on your request URL:\n* DataExportsIds\n* Page\n* PageSize\n\nEXAMPLE: /Services/DataExport/DataExportsList?Page=1&PageSize=3"
 					},
 					"response": []
@@ -373,6 +370,96 @@
 			]
 		},
 		{
+			"name": "Metadata Permissions",
+			"description": "",
+			"item": [
+				{
+					"name": "Get user permissions",
+					"request": {
+						"url": "https:/api.adform.com/v1/buyer/stats/users/00000/x/permissions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows to get user permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/users/00000/x/permissions\n(where 00000 is User Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve User Id using \"GET Users\" method."
+					},
+					"response": []
+				},
+				{
+					"name": "Set user permissions",
+					"request": {
+						"url": "https:/api.adform.com/v1/buyer/stats/users/00000/x/permissions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"+impressions\"\r\n]"
+						},
+						"description": "This method allows to set user permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/users/00000/x/permissions\n(where 00000 is User Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve User Id using \"GET Users\" method."
+					},
+					"response": []
+				},
+				{
+					"name": "Get group permissions",
+					"request": {
+						"url": "https:/api.adform.com/v1/buyer/stats/groups/00000/x/permissions",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows to get group permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/groups/00000/x/permissions\n(where 00000 is Group Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n* \nYou can retrieve Groups Id using \"GET Users\" method."
+					},
+					"response": []
+				},
+				{
+					"name": "Set user permissions",
+					"request": {
+						"url": "https:/api.adform.com/v1/buyer/stats/groups/00000/x/permissions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"+impressions\"\r\n]"
+						},
+						"description": "This method allows to set group permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/groups/00000/x/permissions\n(where 00000 is Group Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve Groups Id using \"GET Users\" method."
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Report Schedules",
 			"description": "",
 			"item": [
@@ -403,10 +490,7 @@
 								"description": ""
 							}
 						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
+						"body": {},
 						"description": "This method returns a specified report schedule."
 					},
 					"response": []
