@@ -1,0 +1,26 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Open Direct: Publisher Cross Advertising",
+		"_postman_id": "c4580912-69b7-9e35-3a71-4ee96aedd2ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Marketplace API",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Order API",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Targeting API",
+			"description": "",
+			"item": []
+		}
+	]
+}
