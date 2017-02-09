@@ -82,7 +82,7 @@
 			]
 		},
 		{
-			"name": "Oder API",
+			"name": "Order API",
 			"description": "",
 			"item": [
 				{
@@ -381,7 +381,7 @@
 					"response": []
 				},
 				{
-					"name": "Specific Order",
+					"name": "Specific Order XXX",
 					"request": {
 						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
 						"method": "GET",
@@ -531,7 +531,7 @@
 							"mode": "raw",
 							"raw": "{\r\n  \"id\": \"string\",\r\n  \"orderId\": \"string\",\r\n  \"productId\": \"string\",\r\n  \"bookingStatus\": \"Draft\",\r\n  \"startDate\": \"string\",\r\n  \"endDate\": \"string\",\r\n  \"name\": \"string\",\r\n  \"comment\": \"string\",\r\n  \"cost\": 0,\r\n  \"frequencyCount\": 0,\r\n  \"frequencyInterval\": \"Hour\",\r\n  \"quantity\": 0,\r\n  \"providerData\": \"string\",\r\n  \"rate\": 0,\r\n  \"reservedExpiryDate\": \"string\",\r\n  \"stateChangeReason\": \"string\",\r\n  \"targeting\": [\r\n    {\r\n      \"target\": \"string\",\r\n      \"targetValues\": [\r\n        \"string\"\r\n      ]\r\n    }\r\n  ],\r\n  \"usesExpandables\": true\r\n}"
 						},
-						"description": "This method allows to update specific lines in order.\n\nEXAMPLE: /v1/od/buyer/accounts/00000/orders/11111/lines/22222?x\n(where 00000 is account Id, 11111 is order Id, 22222 is line Id and x is status)\n\nPossible status values:\n1. book\n2. reserve\n3. cancel\n4. reset"
+						"description": "This method allows to update specific lines in order.\n\nEXAMPLE: /v1/od/buyer/accounts/00000/orders/11111/lines/22222\n(where 00000 is account Id, 11111 is order Id, 22222 is line Id)\n\nYou can add additional 'status' parameter on your request url.\n\nEXAMPLE: /v1/od/buyer/accounts/00000/orders/11111/lines/22222?status=book\n\nPossible status values:\n1. book\n2. reserve\n3. cancel\n4. reset"
 					},
 					"response": []
 				},
@@ -617,6 +617,155 @@
 							"raw": ""
 						},
 						"description": "This method allows to get a specific assignment.\n\nEXAMPLE: /od/buyer/00000/accounts/11111/assignments/22222\n(where 00000 is integration Id, 11111 is account Id, 22222 is assignment Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignment",
+					"request": {
+						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"creativeId\": \"string\",\r\n  \"lineId\": \"string\",\r\n  \"status\": \"Active\",\r\n  \"providerData\": \"string\",\r\n  \"weight\": 0\r\n}"
+						},
+						"description": "This method allows to get a specific assignment.\n\nEXAMPLE: /od/buyer/00000/accounts/11111/assignments/22222\n(where 00000 is integration Id, 11111 is account Id, 22222 is assignment Id)\n\nYou can add additional \"disable\"parameter on your request url.\n\nEXAMPLE: /od/buyer/00000/accounts/11111/assignments/22222?disable=x\n\nDisable states:\n1. true\n2. false"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Order XXX",
+					"request": {
+						"url": "https:/api.adform.com/v1/od/publisher/ca/orders/{orderId}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method allows to get a specific order by id.\n\nEXAMPLE: /v1/od/publisher/ca/orders/00000\n(where 00000 is order Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "All Change Requests",
+					"request": {
+						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows to get all change requests for account.\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests\n(where 00000 is account Id)\n\nPossible additional parameters \"lineId\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Change Requests",
+					"request": {
+						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"orderId\": \"string\",\r\n  \"lineId\": \"string\",\r\n  \"status\": \"Pending\",\r\n  \"change\": {\r\n    \"startDate\": \"string\",\r\n    \"endDate\": \"string\",\r\n    \"frequencyCount\": 0,\r\n    \"frequencyInterval\": \"Hour\",\r\n    \"removeFrequencyCapping\": true,\r\n    \"quantity\": 0,\r\n    \"rate\": 0,\r\n    \"targeting\": [\r\n      {\r\n        \"target\": \"string\",\r\n        \"targetValues\": [\r\n          \"string\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"comment\": \"string\"\r\n}"
+						},
+						"description": "This method allows to create a change request for line. Only one change request with Pending status is supported\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests\n(where 00000 is account Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Change Requests",
+					"request": {
+						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method allows to delete a change request by change request Id. Change request can be deleted only if it has Pending status\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/111111\n(where 00000 is account Id, 11111 is change request Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Change Request",
+					"request": {
+						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows to get a specific change requests for account.\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/11111\n(where 00000 is account Id, 11111 is change request Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Change Request",
+					"request": {
+						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"orderId\": \"string\",\r\n  \"lineId\": \"string\",\r\n  \"status\": \"Pending\",\r\n  \"change\": {\r\n    \"startDate\": \"string\",\r\n    \"endDate\": \"string\",\r\n    \"frequencyCount\": 0,\r\n    \"frequencyInterval\": \"Hour\",\r\n    \"removeFrequencyCapping\": true,\r\n    \"quantity\": 0,\r\n    \"rate\": 0,\r\n    \"targeting\": [\r\n      {\r\n        \"target\": \"string\",\r\n        \"targetValues\": [\r\n          \"string\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"comment\": \"string\"\r\n}"
+						},
+						"description": "This method allows to update a change request.\n\nChange request can be updated only if it has Pending status\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/11111\n(where 00000 is account Id, 11111 is change request Id)"
 					},
 					"response": []
 				}
