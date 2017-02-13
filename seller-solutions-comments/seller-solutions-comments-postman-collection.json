@@ -64,7 +64,7 @@
 									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
 									"\r",
 									"tests[\"Request was successful\"] = \r",
-									"  responseCode.code === 200;"
+									"  responseCode.code === 201;"
 								]
 							}
 						}
@@ -86,7 +86,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"created\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"updated\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"inventorySourceId\": 1,\r\n  \"commentatorId\": 1,\r\n  \"entityType\": \"LineItem\",\r\n  \"entityId\": 1,\r\n  \"content\": \"My comment\"\r\n}"
+							"raw": "{\r\n  \"inventorySourceId\": 1,\r\n  \"commentatorId\": 1,\r\n  \"entityType\": \"LineItem\",\r\n  \"entityId\": 1,\r\n  \"content\": \"Test API Comment\"\r\n}"
 						},
 						"description": "This method allows to create a new comment."
 					},
@@ -107,7 +107,7 @@
 									"  request.headers[\"Content-Type\"] === \"application/json\";\r",
 									"\r",
 									"tests[\"Request was successful\"] = \r",
-									"  responseCode.code === 200;"
+									"  responseCode.code === 204;"
 								]
 							}
 						}
@@ -199,13 +199,13 @@
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
+								"value": "application/json-patch+json",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/content\",\r\n    \"value\": \"My comment\"\r\n  }\r\n]"
+							"raw": "[{\r\n  \"op\": \"replace\",\r\n  \"path\": \"/content\",\r\n  \"value\": \"Partially updated comment\"\r\n}]\r\n"
 						},
 						"description": "This method allows to partially update comment.\n\nEXAMPLE: /v1/seller/comments/00000 (where 00000 is comment Id)"
 					},
@@ -248,7 +248,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"created\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"updated\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"inventorySourceId\": 1,\r\n  \"commentatorId\": 1,\r\n  \"entityType\": \"LineItem\",\r\n  \"entityId\": 1,\r\n  \"content\": \"My comment\"\r\n}"
+							"raw": "{\r\n  \"created\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"updated\": \"2017-01-05T16:03:38.7779653Z\",\r\n  \"inventorySourceId\": 1,\r\n  \"commentatorId\": 1,\r\n  \"entityType\": \"LineItem\",\r\n  \"entityId\": 1,\r\n  \"content\": \"My new comment\"\r\n}"
 						},
 						"description": "This method allows to fully update comment.\n\nEXAMPLE: /v1/seller/comments/00000 (where 00000 is comment Id)"
 					},
@@ -291,7 +291,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "Example comment"
+							"raw": "\"Your message\""
 						},
 						"description": "This method allows to update the content of comment.\n\nEXAMPLE: /v1/seller/comments/00000/content (where 00000 is comment Id)"
 					},

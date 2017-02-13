@@ -86,9 +86,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Advertiser\",\r\n  \"active\": true,\r\n  \"categoryId\": 0,\r\n  \"categoryName\": \"Test Category\"\r\n}"
+							"raw": "{\r\n  \"name\": \"API Test Advertiser\",\r\n  \"active\": true,\r\n  \"categoryId\": 1\r\n}"
 						},
-						"description": "This method allows to create a new Advertiser."
+						"description": "This method allows to create a new Advertiser.\n\nCategory Id has to be greater than 0."
 					},
 					"response": []
 				},
@@ -129,7 +129,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Advertiser\",\r\n  \"active\": true,\r\n  \"categoryId\": 0,\r\n  \"categoryName\": \"Test Category\"\r\n}"
+							"raw": "{\r\n  \"id\": 00000,\r\n  \"name\": \"API Test Advertiser Updated\",\r\n  \"active\": true,\r\n  \"categoryId\": 1,\r\n  \"refUserName\": \"ppasBillingIntegrationTest\"\r\n}"
 						},
 						"description": "This method allows to update Advertiser."
 					},
@@ -302,7 +302,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Buyer\",\r\n  \"active\": true,\r\n  \"adformDspId\": 1\r\n}"
+							"raw": "{\r\n  \"name\": \"Test API Buyer\",\r\n  \"active\": true,\r\n  \"adformDspId\": 1\r\n}"
 						},
 						"description": "This method allows to create a new Buyer object."
 					},
@@ -367,7 +367,7 @@
 						}
 					],
 					"request": {
-						"url": "https://api.adform.com/v1/seller/buyers/00000",
+						"url": "https://api.adform.com/v1/seller/buyers/000",
 						"method": "PUT",
 						"header": [
 							{
@@ -383,7 +383,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Test Buyer\",\r\n  \"active\": true,\r\n  \"adformDspId\": 1\r\n}"
+							"raw": "{\r\n  \"name\": \"Test API Buyer\",\r\n  \"active\": true,\r\n  \"adformDspId\": 1\r\n}"
 						},
 						"description": "This method allows to update buyer.\n\nEXAMPLE: /v1/seller/buyers/00000 (where 00000 is Buyer Id)"
 					},
