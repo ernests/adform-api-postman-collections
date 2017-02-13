@@ -6,5 +6,93 @@
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
-	"item": []
+	"item": [
+		{
+			"name": "Metadata",
+			"description": "This services allow you to get a list of possible Dimensions and Metrics along with their respective descriptions",
+			"item": [
+				{
+					"name": "Get Dimensions metadata",
+					"request": {
+						"url": "https://api.adform.com/v1/reportingstats/publisher/metadata/dimensions",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"dimensions\": [\"publisher\"]\r\n}"
+						},
+						"description": "Leave [ ] empty in order to get a full list of Dimensions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Metrics metadata",
+					"request": {
+						"url": "https://api.adform.com/v1/reportingstats/publisher/metadata/metrics",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
+						},
+						"description": "Leave [ ] empty in order to get a full list of Metrics"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Reporting Stats",
+					"request": {
+						"url": "https://api.adform.com/v1/reportingstats/publisher/reportdata",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n      \"date\": {\r\n         \"from\": \"2017-01-01\",\r\n         \"to\": \"2017-10-20\"\r\n      }\r\n   },\r\n   \"dimensions\" : [\r\n      \"publisher\"\r\n   ],\r\n   \"metrics\": [\r\n      \"impressions\",\r\n      \"clicks\",\r\n      \"bidRequests\"\r\n   ]\r\n}"
+						},
+						"description": "This service allows you to retrieve your reporting data.\nUse Services such as:\n\nMetadata for list of Dimensions and metrics - https://api.adform.com/help/references/seller-solutions/reporting/metadata\n\nFilters - https://api.adform.com/help/references/seller-solutions/reporting/reportdata/filters\n\nPaging - https://api.adform.com/help/references/seller-solutions/reporting/reportdata/paging\n\nSorting- https://api.adform.com/help/references/seller-solutions/reporting/reportdata/sorting\n\nThis endpoint has a request qouta(per inventory source) of:\n10requests/min\n500requests/day"
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }
