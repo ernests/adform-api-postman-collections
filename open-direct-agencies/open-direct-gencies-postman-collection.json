@@ -14,7 +14,7 @@
 				{
 					"name": "All Publisher Objects",
 					"request": {
-						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher?00000",
+						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher?clientId=00000",
 						"method": "GET",
 						"header": [
 							{
@@ -24,14 +24,14 @@
 							}
 						],
 						"body": {},
-						"description": "This method allows you to get all Publisher Objects.\n\nEXAMPLE: /od/buyer/marketplace/publisher?00000\n(where 00000 is client Id)"
+						"description": "This method allows you to get all Publisher Objects.\n\nEXAMPLE: /od/buyer/marketplace/publisher?clientId=00000"
 					},
 					"response": []
 				},
 				{
 					"name": "Publisher by integrationId",
 					"request": {
-						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/111111?00000",
+						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/111111?clientId=00000",
 						"method": "GET",
 						"header": [
 							{
@@ -41,14 +41,14 @@
 							}
 						],
 						"body": {},
-						"description": "This method allows you to get publisher by integration Id.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111?00000\n(where 111111 is integrationId and 00000 is client Id)"
+						"description": "This method allows you to get publisher by integration Id.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111?clientId=00000\n(where 111111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
 				},
 				{
 					"name": "All Products",
 					"request": {
-						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/11111/products?000000",
+						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/11111/products?clientId=00000",
 						"method": "GET",
 						"header": [
 							{
@@ -58,14 +58,14 @@
 							}
 						],
 						"body": {},
-						"description": "This method allows you to get all products belonging to given publisher that match criteria given in query.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/11111/products?000000\n(where 111111 is integrationId and 00000 is client Id)"
+						"description": "This method allows you to get all products belonging to given publisher that match criteria given in query.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/11111/products?clientId=00000\n(where 111111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
 				},
 				{
 					"name": "Specific Product",
 					"request": {
-						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/111111/products/22222?00000",
+						"url": "https://api.adform.com/v1/od/buyer/marketplace/publisher/111111/products/22222?clientId=00000",
 						"method": "GET",
 						"header": [
 							{
@@ -75,7 +75,7 @@
 							}
 						],
 						"body": {},
-						"description": "This method allows you to get a specific product with given 'productId' if it belongs to publisher with 'integrationId'.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111/products/22222?00000\n(where 22222 is productId, 11111 is integrationId and 00000 is client Id)"
+						"description": "This method allows you to get a specific product with given 'productId' if it belongs to publisher with 'integrationId'.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111/products/22222?clientId=00000\n(where 22222 is productId, 11111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
 				}
@@ -646,29 +646,9 @@
 					"response": []
 				},
 				{
-					"name": "Get Specific Order XXX",
+					"name": "All Creatives",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/publisher/ca/orders/{orderId}",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Ticket",
-								"value": "{{Ticket}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": "This method allows to get a specific order by id.\n\nEXAMPLE: /v1/od/publisher/ca/orders/00000\n(where 00000 is order Id)"
-					},
-					"response": []
-				},
-				{
-					"name": "All Change Requests",
-					"request": {
-						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives",
 						"method": "GET",
 						"header": [
 							{
@@ -678,14 +658,31 @@
 							}
 						],
 						"body": {},
-						"description": "This method allows to get all change requests for account.\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests\n(where 00000 is account Id)\n\nPossible additional parameters \"lineId\"."
+						"description": "This method allows to get all account creatives.\n\nEXAMPLE: "
 					},
 					"response": []
 				},
 				{
-					"name": "Create Change Requests",
+					"name": "All Creatives",
 					"request": {
-						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ticket",
+								"value": "{{Ticket}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This method allows to get all account creatives.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives\n(where 00000 is Integration Id and 111111 is Account Id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Creative",
+					"request": {
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives",
 						"method": "POST",
 						"header": [
 							{
@@ -701,16 +698,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": \"string\",\r\n  \"orderId\": \"string\",\r\n  \"lineId\": \"string\",\r\n  \"status\": \"Pending\",\r\n  \"change\": {\r\n    \"startDate\": \"string\",\r\n    \"endDate\": \"string\",\r\n    \"frequencyCount\": 0,\r\n    \"frequencyInterval\": \"Hour\",\r\n    \"removeFrequencyCapping\": true,\r\n    \"quantity\": 0,\r\n    \"rate\": 0,\r\n    \"targeting\": [\r\n      {\r\n        \"target\": \"string\",\r\n        \"targetValues\": [\r\n          \"string\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"comment\": \"string\"\r\n}"
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"accountId\": \"string\",\r\n  \"adFormatType\": \"string\",\r\n  \"adQualityRejectionReason\": {},\r\n  \"adQualityStatus\": \"Pending\",\r\n  \"backupFlashAsset\": \"string\",\r\n  \"clickUrl\": \"string\",\r\n  \"creativeAsset\": \"string\",\r\n  \"geometry\": {\r\n    \"height\": 0,\r\n    \"width\": 0\r\n  },\r\n  \"httpsCompatible\": true,\r\n  \"language\": \"string\",\r\n  \"maturityLevel\": \"Children\",\r\n  \"name\": \"string\",\r\n  \"providerData\": \"string\"\r\n}"
 						},
-						"description": "This method allows to create a change request for line. Only one change request with Pending status is supported\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests\n(where 00000 is account Id)"
+						"description": "This method allows to create a new creative object.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives\n(where 00000 is Integration Id and 111111 is Account Id)"
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Change Requests",
+					"name": "Delete Creative",
 					"request": {
-						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives/22222",
 						"method": "DELETE",
 						"header": [
 							{
@@ -723,14 +720,14 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": "This method allows to delete a change request by change request Id. Change request can be deleted only if it has Pending status\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/111111\n(where 00000 is account Id, 11111 is change request Id)"
+						"description": "This method allows to delete a creative.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives/22222\n(where 00000 is Integration Id, 111111 is Account Id and 22222 is Creative Id)"
 					},
 					"response": []
 				},
 				{
-					"name": "Specific Change Request",
+					"name": "Specific Creative",
 					"request": {
-						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives/22222",
 						"method": "GET",
 						"header": [
 							{
@@ -739,15 +736,18 @@
 								"description": ""
 							}
 						],
-						"body": {},
-						"description": "This method allows to get a specific change requests for account.\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/11111\n(where 00000 is account Id, 11111 is change request Id)"
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "This method allows to get a specific creative.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives/22222\n(where 00000 is Integration Id, 111111 is Account Id and 22222 is Creative Id)"
 					},
 					"response": []
 				},
 				{
-					"name": "Update Change Request",
+					"name": "Update Creative",
 					"request": {
-						"url": "https://www.adform.com/v1/od/publisher/ca/accounts/00000/changerequests/11111",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/creatives/22222",
 						"method": "PUT",
 						"header": [
 							{
@@ -763,9 +763,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": \"string\",\r\n  \"orderId\": \"string\",\r\n  \"lineId\": \"string\",\r\n  \"status\": \"Pending\",\r\n  \"change\": {\r\n    \"startDate\": \"string\",\r\n    \"endDate\": \"string\",\r\n    \"frequencyCount\": 0,\r\n    \"frequencyInterval\": \"Hour\",\r\n    \"removeFrequencyCapping\": true,\r\n    \"quantity\": 0,\r\n    \"rate\": 0,\r\n    \"targeting\": [\r\n      {\r\n        \"target\": \"string\",\r\n        \"targetValues\": [\r\n          \"string\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"comment\": \"string\"\r\n}"
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"accountId\": \"string\",\r\n  \"adFormatType\": \"string\",\r\n  \"adQualityRejectionReason\": {},\r\n  \"adQualityStatus\": \"Pending\",\r\n  \"backupFlashAsset\": \"string\",\r\n  \"clickUrl\": \"string\",\r\n  \"creativeAsset\": \"string\",\r\n  \"geometry\": {\r\n    \"height\": 0,\r\n    \"width\": 0\r\n  },\r\n  \"httpsCompatible\": true,\r\n  \"language\": \"string\",\r\n  \"maturityLevel\": \"Children\",\r\n  \"name\": \"string\",\r\n  \"providerData\": \"string\"\r\n}"
 						},
-						"description": "This method allows to update a change request.\n\nChange request can be updated only if it has Pending status\n\nEXAMPLE: /v1/od/publisher/ca/accounts/00000/changerequests/11111\n(where 00000 is account Id, 11111 is change request Id)"
+						"description": "This method allows to update a creative.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives/22222\n(where 00000 is Integration Id, 111111 is Account Id and 22222 is Creative Id)"
 					},
 					"response": []
 				}
