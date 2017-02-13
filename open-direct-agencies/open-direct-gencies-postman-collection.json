@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Open Direct: Agencies",
-		"_postman_id": "6ed584ca-f799-a0f3-971b-1c2c542f8567",
+		"_postman_id": "c542e99a-357c-d4af-599e-352e96f0836d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -23,7 +23,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows you to get all Publisher Objects.\n\nEXAMPLE: /od/buyer/marketplace/publisher?clientId=00000"
 					},
 					"response": []
@@ -40,7 +43,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows you to get publisher by integration Id.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111?clientId=00000\n(where 111111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
@@ -57,7 +63,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows you to get all products belonging to given publisher that match criteria given in query.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/11111/products?clientId=00000\n(where 111111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
@@ -74,7 +83,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows you to get a specific product with given 'productId' if it belongs to publisher with 'integrationId'.\n\nEXAMPLE: v1/od/buyer/marketplace/publisher/111111/products/22222?clientId=00000\n(where 22222 is productId, 11111 is integrationId and 00000 is client Id)"
 					},
 					"response": []
@@ -88,7 +100,7 @@
 				{
 					"name": "Get Pricing and Availability",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/products/avails",
+						"url": "https://api.adform.com/v1/od/buyer/products/avails",
 						"method": "POST",
 						"header": [
 							{
@@ -113,7 +125,7 @@
 				{
 					"name": "Client Organizations",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations",
+						"url": "https://api.adform.com/v1/od/buyer/organizations",
 						"method": "GET",
 						"header": [
 							{
@@ -133,7 +145,7 @@
 				{
 					"name": "Create new Agency (Top Level)",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations",
+						"url": "https://api.adform.com/v1/od/buyer/organizations",
 						"method": "POST",
 						"header": [
 							{
@@ -149,7 +161,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": \"string\",\r\n  \"name\": \"string\",\r\n  \"status\": \"string\",\r\n  \"disapprovalReason\": \"string\",\r\n  \"fax\": \"string\",\r\n  \"industry\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"providerData\": \"string\",\r\n  \"address\": {\r\n    \"city\": \"string\",\r\n    \"country\": \"string\",\r\n    \"addressLine1\": \"string\",\r\n    \"addressLine2\": \"string\",\r\n    \"postalCode\": \"string\",\r\n    \"state\": \"string\"\r\n  },\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"address\": {\r\n        \"city\": \"string\",\r\n        \"country\": \"string\",\r\n        \"addressLine1\": \"string\",\r\n        \"addressLine2\": \"string\",\r\n        \"postalCode\": \"string\",\r\n        \"state\": \"string\"\r\n      },\r\n      \"email\": \"string\",\r\n      \"honorific\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"phone\": \"string\",\r\n      \"title\": \"string\"\r\n    }\r\n  ],\r\n  \"url\": \"string\"\r\n}"
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"status\": \"string\",\r\n  \"disapprovalReason\": \"string\",\r\n  \"fax\": \"string\",\r\n  \"industry\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"providerData\": \"string\",\r\n  \"address\": {\r\n    \"city\": \"string\",\r\n    \"country\": \"string\",\r\n    \"addressLine1\": \"string\",\r\n    \"addressLine2\": \"string\",\r\n    \"postalCode\": \"string\",\r\n    \"state\": \"string\"\r\n  },\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"address\": {\r\n        \"city\": \"string\",\r\n        \"country\": \"string\",\r\n        \"addressLine1\": \"string\",\r\n        \"addressLine2\": \"string\",\r\n        \"postalCode\": \"string\",\r\n        \"state\": \"string\"\r\n      },\r\n      \"email\": \"string\",\r\n      \"honorific\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"phone\": \"string\",\r\n      \"title\": \"string\"\r\n    }\r\n  ],\r\n  \"url\": \"string\"\r\n}"
 						},
 						"description": "This method allows to create new Agency (Top Level) Organization object"
 					},
@@ -158,7 +170,7 @@
 				{
 					"name": "Update Agency (Top Level)",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations/00000",
+						"url": "https://api.adform.com/v1/od/buyer/organizations/00000",
 						"method": "PUT",
 						"header": [
 							{
@@ -183,7 +195,7 @@
 				{
 					"name": "Current Top Level Organization",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations/current",
+						"url": "https://api.adform.com/v1/od/buyer/organizations/current",
 						"method": "GET",
 						"header": [
 							{
@@ -203,7 +215,7 @@
 				{
 					"name": "Create New Client Organization Object",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations/clients",
+						"url": "https://api.adform.com/v1/od/buyer/organizations/clients",
 						"method": "POST",
 						"header": [
 							{
@@ -228,7 +240,7 @@
 				{
 					"name": "Update Client Organization Object",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/organizations/clients/00000",
+						"url": "https://api.adform.com/v1/od/buyer/organizations/clients/00000",
 						"method": "PUT",
 						"header": [
 							{
@@ -253,7 +265,7 @@
 				{
 					"name": "All Accounts",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts",
+						"url": "https://api.adform.com/v1/od/buyer/accounts",
 						"method": "GET",
 						"header": [
 							{
@@ -273,7 +285,7 @@
 				{
 					"name": "Create Account",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts",
+						"url": "https://api.adform.com/v1/od/buyer/accounts",
 						"method": "POST",
 						"header": [
 							{
@@ -298,7 +310,7 @@
 				{
 					"name": "Specific Account",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000",
 						"method": "GET",
 						"header": [
 							{
@@ -318,7 +330,7 @@
 				{
 					"name": "Specific Account Orders",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders",
 						"method": "GET",
 						"header": [
 							{
@@ -338,7 +350,7 @@
 				{
 					"name": "Create Order",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders",
 						"method": "POST",
 						"header": [
 							{
@@ -363,7 +375,7 @@
 				{
 					"name": "Delete Order",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
 						"method": "DELETE",
 						"header": [
 							{
@@ -383,7 +395,7 @@
 				{
 					"name": "Specific Order XXX",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
 						"method": "GET",
 						"header": [
 							{
@@ -403,7 +415,7 @@
 				{
 					"name": "Update Order",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
 						"method": "PUT",
 						"header": [
 							{
@@ -428,7 +440,7 @@
 				{
 					"name": "All Lines in Order",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
 						"method": "GET",
 						"header": [
 							{
@@ -448,7 +460,7 @@
 				{
 					"name": "Create Lines",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
 						"method": "POST",
 						"header": [
 							{
@@ -473,7 +485,7 @@
 				{
 					"name": "Delete Lines",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
 						"method": "DELETE",
 						"header": [
 							{
@@ -493,7 +505,7 @@
 				{
 					"name": "Specific Lines",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
 						"method": "GET",
 						"header": [
 							{
@@ -513,7 +525,7 @@
 				{
 					"name": "Update Specific Lines",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
+						"url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
 						"method": "PUT",
 						"header": [
 							{
@@ -538,7 +550,7 @@
 				{
 					"name": "All Assignments",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
 						"method": "GET",
 						"header": [
 							{
@@ -558,7 +570,7 @@
 				{
 					"name": "Create Assignment",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
 						"method": "POST",
 						"header": [
 							{
@@ -583,7 +595,7 @@
 				{
 					"name": "Delete Assignment",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
 						"method": "DELETE",
 						"header": [
 							{
@@ -603,7 +615,7 @@
 				{
 					"name": "Get Specific Assignment",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
 						"method": "GET",
 						"header": [
 							{
@@ -623,7 +635,7 @@
 				{
 					"name": "Update Assignment",
 					"request": {
-						"url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+						"url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
 						"method": "PUT",
 						"header": [
 							{
@@ -657,7 +669,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows to get all account creatives.\n\nEXAMPLE: "
 					},
 					"response": []
@@ -674,7 +689,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method allows to get all account creatives.\n\nEXAMPLE: /buyer/00000/accounts/11111/creatives\n(where 00000 is Integration Id and 111111 is Account Id)"
 					},
 					"response": []
