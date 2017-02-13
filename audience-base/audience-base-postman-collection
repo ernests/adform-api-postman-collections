@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Audience Base",
-		"_postman_id": "bf1a1cfb-ae0a-f5a1-9ff8-d3ce8a08ea97",
+		"name": "Audience Base (DMP)",
+		"_postman_id": "bade6b06-c81a-34ee-a104-282e66f0fa4e",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					}
 				],
@@ -35,7 +35,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					}
 				],
@@ -60,7 +60,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					}
 				],
@@ -80,7 +80,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					},
 					{
@@ -105,7 +105,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					}
 				],
@@ -125,7 +125,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer {{access_token}}",
+						"value": "Bearer {{access_token}}",
 						"description": ""
 					},
 					{

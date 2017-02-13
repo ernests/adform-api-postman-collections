@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Campaign",
-		"_postman_id": "a76a6157-edde-24c0-8486-6a78486dd44d",
+		"_postman_id": "6f7c3766-5bcf-a467-a505-3eb8e700463d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -550,7 +550,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns a default attribute value.\n\nCampaignId is required in your request url. \n\nEXAMPLE: /api/v1/CampaignSettings/00000/CampaignAttributes/111111/Values/default\n(00000 - CampaignId, 11111 - CampaignAttributesId)"
 					},
 					"response": []
@@ -1266,7 +1269,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"Campaign\": {\r\n    \"AdvertiserId\": 00000,\r\n    \"Name\": \"Lukas under construction\",\r\n    \"StartDate\": \"2017-06-16T00:00:00\",\r\n    \"EndDate\": \"2018-10-22T23:59:00\",\r\n    \"ResponsibleUserId\": 11111,\r\n    \"CoResponsibleUserId\": 11111,\r\n    \"Type\": \"Display\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"Campaign\": {\r\n    \"AdvertiserId\": 00000,\r\n    \"Name\": \"New campaign\",\r\n    \"StartDate\": \"2017-06-16T00:00:00\",\r\n    \"EndDate\": \"2018-10-22T23:59:00\",\r\n    \"ResponsibleUserId\": 11111,\r\n    \"CoResponsibleUserId\": 11111,\r\n    \"Type\": \"Display\"\r\n  }\r\n}"
 						},
 						"description": "This method creates a new advertising campaign.\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve ResponsibleUserId using \"GET Users\" method."
 					},
