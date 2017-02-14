@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Account (Audience Base)",
-		"_postman_id": "a850b815-39f8-9e89-2294-9d8f04b369a0",
+		"_postman_id": "13ee80e5-6da2-a7fe-682b-8801c0cced57",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -36,7 +36,7 @@
 						}
 					],
 					"request": {
-						"url": "https://dmp-api.adform.com/v1/token",
+						"url": "https://api.adform.com/v1/dmp/token",
 						"method": "POST",
 						"header": [
 							{
