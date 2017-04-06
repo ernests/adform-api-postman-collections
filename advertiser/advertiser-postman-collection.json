@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Advertiser",
-		"_postman_id": "84c4d10c-1aec-09cf-d628-8bb0a62cd068",
+		"_postman_id": "737f06be-7125-e473-df0e-550bbc5b4dcf",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -38,7 +38,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": "This method returns list of own and inherited alerts for specified client/campaign/agency.\n\nYou can filter alerts by parsing AgencyId, AdvertiserID or CampaignId in your request URL. One and only one item can be specified. E.g. both AdvertiserId and CampaignId are not allowed.\n\nEXAMPLE: \nv1/alerts?agencyId={{AgencyId}} or v1/alerts?advertiserId={{AdvertiserId}} or\nv1/alerts?campaignId={{CampaignId}}\n\n\nYou can retrieve AgencyId and set it as a Global variable using \"Get Advertiser\" method.\n\nYou can retrieve AdvertiserId using \"Get Advertiser\" method.\n\nYou can retrieve CampaignId using \"Get Campaigns\" method."
 					},
 					"response": []
@@ -491,7 +494,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Advertisers",
+					"name": "Advertisers OLD",
 					"event": [
 						{
 							"listen": "test",
@@ -529,6 +532,760 @@
 							"raw": ""
 						},
 						"description": "To use Advertiser service you need to have advertisers created.\n\nIn case it's your first time using our services, please contact our Adform Traffic: traffic@adform.com or Adform Help:help@adform.com teams for assistance.\n\nThis method returns a list of all advertisers which are under the same client as you have logged in.\n\nNOTE: You can filter advertisers by parsing \"Names\" parameter in your request URL. \"Names\" parameter is of string array type. \n\nEXAMPLE: ?Names=AdvertiserName1,AdvertiserName2...."
+					},
+					"response": []
+				},
+				{
+					"name": "Advertisers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Advertisers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pepsi\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 10.7,\r\n  \"vatPercent\": 22.3,\r\n  \"cookieMatchingOnImpressionsEnabled\": true,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/post_v1_buyer_advertisers"
+					},
+					"response": []
+				},
+				{
+					"name": "Check advertiser status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/pending/{id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pepsi\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 10.7,\r\n  \"vatPercent\": 22.3,\r\n  \"cookieMatchingOnImpressionsEnabled\": true,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_pending_id"
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Advertiser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pepsi\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 10.7,\r\n  \"vatPercent\": 22.3,\r\n  \"cookieMatchingOnImpressionsEnabled\": true,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"NotCocaCola\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 5.6,\r\n  \"vatPercent\": 43.7,\r\n  \"cookieMatchingOnImpressionsEnabled\": false,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser activity status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/status",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"NotCocaCola\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 5.6,\r\n  \"vatPercent\": 43.7,\r\n  \"cookieMatchingOnImpressionsEnabled\": false,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_status"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Advertiser activity status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/status",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Inactive\""
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_status"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser Brand safety settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/brandSafety",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Inactive\""
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_brandSafety"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser Brand safety settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/brandSafety",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"enabled\": true,\r\n  \"providerId\": 1,\r\n  \"blockedCategories\": [10,\r\n 20,\r\n 30],\r\n  \"blockUncategorized\": false\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_brandSafety"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser campaign labels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/campaignLabels",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"enabled\": true,\r\n  \"providerId\": 1,\r\n  \"blockedCategories\": [10,\r\n 20,\r\n 30],\r\n  \"blockUncategorized\": false\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_campaignLabels"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser campaign labels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/campaignLabels",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"labelGroups\": [{\r\n\t\t\"id\": 1,\r\n\t\t\"name\": \"Pepsi Labels\",\r\n\t\t\"labels\": [{\r\n\t\t\t\"id\": 12,\r\n\t\t\t\"name\": \"Christmas Campaign\"\r\n\t\t}, {\r\n\t\t\t\"name\": \"Summer Campaign\"\r\n\t\t}]\r\n\t}, {\r\n\t\t\"name\": \"Microsoft Labels\",\r\n\t\t\"labels\": []\r\n\t}]\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_campaignLabels"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser RTB Domain settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"labelGroups\": [{\r\n\t\t\"id\": 1,\r\n\t\t\"name\": \"Pepsi Labels\",\r\n\t\t\"labels\": [{\r\n\t\t\t\"id\": 12,\r\n\t\t\t\"name\": \"Christmas Campaign\"\r\n\t\t}, {\r\n\t\t\t\"name\": \"Summer Campaign\"\r\n\t\t}]\r\n\t}, {\r\n\t\t\"name\": \"Microsoft Labels\",\r\n\t\t\"labels\": []\r\n\t}]\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_rtbDomains"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser RTB Domain settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"includedDomainsSource\": \"CustomList\",\r\n  \"excludedDomainsSource\": \"Template\",\r\n  \"excludedDomainsTemplateId\": 2,\r\n  \"excludeUnknownDomains\": true\r\n}"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_rtbDomains"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser RTB custom included Domains",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains/includedDomains",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \"example.com\",\r\n  \"another.domain.org\"]"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_rtbDomains_includedDomains"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser RTB custom included Domains",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains/includedDomains",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \"example.com\",\r\n  \"another.domain.org\"]"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_rtbDomains_includedDomains"
+					},
+					"response": []
+				},
+				{
+					"name": "Advertiser RTB custom excluded Domains",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains/excludedDomains",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \"example.com\",\r\n  \"another.domain.org\"]"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers_id_rtbDomains_excludedDomains"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advertiser RTB custom excluded Domains",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Request header includes authentication Ticket\"] = \r",
+									"  request.headers.Ticket;\r",
+									"\r",
+									"tests[\"Request was successful\"] = \r",
+									"  responseCode.code === 200;\r",
+									"  \r",
+									"if(responseCode.code === 200) {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+									"    tests[\"AgencyId was set as a global variable\"] =\r",
+									"      globals.AgencyId !== undefined;\r",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/advertisers/{id}/rtbDomains/excludedDomains",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[  \"example.com\",\r\n  \"another.domain.org\"]"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_rtbDomains_excludedDomains"
 					},
 					"response": []
 				}
