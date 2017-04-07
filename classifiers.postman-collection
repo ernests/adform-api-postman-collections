@@ -1,0 +1,168 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Classifiers",
+		"_postman_id": "77bc15c4-6fac-823a-56ce-39a2300d65f6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Brand safety taxonomy",
+			"description": "",
+			"item": [
+				{
+					"name": "List of supported brand safety providers",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/brandSafety/providers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Brand_Safety_Taxonomy/get_v1_buyer_classifiers_brandSafety_providers"
+					},
+					"response": []
+				},
+				{
+					"name": "List of supported categories by a brand safety provider",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/brandSafety/providers/{id}/categories",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Brand_Safety_Taxonomy/get_v1_buyer_classifiers_brandSafety_providers_id_categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update custom categories for user's agency",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/brandSafety/providers/{id}/categories/custom",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[  {\r\n    \"name\": \"11111\"  \r\n},\r\n  {\r\n    \"name\": \"22222\"  \r\n}]"
+						},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Brand_Safety_Taxonomy/put_v1_buyer_classifiers_brandSafety_providers_id_categories_custom\n\nThis feature is currently only supported by BatchMedia provider (id=7).\nAlso it requires Brand Safety to be enabled for user's agency."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Industry verticals",
+			"description": "",
+			"item": [
+				{
+					"name": "List of available industry vertical categories",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/industryVerticals",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Industry_Verticals/get_v1_buyer_classifiers_industryVerticals"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managers",
+			"description": "",
+			"item": [
+				{
+					"name": "List of possible agency users",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/managers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Managers/get_v1_buyer_classifiers_managers"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Time zones",
+			"description": "",
+			"item": [
+				{
+					"name": "List of available time zones",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/timeZones",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Time_Zones/get_v1_buyer_classifiers_timeZones"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tracking domains",
+			"description": "",
+			"item": [
+				{
+					"name": "List of available tracking domains",
+					"request": {
+						"url": "https://api.adform.com/v1/buyer/classifiers/trackingDomains",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "https://api.adform.com/v1/help/buyer/classifiers#!/Tracking_Domains/get_v1_buyer_classifiers_trackingDomains"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
