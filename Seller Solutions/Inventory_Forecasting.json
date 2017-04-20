@@ -1,0 +1,62 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Seller Solutions: Inventory Forecasting",
+    "_postman_id": "938c3bac-aa02-4816-b612-293c2e328170",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "6100256c-5066-25f5-3737-dc2bbb180f1a",
+      "name": "Management",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "d4efb49c-8ffb-26c6-dc7f-9224fdb519a6",
+          "name": "Get Inventory Forecasts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/seller/forecasts/inventory",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dateRange\": {\r\n    \"from\": \"2017-02-13T09:28:45.887Z\",\r\n    \"to\": \"2017-02-13T09:28:45.887Z\"\r\n  },\r\n  \"placementIds\": [\r\n    152,\r\n    6542,\r\n    23\r\n  ],\r\n  \"inventoryType\": \"Regular\"\r\n}"
+            },
+            "description": "This method allows to retrieve inventory forecast."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
