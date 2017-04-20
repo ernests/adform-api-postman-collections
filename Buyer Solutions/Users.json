@@ -1,0 +1,54 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Users",
+    "_postman_id": "76befcab-2334-1f7e-df3d-fb7eee037e2b",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "fd1fae5c-9605-ff54-ed64-d684a0343047",
+      "name": "Management",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "18b07187-18d5-7347-dc16-f517a703f0b3",
+          "name": "Users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Has Ticket\"] = ",
+                  "  request.headers.Ticket;",
+                  "    ",
+                  "tests[\"Request was successful\"] = ",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/User/Users",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns a list of all users which are under the same client as you have logged in.\n\nCurrently no filtering is enabled."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

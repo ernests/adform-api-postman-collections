@@ -1,0 +1,707 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Reporting",
+    "_postman_id": "e8773a63-b8e4-ca5c-5329-337fcfb1ecfd",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "062066c3-99ae-f048-4149-11118901e1e0",
+      "name": "Stats",
+      "description": "IMPORTANT: Each user has to have \"Reporting Stats API\" enabled in User Management section.\n\nReporting Stats API returns report data consisting of statistics derived from the data collected by the Adform tracking code. Each report is organized as dimensions and metrics. Metrics are the individual measurements of user activity on your property, such as impressions, clicks and conversions. Dimensions break down metrics across some common criteria, such as campaign or line item. When you build a query, you specify which dimensions and metrics you want in your report data.",
+      "item": [
+        {
+          "_postman_id": "e356dd3c-32d9-471c-98be-001a4dedd74d",
+          "name": "Report Data",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/reportingstats/agency/reportdata",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dimensions\": [\r\n    \"order\"\r\n  ],\r\n  \"metrics\": [\r\n    \"clicks\",\r\n    \"impressions\"\r\n  ],\r\n  \"filter\": {\r\n    \"date\": \"campaignStartToEnd\"\r\n  }\r\n}"
+            },
+            "description": "This method returns stats according to specified filters, dimensions and metrics."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "191e14eb-7ef1-67ef-3fc6-25cfb5178329",
+      "name": "Report Schedules",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f3ca44f9-b7e5-aaab-99c9-f377e46c7264",
+          "name": "Report Schedules",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/ReportSchedule/ReportSchedules",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns a specified report schedule."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b45882d9-536b-61de-45d5-f1cc64f7d343",
+          "name": "Create Report Schedules",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/ReportSchedule/ReportSchedules",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ReportSchedule\": {\r\n    \"TemplateId\": 00000,\r\n    \"Name\": \"Schedule From API: 2014-04-21 08:29:05_FTP\",\r\n    \"StartDate\": \"2016-08-21T00:00:00\",\r\n    \"EndDate\": null,\r\n    \"FileDeliveryToEmail\": null,\r\n    \"FileDeliveryToFtp\": {\r\n      \"FtpAddress\": \"ftp://ftm.com\",\r\n      \"UserName\": \"UserName\",\r\n      \"Password\": \"Password\",\r\n      \"NotificationEmail\": \"NotificationEmail@adform.com\"\r\n    },\r\n    \"FileDeliveryToSFtp\": null,\r\n    \"Frequency\": \"Once\",\r\n    \"WeekDays\": [\r\n      \"None\"\r\n    ],\r\n    \"FileFormat\": \"Xls\",\r\n    \"DataFilters\": {\r\n      \"ReportPresetInterval\": \"CampaignStartToToday\",\r\n      \"ReportInterval\": null,\r\n      \"AdvertiserIds\": [ ],\r\n      \"CampaignIds\": [ ],\r\n      \"MediaIds\": null,\r\n      \"TrackingPointFilterId\": null,\r\n      \"PlacementIds\" : null\r\n    }\r\n  }\r\n}"
+            },
+            "description": "This method creates a new report schedule.\n\nYou need to define ReportTemplateId in your request body, also AdvertiserId and CampaignId.\n\nYou can retreive ReportTemplateId on Stats&Reports page, under Reports Manager tab in Reports section from UI. \n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b332934d-af7b-ffb9-07dd-e38cc5e74929",
+          "name": "Update Report Schedules",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/ReportSchedule/ReportSchedules",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ReportSchedule\": {\r\n    \"Id\": 1111111,\r\n    \"TemplateId\": 221413,\r\n    \"Name\": \"Schedule From API UPDATED: 2014-04-21 08:29:05_FTP\",\r\n    \"StartDate\": \"2016-08-21T00:00:00\",\r\n    \"EndDate\": null,\r\n    \"FileDeliveryToEmail\": null,\r\n    \"FileDeliveryToFtp\": {\r\n      \"FtpAddress\": \"ftp://ftm.com\",\r\n      \"UserName\": \"UserName\",\r\n      \"Password\": \"Password\",\r\n      \"NotificationEmail\": \"NotificationEmail@adform.com\"\r\n    },\r\n    \"FileDeliveryToSFtp\": null,\r\n    \"Frequency\": \"Once\",\r\n    \"WeekDays\": [\r\n      \"None\"\r\n    ],\r\n    \"FileFormat\": \"Xls\",\r\n    \"DataFilters\": {\r\n      \"ReportPresetInterval\": \"CampaignStartToToday\",\r\n      \"ReportInterval\": null,\r\n      \"AdvertiserIds\": [\r\n        62476\r\n      ],\r\n      \"CampaignIds\": [],\r\n      \"MediaIds\": null,\r\n      \"TrackingPointFilterId\": null,\r\n      \"PlacementIds\" : null\r\n    }\r\n  }\r\n}"
+            },
+            "description": "This method updates report schedules.\n\nYou need to define ReportTemplateId and ReportScheduleId in your request body, also AdvertiserId and CampaignId.\n\nYou can retreive ReportTemplateId on Stats&Reports page, under Reports Manager tab in Reports section from UI. \n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "92dd21e6-658b-6ac9-de99-875f870b58a1",
+          "name": "Delete Report Schedules",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/ReportSchedule/ReportSchedules?id=111111",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method deletes report schedules.\n\nReportScheduleId is required on your request URL.\n\nEXAMPLES: Services/ReportSchedule/ReportSchedules?id=111111\n"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "1b3c247f-f814-e863-9e9f-42639bde3fec",
+      "name": "Metadata Permissions",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6420e57e-991a-57c3-0d07-72791bb0f23c",
+          "name": "Get user permissions",
+          "request": {
+            "url": "https:/api.adform.com/v1/buyer/stats/users/00000/x/permissions",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method allows to get user permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/users/00000/x/permissions\n(where 00000 is User Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve User Id using \"GET Users\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f0bf1656-ef50-0c24-5d99-e98afa57c35c",
+          "name": "Set user permissions",
+          "request": {
+            "url": "https:/api.adform.com/v1/buyer/stats/users/00000/x/permissions",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  \"+impressions\"\r\n]"
+            },
+            "description": "This method allows to set user permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/users/00000/x/permissions\n(where 00000 is User Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve User Id using \"GET Users\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "77d0cd0f-158e-10d2-3c8d-1cc85ac59f49",
+          "name": "Get group permissions",
+          "request": {
+            "url": "https:/api.adform.com/v1/buyer/stats/groups/00000/x/permissions",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method allows to get group permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/groups/00000/x/permissions\n(where 00000 is Group Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n* \nYou can retrieve Groups Id using \"GET Users\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3deadd17-866d-f971-9073-ec4e305d1b76",
+          "name": "Set user permissions",
+          "request": {
+            "url": "https:/api.adform.com/v1/buyer/stats/groups/00000/x/permissions",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  \"+impressions\"\r\n]"
+            },
+            "description": "This method allows to set group permissions for metrics or dimensions.\n\nEXAMPLE: v1/buyer/stats/groups/00000/x/permissions\n(where 00000 is Group Id and x is object type)\n\nObject types:\n* Metrics\n* Dimensions\n\nYou can retrieve Groups Id using \"GET Users\" method."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "2117bcfb-452a-4662-9ddb-50d3e4849234",
+      "name": "Data Exports",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "0494dbb6-5b1e-f888-271a-734464b1ce56",
+          "name": "Data Exports List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExportsList",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method filters all data exports.\n\nYou can filter DataExports using these filter parameters on your request URL:\n* DataExportsIds\n* Page\n* PageSize\n\nEXAMPLE: /Services/DataExport/DataExportsList?Page=1&PageSize=3"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7eddb75f-f7b6-5f97-98bf-6eceef1f5255",
+          "name": "Create Data Export",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  " \r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExports",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"DataExport\": {\r\n    \"Name\": \"TestDataExport\",\r\n    \"StartDate\": \"2016-08-21\",\r\n    \"EndDate\": \"2016-09-23\",\r\n    \"ExportType\": \"WebVariables\",\r\n    \"Emails\": \"Emails@adform.com\",\r\n    \"Frequency\": \"Monthly\",\r\n    \"ExportOnlyFullData\": false,\r\n    \"DistinctValuesOnly\": true,\r\n    \"ExportColumns\": [\r\n      \"Timestamp\",\r\n      \"Campaign\",\r\n      \"CampaignType\",\r\n      \"Media\",\r\n      \"Placement\"\r\n    ],\r\n    \"DataFilters\": {\r\n      \"ReportPresetInterval\": \"Custom\",\r\n      \"ReportInterval\": {\r\n        \"StartDate\": \"2014-04-21\",\r\n        \"EndDate\": \"2014-04-23\"\r\n      },\r\n      \"AdvertiserId\": 00000,\r\n      \"CampaignIds\": [],\r\n      \"MediaIds\": [],\r\n      \"TrackingPointFilterId\": null,\r\n      \"NetworkIds\": []\r\n    }\r\n  }\r\n}"
+            },
+            "description": "This method creates a new DataExport.\n\nRequired fields in your request body:\n\nDataExport: \n - Name, \n - ExportType, \n - Frequency, \n - Emails, \n - StartDate, \n - EndDate, \n - ExportColumns, \n - DataFilters\n\nDataExportFilters: \n - ReportInterval\n - AdvertiserId"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "020b5a17-9630-2570-611f-b378ae78385a",
+          "name": "Update Data Export",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExports",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"DataExport\": {\r\n    \"Id\": 111111,\r\n    \"Name\": \"TestDataExport\",\r\n    \"StartDate\": \"2016-08-21\",\r\n    \"EndDate\": \"2016-09-23\",\r\n    \"ExportType\": \"WebVariables\",\r\n    \"Emails\": \"Emails@adform.com\",\r\n    \"Frequency\": \"Monthly\",\r\n    \"ExportOnlyFullData\": false,\r\n    \"DistinctValuesOnly\": true,\r\n    \"ExportColumns\": [\r\n      \"Timestamp\",\r\n      \"Campaign\",\r\n      \"CampaignType\",\r\n      \"Media\",\r\n      \"Placement\"\r\n    ],\r\n    \"DataFilters\": {\r\n      \"ReportPresetInterval\": \"Custom\",\r\n      \"ReportInterval\": {\r\n        \"StartDate\": \"2014-04-21\",\r\n        \"EndDate\": \"2014-04-23\"\r\n      },\r\n      \"AdvertiserId\": 00000,\r\n      \"CampaignIds\": [],\r\n      \"MediaIds\": [],\r\n      \"TrackingPointFilterId\": null,\r\n      \"NetworkIds\": []\r\n    }\r\n  }\r\n}"
+            },
+            "description": "This method updates an existing DataExport.\n\nRequired fields in your request body:\n\nDataExport: \n - Id,\n - Name, \n - ExportType, \n - Frequency, \n - Emails, \n - StartDate, \n - EndDate, \n - ExportColumns, \n - DataFilters\n \nDataExportFilters: \n - ReportInterval,\n - AdvertiserId"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "afa04f9b-7bb9-dda8-78c6-272144a54339",
+          "name": "Delete Data Export",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExports?DataExportsIds=111111",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method deletes Data Export.\n\nYou need to parse DataExportId on your request URL.\n\nEXAMPLE: /Services/DataExport/DataExports?DataExportsIds=111111\n\nYou can delete multiple items by using commas in endpoint.\nE.g. ?DataExportsIds=111111,111112,111113"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "07c4c000-65ff-9240-2189-2a3826f3f358",
+          "name": "Data Export Columns",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExportColumns?exportType=WebVariables",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns the list of available data export columns depending on specified type.\n\nExportType has to be defined on your request URL.\n\nExport Types:\n- WebVariables,\n- BannerVariables,\n- Clicks,\n- TrackingPoints\n\nEXAMPLE: /DataExport/DataExportColumns?exportType=WebVariables"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "97acfb52-86ef-7dc6-3c5d-f93edd9538bb",
+          "name": "Data Export Results",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/DataExport/DataExportResult?DataExportName=Variable%20Export",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns status, timing and output destination of a specified Data Export\n\nDataExporName parameter is required on your request URL.\n\nEXAMPLE: /DataExport/DataExportResult?DataExportName=Variable%20Export"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4eea367e-e086-b314-4da3-37c594389f68",
+      "name": "Master Data",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "613ce338-bc88-e44f-2a97-23b7f1c15c85",
+          "name": "Master Data",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "masterdata.adform.com:8652/list/00000?render=json&authTicket=11111",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
+            },
+            "description": "This method returs a list of available master data files.\n\nYou need to parse MasterDataId and Authorization ticket returned by calling SecurityServiceAPI.\n\nEXAMPLE: 8652/list/00000?render=json&authTicket=11111\n(00000  MasterDataId, 111111 - Authorization ticket)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "e83b54e5-5e50-96b6-d066-7f4c74e83cf9",
+      "name": "Metadata",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "4fdeda72-0fc2-85d4-c36a-62e00951e38e",
+          "name": "Dimensions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/reportingstats/agency/metadata/dimensions",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dimensions\": [\"campaign\", \"buyType\"]\r\n}"
+            },
+            "description": "This method returns all available dimensions and their names, descriptions and categories if array is left empty []."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6dfcc170-a0ea-f2c6-a393-50d35a993fb5",
+          "name": "Metrics",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/reportingstats/agency/metadata/metrics",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
+            },
+            "description": "This method returns all available metrics to be used in Reporting Stats if array is left empty []."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

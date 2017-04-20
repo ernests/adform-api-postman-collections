@@ -1,0 +1,303 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Order",
+    "_postman_id": "45f8a29f-68ac-499e-612f-d4c796b6ac41",
+    "description": "Orders allow you to group line items within a campaign to efficiently organize your buying strategies. Orders are particularly useful if you are running long term campaigns and would like to group your line items for convenience purposes but they themselves do not represent additional functionality but rather act as an additional level between campaign and line items.\n\nNOTE: Each order can only contain up to 100 line items.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "1c58466a-1d5f-cf1d-3135-eb767ee6e9a0",
+      "name": "Direct",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "35d3c9eb-0353-0f40-f082-7dc7deb7aedf",
+          "name": "Media Creatives",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Media/MediaCreatives?MediaIds=00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method returns a list of media creatives.\n\nYou must parse MediaIds parameter on your request URL.\n\nEXAMPLE: /Media/MediaCreatives?MediaIds=00000,11111"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6dc55647-3115-4076-a76d-b31a8f0cfaaa",
+          "name": "Add Media",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  " responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Media/Medias",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Media\": {\r\n    \"Name\": \"MediaName\"\r\n  }\r\n}"
+            },
+            "description": "This method adds a new media with a specified name."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "82498f69-8ba3-55e8-7873-efe6854f8e97",
+          "name": "Get Medias",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Media/Medias",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Media\": {\r\n    \"Name\": \"tmp.Media 1144489\"\r\n  }\r\n}"
+            },
+            "description": "This method returns a list of all account medias filtered by CampaignId.\n\nYou can filter medias by parsing \"CampaignId\" or \"Names\" parameters on your request URL.\n\nEXAMPLES: /Media/Medias?CampaignId=00000\n/Media/Medias?Names=MediaName\n\nNOTE: If you are using more than one media name, please use encoder.\n\nFYI: You can click \"Params\" button for easier parameter management on Postman. "
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4c85a887-4e0d-b68b-fd68-d68d7cc21940",
+      "name": "RTB",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "4de360c6-5a79-76d7-e08a-cec353a82753",
+          "name": "Orders",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/orders?campaignId=742090",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method returns a list of orders for the specific campaign.\n\nYou have to parse \"campaignId\" parameters on your request URL.\n\nEXAMPLE: /v1/buyer/orders?campaignId=00000\n\nFYI: You can click \"Params\" button for easier parameter management on Postman. \n\nNOTE: You can retrieve a spesific order by parsing OrderId.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OderId)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6d030c70-2436-7a1f-840d-3ee4a63de859",
+          "name": "Create Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/orders",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"NewTestOrder\",\r\n  \"startDate\": \"2016-07-25T06:32:20.901Z\", \r\n  \"endDate\": \"2016-07-25T06:32:20.901Z\",\r\n  \"budget\": 0,\r\n  \"campaignId\": 00000\r\n}"
+            },
+            "description": "This method allows you to create a new Order.\n\nYou need to specify CampaignId in the body that you are sending.\n\nYou can retrieve CampaignId using method \"GET Campaigns\" or Dictionaries."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a72b5809-2503-d6e0-49f0-400e3380c8a8",
+          "name": "Activate/Deactivate Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/orders/11111/active",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"active\": false\r\n}"
+            },
+            "description": "This method allows yuo to activate or deactivate a specified Order.\n\nYou need to parse OrderId on the reqest URL that you are sending.\n\nEXAMPLE: /v1/buyer/orders/11111/active\n(11111 - OrderId)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "517930ec-17d5-1e1d-a09c-b48fd465e8b9",
+          "name": "Update Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/orders/11111",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"OrderName\",\r\n  \"StartDate\": \"2016-06-16T00:00:00\",\r\n  \"EndDate\": \"2016-06-16T00:00:00\",\r\n  \"Budget\": 0,\r\n  \"CurrencyCode\": \"EUR\",\r\n  \"Currency\": \"Euro\",\r\n  \"CampaignId\": 00000,\r\n  \"State\": \"Running\",\r\n  \"Active\": true,\r\n  \"Timezone\": \"(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius\",\r\n  \"DefaultPlacementView\": 2\r\n}"
+            },
+            "description": "This method allows yuo to update an existing order.\n\nYou need to parse OrderId on the reqest URL that you are sending.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OrderId)\n\nYou also need to specify parent CampaignId in your request body.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method or Dictionaries."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
