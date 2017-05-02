@@ -1926,7 +1926,7 @@
         },
         {
           "_postman_id": "58a1f4e0-93be-5cb3-eab0-97ad7ff48f40",
-          "name": "Nested Rotators by AdId copy",
+          "name": "Ad members by UUID",
           "event": [
             {
               "listen": "test",
@@ -1956,7 +1956,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method retrievesnested rotators by AdId.\n\nYou need to parse banner uuid on your request URL."
+            "description": "This method retrieves members of an Ad(rotator, schedule, etc.) using it UUID"
           },
           "response": []
         }
