@@ -1943,7 +1943,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/api/v1/AdsOverview/Ads/MembersView",
+            "url": "https://api.adform.com/api/v1/AdsOverview/Ads/MembersView?uuid=0000",
             "method": "GET",
             "header": [
               {
