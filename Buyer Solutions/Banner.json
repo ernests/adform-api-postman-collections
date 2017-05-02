@@ -1923,6 +1923,42 @@
             "description": "This method retrieves ads according to the search body in your request URL.\n\nYou need to define CampaignId in your request body.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
           },
           "response": []
+        },
+        {
+          "_postman_id": "58a1f4e0-93be-5cb3-eab0-97ad7ff48f40",
+          "name": "Nested Rotators by AdId copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/AdsOverview/NestedRotators/00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method retrievesnested rotators by AdId.\n\nYou need to parse banner uuid on your request URL."
+          },
+          "response": []
         }
       ]
     },
