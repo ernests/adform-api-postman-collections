@@ -29,7 +29,7 @@
                   "",
                   "if(responseCode.code === 200) {",
                   "  var jsonData = JSON.parse(responseBody);",
-                  "  postman.setGlobalVariable('AccessToken', jsonData.access_token);",
+                  "  postman.setGlobalVariable('access_token', jsonData.access_token);",
                   "    tests[\"Access token was set as a global variable\"] =",
                   "      globals.AccessToken !== undefined;",
                   "}"
@@ -58,13 +58,13 @@
                 },
                 {
                   "key": "password",
-                  "value": "",
+                  "value": "{{DMPpassword}}",
                   "type": "text",
                   "enabled": true
                 },
                 {
                   "key": "username",
-                  "value": "",
+                  "value": "{{DMPusername}}",
                   "type": "text",
                   "enabled": true
                 }
