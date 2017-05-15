@@ -57,7 +57,7 @@
         },
         {
           "_postman_id": "7d7a3d2a-7f9a-43e9-d923-c824582e5833",
-          "name": "Login copy",
+          "name": "OAuth2",
           "event": [
             {
               "listen": "test",
