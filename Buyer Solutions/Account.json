@@ -97,6 +97,74 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "00852a26-760c-3c75-56cf-f36d52c3a08f",
+          "name": "OAuth2 Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Content-Type is application/json\"] =",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";",
+                  "",
+                  "tests[\"Request was successful\"] = ",
+                  "  responseCode.code === 200;",
+                  "",
+                  "if(responseCode.code === 200) {",
+                  "  var jsonData = JSON.parse(responseBody);",
+                  "  postman.setGlobalVariable('Ticket', jsonData.Ticket);",
+                  "    tests[\"Ticket was set as a global variable\"] =",
+                  "      globals.Ticket !== undefined;",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://id.adform.com/sts/connect/token",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_secret",
+                  "value": "",
+                  "type": "text",
+                  "enabled": true
+                },
+                {
+                  "key": "grant_type",
+                  "value": "",
+                  "type": "text",
+                  "enabled": true
+                },
+                {
+                  "key": "client_id",
+                  "value": "",
+                  "type": "text",
+                  "enabled": true
+                },
+                {
+                  "key": "scope",
+                  "value": "",
+                  "type": "text",
+                  "enabled": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
