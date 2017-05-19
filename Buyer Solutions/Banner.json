@@ -230,7 +230,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"CampaignId\": 000000,\r\n  \"SearchText\": \"string\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"Weight\": {\r\n    \"VideoWeight\": 0,\r\n    \"BannerWeight\": 0\r\n  },\r\n  \"IsValid\": true,\r\n  \"IsActive\": true,\r\n  \"IncludeDeleted\": true,\r\n  \"Types\": [\r\n    0\r\n  ],\r\n  \"SortBy\": \"string\",\r\n  \"SortDirection\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0\r\n}"
+              "raw": "{\r\n  \"CampaignId\": 628971,\r\n  \"BannerType\": 6\r\n}"
             },
             "description": "This method retrieves ads according to the search body in your request URL.\n\nYou need to define CampaignId in your request body.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method."
           },
