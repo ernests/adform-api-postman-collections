@@ -8,15 +8,15 @@
   },
   "item": [
     {
-      "_postman_id": "64c36c80-7b62-d97e-f408-0ec01925590c",
-      "name": "Targeting API",
+      "_postman_id": "98dc8170-520a-e98b-f853-2a4897bccc43",
+      "name": "Marketplace API",
       "description": "",
       "item": [
         {
-          "_postman_id": "e58481c5-657f-6852-d891-8924c376112e",
-          "name": "Get available keys",
+          "_postman_id": "1f621b68-6735-6879-8993-81b7ffb9b8f9",
+          "name": "Get all products",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/targeting/keyvalue/available",
+            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products",
             "method": "GET",
             "header": [
               {
@@ -29,15 +29,15 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "Gets available keys with availble values for key-value targeting\r\n\r\n"
+            "description": "Gets all Products that match criteria given in query."
           },
           "response": []
         },
         {
-          "_postman_id": "a4c536db-67f3-83a6-429e-bb58ac1da898",
-          "name": "Get available targets",
+          "_postman_id": "514321bd-5752-e878-ab7f-4c04ff64c0ee",
+          "name": "Get product by productId",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/target",
+            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products/{productId}",
             "method": "GET",
             "header": [
               {
@@ -50,15 +50,15 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": ""
+            "description": "Gets the Product with given 'productId' if it belongs to publisher"
           },
           "response": []
         },
         {
-          "_postman_id": "a7dfc940-5c51-1851-ec82-95af99750372",
-          "name": "Get available target values",
+          "_postman_id": "f6007638-cf2e-8e13-17f0-ad88efda3276",
+          "name": "Get placements of product by productId",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/targets/{targetId}/values",
+            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products/{productId}/placements",
             "method": "GET",
             "header": [
               {
@@ -71,7 +71,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "."
+            "description": "Gets the placements of Product with given 'productId' if it belongs to publisher"
           },
           "response": []
         }
@@ -999,15 +999,15 @@
       ]
     },
     {
-      "_postman_id": "98dc8170-520a-e98b-f853-2a4897bccc43",
-      "name": "Marketplace API",
+      "_postman_id": "64c36c80-7b62-d97e-f408-0ec01925590c",
+      "name": "Targeting API",
       "description": "",
       "item": [
         {
-          "_postman_id": "1f621b68-6735-6879-8993-81b7ffb9b8f9",
-          "name": "Get all products",
+          "_postman_id": "e58481c5-657f-6852-d891-8924c376112e",
+          "name": "Get available keys",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products",
+            "url": "https://api.adform.com/v1/od/publisher/ca/targeting/keyvalue/available",
             "method": "GET",
             "header": [
               {
@@ -1020,15 +1020,15 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "Gets all Products that match criteria given in query."
+            "description": "Gets available keys with availble values for key-value targeting\r\n\r\n"
           },
           "response": []
         },
         {
-          "_postman_id": "514321bd-5752-e878-ab7f-4c04ff64c0ee",
-          "name": "Get product by productId",
+          "_postman_id": "a4c536db-67f3-83a6-429e-bb58ac1da898",
+          "name": "Get available targets",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products/{productId}",
+            "url": "https://api.adform.com/v1/od/publisher/ca/target",
             "method": "GET",
             "header": [
               {
@@ -1041,15 +1041,15 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "Gets the Product with given 'productId' if it belongs to publisher"
+            "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "f6007638-cf2e-8e13-17f0-ad88efda3276",
-          "name": "Get placements of product by productId",
+          "_postman_id": "a7dfc940-5c51-1851-ec82-95af99750372",
+          "name": "Get available target values",
           "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/marketplace/products/{productId}/placements",
+            "url": "https://api.adform.com/v1/od/publisher/ca/targets/{targetId}/values",
             "method": "GET",
             "header": [
               {
@@ -1062,7 +1062,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "Gets the placements of Product with given 'productId' if it belongs to publisher"
+            "description": "."
           },
           "response": []
         }
