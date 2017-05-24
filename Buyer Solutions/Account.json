@@ -53,7 +53,72 @@
             },
             "description": "This request allows you to get authentication token that can then be used to access all other Adform API services.\n\nThe token itself has a total lifetime of 24 hours and expires after 3 hours of inactivity.\n\nAuthentication token is set as a global 'Ticket' variable and it can be reused in further requests - headers and json body.\n\nIf you want to use global variables please write them in double curly brackets: {{Ticket}}\n\nRequest body fields:\n1. UserName - mandatory\n2. Password - mandatory"
           },
-          "response": []
+          "response": [
+            {
+              "id": "27aef876-0471-0312-e4c7-fd8cb0a20ebf",
+              "name": "Incorrect user name or password",
+              "originalRequest": {
+                "url": "https://api.adform.com/Services/Security/Login",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"UserName\": \"username\",\r\n  \"Password\": \"password\"\r\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "77",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 23 May 2017 09:03:39 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/8.5",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET",
+                  "name": "X-Powered-By",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "281",
+              "body": "{\"ErrorCode\":null,\"Message\":\"Incorrect user name or password\",\"Details\":null}"
+            }
+          ]
         },
         {
           "_postman_id": "00852a26-760c-3c75-56cf-f36d52c3a08f",
