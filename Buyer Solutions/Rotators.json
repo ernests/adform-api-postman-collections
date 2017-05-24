@@ -8,12 +8,12 @@
   },
   "item": [
     {
-      "_postman_id": "12410e8b-0919-0161-213a-9d43c02d2022",
-      "name": "Random Rotator",
+      "_postman_id": "2862418d-c85a-1b2a-ea6b-e78f346095f5",
+      "name": "A/B Rotator",
       "description": "",
       "item": [
         {
-          "_postman_id": "2a778f3c-4c2e-c561-5487-3f92c0bc579a",
+          "_postman_id": "18400020-1f85-3944-000c-a4a4ae391449",
           "name": "Create",
           "event": [
             {
@@ -34,7 +34,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators",
+            "url": "https://api.adform.com/v1/rotators/ABRotators",
             "method": "POST",
             "header": [
               {
@@ -50,14 +50,14 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"rotatorId\": \"guid\",\r\n  \"title\": \"Title\",\r\n  \"campaignId\": 00000, \r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n           \"frequency\": 0   \r\n       }\r\n    }\r\n  ],\r\n  \"backupBannerId\": \"uuid\"\r\n}"
+              "raw": "{\r\n  \"rotatorId\": \"guid\",\r\n  \"title\": \"Title\",\r\n  \"campaignId\": 00000, \r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n           \"abGroup\": \"A\"   \r\n       }\r\n    }\r\n  ],\r\n  \"backupBannerId\": \"uuid\"\r\n}"
             },
-            "description": "This method creates a new random rotator.\n\nPlease note that these fields are mandatory in your request body:\n1.RotatorId (user generated UUID)\n2.CampaignId\n\nIf you are adding member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. Frequency settings"
+            "description": "This method creates a new A/B rotator.\n\nPlease note that these fields are mandatory in your request body:\n1.RotatorId (user generated UUID)\n2.CampaignId\n\nIf you are adding member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. abGroup settings (A or B)"
           },
           "response": []
         },
         {
-          "_postman_id": "fabc087d-a086-be69-0a58-37a32f11c193",
+          "_postman_id": "8ab8cb0c-432f-e8e6-b98b-41f9922c5518",
           "name": "Retrieve",
           "event": [
             {
@@ -75,7 +75,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000",
             "method": "GET",
             "header": [
               {
@@ -88,12 +88,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method retrieves random rotator by UUID.\n\nYou need to parse UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000\n(00000 - Rotator UUID)"
+            "description": "This method retrieves A/B rotator by UUID.\n\nYou need to parse UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "1978d868-eb75-0641-2bb1-126b3b64a0dd",
+          "_postman_id": "ba37197d-88b2-e122-125c-348ae5e9e9d5",
           "name": "Delete",
           "event": [
             {
@@ -111,7 +111,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000",
             "method": "DELETE",
             "header": [
               {
@@ -124,12 +124,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes random rotator.\n\nBanner uuid is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000\n(00000 - Rotator UUID)"
+            "description": "This method deletes A/B rotator.\n\nBanner uuid is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "adc41678-6b10-cbf7-f70d-66f6cbe0df2f",
+          "_postman_id": "7b8474fe-6a1d-12af-e1f8-1f1d0ed60481",
           "name": "Rename",
           "event": [
             {
@@ -150,7 +150,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Title",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Title",
             "method": "PUT",
             "header": [
               {
@@ -168,12 +168,12 @@
               "mode": "raw",
               "raw": "{\r\n  \"title\": \"Title\"\r\n}"
             },
-            "description": "This method renames random banner.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Title\n(00000 - Banner uuid)"
+            "description": "This method renames A/B banner.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Title\n(00000 - Banner uuid)"
           },
           "response": []
         },
         {
-          "_postman_id": "193ddd4a-8f66-ab32-cc29-25c3d0f7d707",
+          "_postman_id": "e1eb099e-affb-beb5-5531-7d96801960fd",
           "name": "Delete Backup",
           "event": [
             {
@@ -191,7 +191,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/BackupBanner",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/BackupBanner",
             "method": "DELETE",
             "header": [
               {
@@ -204,12 +204,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes random rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/BackupBanner\n(00000 - Rotator UUID)"
+            "description": "This method deletes A/B rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/BackupBanner\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "5ba6c979-bf96-9171-5ca0-77adc9e4f202",
+          "_postman_id": "8ba588ca-cec2-9d19-2dea-15513fe7e216",
           "name": "Set Backup",
           "event": [
             {
@@ -230,7 +230,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/000000/BackupBanner",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/000000/BackupBanner",
             "method": "PUT",
             "header": [
               {
@@ -248,12 +248,12 @@
               "mode": "raw",
               "raw": "{\r\n  \"backupBannerId\": \"string\"\r\n}"
             },
-            "description": "This method sets random rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/BackupBanner\n(00000 - Rotator UUID)\n\nBackup banner UUID is required in your request body."
+            "description": "This method sets A/B rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/BackupBanner\n(00000 - Rotator UUID)\n\nBackup banner UUID is required in your request body."
           },
           "response": []
         },
         {
-          "_postman_id": "70ff37b3-e55b-13c6-0124-c0d193f4e1fc",
+          "_postman_id": "51d10182-0741-9ad9-169d-e5ed759b526f",
           "name": "Activate",
           "event": [
             {
@@ -271,7 +271,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com//v1/rotators/RandomRotators/000000/Activate",
+            "url": "https://api.adform.com//v1/rotators/ABRotators/000000/Activate",
             "method": "POST",
             "header": [
               {
@@ -284,12 +284,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method activates random rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Activate\n(00000 - Rotator UUID)"
+            "description": "This method activates A/B rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Activate\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "4460cac7-8f69-77f5-98ec-a6f898f0b5c1",
+          "_postman_id": "41c6a143-692c-e9cf-6abf-976ce96c1522",
           "name": "Deactivate",
           "event": [
             {
@@ -307,7 +307,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com//v1/rotators/RandomRotators/00000/Deactivate",
+            "url": "https://api.adform.com//v1/rotators/ABRotators/00000/Deactivate",
             "method": "POST",
             "header": [
               {
@@ -320,13 +320,13 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deactivates random rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Deactivate\n(00000 - Rotator UUID)"
+            "description": "This method deactivates A/B rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Deactivate\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "da61354c-737c-edbf-8794-5497bd17320d",
-          "name": "Update Members",
+          "_postman_id": "393c401f-ac9a-9edb-ae53-bb5be4345b33",
+          "name": "Update members",
           "event": [
             {
               "listen": "test",
@@ -346,7 +346,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members",
             "method": "PUT",
             "header": [
               {
@@ -362,15 +362,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n        \"frequency\": 0\r\n      }\r\n    }\r\n  ]\r\n}"
+              "raw": "{\r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n        \"abGroup\": \"A\"\r\n      }\r\n    }\r\n  ]\r\n}"
             },
-            "description": "This method updates random rotator members.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members\n(00000 - Banner uuid)\n\nFor each rotator member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. Frequency settings"
+            "description": "This method updates A/B rotator members.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members\n(00000 - Banner uuid)\n\nFor each rotator member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. abGroup settings (A or B)"
           },
           "response": []
         },
         {
-          "_postman_id": "15414d72-574d-878d-cf52-70bab20dfe45",
-          "name": "Update Members Sequence",
+          "_postman_id": "88f5d741-b032-fe0e-c8cc-2ca943c6b20a",
+          "name": "Update members sequence",
           "event": [
             {
               "listen": "test",
@@ -390,7 +390,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/Sequence",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/Sequence",
             "method": "PUT",
             "header": [
               {
@@ -408,13 +408,13 @@
               "mode": "raw",
               "raw": "{\r\n  \"memberSequence\": [\r\n    \"string\"\r\n  ]\r\n}"
             },
-            "description": "This method sets sequence to members of random rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/Sequence\n(00000 - Banner uuid)"
+            "description": "This method sets sequence to members of A/B rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/Sequence\n(00000 - Banner uuid)"
           },
           "response": []
         },
         {
-          "_postman_id": "c38195b5-de28-d61b-fe2b-05f55228cddc",
-          "name": "Update Member Settings",
+          "_postman_id": "3ec5daf6-2f0a-2c6c-1733-d3636931445b",
+          "name": "Update member settings",
           "event": [
             {
               "listen": "test",
@@ -434,7 +434,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111/Settings",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111/Settings",
             "method": "PUT",
             "header": [
               {
@@ -450,15 +450,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"settings\": {\r\n    \"frequency\": 0\r\n  }\r\n}"
+              "raw": "{\r\n  \"settings\": {\r\n    \"abGroup\": \"B\"\r\n  }\r\n}"
             },
-            "description": "This method sets settings to members of random rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111/Settings\n(00000 - Banner UUID, 11111 - Member UUID)"
+            "description": "This method sets settings to members of A/B rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111/Settings\n(00000 - Banner UUID, 11111 - Member UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "286df850-0a16-55c9-bb66-a2a33f4c3710",
-          "name": "Add Members",
+          "_postman_id": "674f5f82-56f9-6039-3869-a3b8bb84b1b1",
+          "name": "Add members",
           "event": [
             {
               "listen": "test",
@@ -478,7 +478,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111/Banner",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111/Banner",
             "method": "PUT",
             "header": [
               {
@@ -496,13 +496,13 @@
               "mode": "raw",
               "raw": "{\r\n  \"bannerId\": \"uuid\"\r\n}"
             },
-            "description": "This method adds a member to random rotator.\n\nRotator UUID and rotator member UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111/Banner\n(00000 - Banner UUID, 11111 - Member UUID)"
+            "description": "This method adds a member to A/B rotator.\n\nRotator UUID and rotator member UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111/Banner\n(00000 - Banner UUID, 11111 - Member UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "74e1b18b-b148-ee78-9ea9-6871792dd096",
-          "name": "Delete Member",
+          "_postman_id": "7baf6a03-6c54-531f-c697-fd97c193c153",
+          "name": "Delete Members",
           "event": [
             {
               "listen": "test",
@@ -519,7 +519,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111",
+            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111",
             "method": "DELETE",
             "header": [
               {
@@ -532,7 +532,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes random rotator backup.\n\nRotator UUID and rotator member UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111\n(00000 - Rotator UUID, 11111 - Member UUID)"
+            "description": "This method deletes A/B rotator backup.\n\nRotator UUID and rotator member UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111\n(00000 - Rotator UUID, 11111 - Member UUID)"
           },
           "response": []
         }
@@ -1070,12 +1070,12 @@
       ]
     },
     {
-      "_postman_id": "2862418d-c85a-1b2a-ea6b-e78f346095f5",
-      "name": "A/B Rotator",
+      "_postman_id": "12410e8b-0919-0161-213a-9d43c02d2022",
+      "name": "Random Rotator",
       "description": "",
       "item": [
         {
-          "_postman_id": "18400020-1f85-3944-000c-a4a4ae391449",
+          "_postman_id": "2a778f3c-4c2e-c561-5487-3f92c0bc579a",
           "name": "Create",
           "event": [
             {
@@ -1096,7 +1096,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators",
             "method": "POST",
             "header": [
               {
@@ -1112,14 +1112,14 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"rotatorId\": \"guid\",\r\n  \"title\": \"Title\",\r\n  \"campaignId\": 00000, \r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n           \"abGroup\": \"A\"   \r\n       }\r\n    }\r\n  ],\r\n  \"backupBannerId\": \"uuid\"\r\n}"
+              "raw": "{\r\n  \"rotatorId\": \"guid\",\r\n  \"title\": \"Title\",\r\n  \"campaignId\": 00000, \r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n           \"frequency\": 0   \r\n       }\r\n    }\r\n  ],\r\n  \"backupBannerId\": \"uuid\"\r\n}"
             },
-            "description": "This method creates a new A/B rotator.\n\nPlease note that these fields are mandatory in your request body:\n1.RotatorId (user generated UUID)\n2.CampaignId\n\nIf you are adding member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. abGroup settings (A or B)"
+            "description": "This method creates a new random rotator.\n\nPlease note that these fields are mandatory in your request body:\n1.RotatorId (user generated UUID)\n2.CampaignId\n\nIf you are adding member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. Frequency settings"
           },
           "response": []
         },
         {
-          "_postman_id": "8ab8cb0c-432f-e8e6-b98b-41f9922c5518",
+          "_postman_id": "fabc087d-a086-be69-0a58-37a32f11c193",
           "name": "Retrieve",
           "event": [
             {
@@ -1137,7 +1137,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000",
             "method": "GET",
             "header": [
               {
@@ -1150,12 +1150,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method retrieves A/B rotator by UUID.\n\nYou need to parse UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000\n(00000 - Rotator UUID)"
+            "description": "This method retrieves random rotator by UUID.\n\nYou need to parse UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "ba37197d-88b2-e122-125c-348ae5e9e9d5",
+          "_postman_id": "1978d868-eb75-0641-2bb1-126b3b64a0dd",
           "name": "Delete",
           "event": [
             {
@@ -1173,7 +1173,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000",
             "method": "DELETE",
             "header": [
               {
@@ -1186,12 +1186,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes A/B rotator.\n\nBanner uuid is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000\n(00000 - Rotator UUID)"
+            "description": "This method deletes random rotator.\n\nBanner uuid is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "7b8474fe-6a1d-12af-e1f8-1f1d0ed60481",
+          "_postman_id": "adc41678-6b10-cbf7-f70d-66f6cbe0df2f",
           "name": "Rename",
           "event": [
             {
@@ -1212,7 +1212,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Title",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Title",
             "method": "PUT",
             "header": [
               {
@@ -1230,12 +1230,12 @@
               "mode": "raw",
               "raw": "{\r\n  \"title\": \"Title\"\r\n}"
             },
-            "description": "This method renames A/B banner.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Title\n(00000 - Banner uuid)"
+            "description": "This method renames random banner.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Title\n(00000 - Banner uuid)"
           },
           "response": []
         },
         {
-          "_postman_id": "e1eb099e-affb-beb5-5531-7d96801960fd",
+          "_postman_id": "193ddd4a-8f66-ab32-cc29-25c3d0f7d707",
           "name": "Delete Backup",
           "event": [
             {
@@ -1253,7 +1253,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/BackupBanner",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/BackupBanner",
             "method": "DELETE",
             "header": [
               {
@@ -1266,12 +1266,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes A/B rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/BackupBanner\n(00000 - Rotator UUID)"
+            "description": "This method deletes random rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/BackupBanner\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "8ba588ca-cec2-9d19-2dea-15513fe7e216",
+          "_postman_id": "5ba6c979-bf96-9171-5ca0-77adc9e4f202",
           "name": "Set Backup",
           "event": [
             {
@@ -1292,7 +1292,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/000000/BackupBanner",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/000000/BackupBanner",
             "method": "PUT",
             "header": [
               {
@@ -1310,12 +1310,12 @@
               "mode": "raw",
               "raw": "{\r\n  \"backupBannerId\": \"string\"\r\n}"
             },
-            "description": "This method sets A/B rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/BackupBanner\n(00000 - Rotator UUID)\n\nBackup banner UUID is required in your request body."
+            "description": "This method sets random rotator backup.\n\nRotator UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/BackupBanner\n(00000 - Rotator UUID)\n\nBackup banner UUID is required in your request body."
           },
           "response": []
         },
         {
-          "_postman_id": "51d10182-0741-9ad9-169d-e5ed759b526f",
+          "_postman_id": "70ff37b3-e55b-13c6-0124-c0d193f4e1fc",
           "name": "Activate",
           "event": [
             {
@@ -1333,7 +1333,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com//v1/rotators/ABRotators/000000/Activate",
+            "url": "https://api.adform.com//v1/rotators/RandomRotators/000000/Activate",
             "method": "POST",
             "header": [
               {
@@ -1346,12 +1346,12 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method activates A/B rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Activate\n(00000 - Rotator UUID)"
+            "description": "This method activates random rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Activate\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "41c6a143-692c-e9cf-6abf-976ce96c1522",
+          "_postman_id": "4460cac7-8f69-77f5-98ec-a6f898f0b5c1",
           "name": "Deactivate",
           "event": [
             {
@@ -1369,7 +1369,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com//v1/rotators/ABRotators/00000/Deactivate",
+            "url": "https://api.adform.com//v1/rotators/RandomRotators/00000/Deactivate",
             "method": "POST",
             "header": [
               {
@@ -1382,13 +1382,13 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deactivates A/B rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Deactivate\n(00000 - Rotator UUID)"
+            "description": "This method deactivates random rotator.\n\nYou need to parse Rotator UUID on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Deactivate\n(00000 - Rotator UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "393c401f-ac9a-9edb-ae53-bb5be4345b33",
-          "name": "Update members",
+          "_postman_id": "da61354c-737c-edbf-8794-5497bd17320d",
+          "name": "Update Members",
           "event": [
             {
               "listen": "test",
@@ -1408,7 +1408,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members",
             "method": "PUT",
             "header": [
               {
@@ -1424,15 +1424,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n        \"abGroup\": \"A\"\r\n      }\r\n    }\r\n  ]\r\n}"
+              "raw": "{\r\n  \"members\": [\r\n    {\r\n      \"memberId\": \"guid\",\r\n      \"bannerId\": \"uuid\",\r\n      \"settings\": {\r\n        \"frequency\": 0\r\n      }\r\n    }\r\n  ]\r\n}"
             },
-            "description": "This method updates A/B rotator members.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members\n(00000 - Banner uuid)\n\nFor each rotator member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. abGroup settings (A or B)"
+            "description": "This method updates random rotator members.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members\n(00000 - Banner uuid)\n\nFor each rotator member please specify:\n1. MemberId (user generated UUID)\n2. BannerId (Member Ad UUID)\n3. Frequency settings"
           },
           "response": []
         },
         {
-          "_postman_id": "88f5d741-b032-fe0e-c8cc-2ca943c6b20a",
-          "name": "Update members sequence",
+          "_postman_id": "15414d72-574d-878d-cf52-70bab20dfe45",
+          "name": "Update Members Sequence",
           "event": [
             {
               "listen": "test",
@@ -1452,7 +1452,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/Sequence",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/Sequence",
             "method": "PUT",
             "header": [
               {
@@ -1470,13 +1470,13 @@
               "mode": "raw",
               "raw": "{\r\n  \"memberSequence\": [\r\n    \"string\"\r\n  ]\r\n}"
             },
-            "description": "This method sets sequence to members of A/B rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/Sequence\n(00000 - Banner uuid)"
+            "description": "This method sets sequence to members of random rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/Sequence\n(00000 - Banner uuid)"
           },
           "response": []
         },
         {
-          "_postman_id": "3ec5daf6-2f0a-2c6c-1733-d3636931445b",
-          "name": "Update member settings",
+          "_postman_id": "c38195b5-de28-d61b-fe2b-05f55228cddc",
+          "name": "Update Member Settings",
           "event": [
             {
               "listen": "test",
@@ -1496,7 +1496,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111/Settings",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111/Settings",
             "method": "PUT",
             "header": [
               {
@@ -1512,15 +1512,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"settings\": {\r\n    \"abGroup\": \"B\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"settings\": {\r\n    \"frequency\": 0\r\n  }\r\n}"
             },
-            "description": "This method sets settings to members of A/B rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111/Settings\n(00000 - Banner UUID, 11111 - Member UUID)"
+            "description": "This method sets settings to members of random rotator.\n\nRotator UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111/Settings\n(00000 - Banner UUID, 11111 - Member UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "674f5f82-56f9-6039-3869-a3b8bb84b1b1",
-          "name": "Add members",
+          "_postman_id": "286df850-0a16-55c9-bb66-a2a33f4c3710",
+          "name": "Add Members",
           "event": [
             {
               "listen": "test",
@@ -1540,7 +1540,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111/Banner",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111/Banner",
             "method": "PUT",
             "header": [
               {
@@ -1558,13 +1558,13 @@
               "mode": "raw",
               "raw": "{\r\n  \"bannerId\": \"uuid\"\r\n}"
             },
-            "description": "This method adds a member to A/B rotator.\n\nRotator UUID and rotator member UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111/Banner\n(00000 - Banner UUID, 11111 - Member UUID)"
+            "description": "This method adds a member to random rotator.\n\nRotator UUID and rotator member UUID is required on you request URL.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111/Banner\n(00000 - Banner UUID, 11111 - Member UUID)"
           },
           "response": []
         },
         {
-          "_postman_id": "7baf6a03-6c54-531f-c697-fd97c193c153",
-          "name": "Delete Members",
+          "_postman_id": "74e1b18b-b148-ee78-9ea9-6871792dd096",
+          "name": "Delete Member",
           "event": [
             {
               "listen": "test",
@@ -1581,7 +1581,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/rotators/ABRotators/00000/Members/11111",
+            "url": "https://api.adform.com/v1/rotators/RandomRotators/00000/Members/11111",
             "method": "DELETE",
             "header": [
               {
@@ -1594,7 +1594,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method deletes A/B rotator backup.\n\nRotator UUID and rotator member UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/ABRotators/00000/Members/11111\n(00000 - Rotator UUID, 11111 - Member UUID)"
+            "description": "This method deletes random rotator backup.\n\nRotator UUID and rotator member UUID is required on your request url.\n\nEXAMPLE: /v1/rotators/RandomRotators/00000/Members/11111\n(00000 - Rotator UUID, 11111 - Member UUID)"
           },
           "response": []
         }
