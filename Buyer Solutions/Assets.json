@@ -8,299 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "1db0c585-431c-3a0d-109d-2b73b3ffe9c2",
-      "name": "Video assets",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "31b8b0f4-03e1-ca32-ee4e-5d3d49a0ac91",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/000000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "547b2d01-2df7-86cd-43dc-ebabc74f2128",
-          "name": "Get Assets by Filter",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/Search",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
-            },
-            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7defacae-98dc-e01e-ece3-65e2352e7640",
-          "name": "Create Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".flv\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .flv .mp4 .webm .ogv .f4v .wmv .mov .mpg .mpeg .3gp .m4v .mkv"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "503c3848-78fb-b843-d50a-60fb3b3af621",
-          "name": "Rename Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/Title",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "003bd4fe-b7fa-5b42-8356-bbdac718b630",
-          "name": "Update Asset File",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/File",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".mp4\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f91b7109-364a-bc0e-3591-68ac5a905231",
-          "name": "Update Asset Batch",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/Batch",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3f864751-f7a7-fc3e-25db-8bb982dcac14",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/000000",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/VideoAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "264b4f19-99e8-b8d7-f811-a6c650386b8e",
       "name": "Asset Files",
       "description": "",
@@ -335,6 +42,211 @@
             ],
             "body": {},
             "description": "To download asset file please click \"Send and download\" button.\n\nAdvertiserId and AssetIds are required on your request URL.\n\nEXAMPLE: /api/v1/Assets/Files/00000?assetIds=11111\n(00000 - AdvertiserId, 11111 - AssetIds, can be separated by comma)\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve AssetIds using \"GET Asset by UUID\" method."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "53301d30-8760-2f74-a1f7-817d8e5ef0ae",
+      "name": "Assets",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "76ed02e8-d808-5cab-4b1e-dd182dfd71f1",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to retrieve asset by uuid.\n\nYou need to parse asset uuid on your request URL.\n\nEXAMPLE: api/v1/Assets/00000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d5bebc51-cb15-a65d-e631-ae1f20ebb87e",
+          "name": "Asset Usage",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/00000/Usage",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to get a list of objects where asset is used.\n\nYou need to parse asset uuid on your request URL.\n\nEXAMPLE: api/v1/Assets/00000/Usage\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1a604512-cd38-6de0-94c7-dc3d229a3099",
+          "name": "Unique Asset Title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/UniqueTitle",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to get a unique asset title, if current is not unique.\n\nYou need to parse AdvertiserId and asset uuid in your request body."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d077f626-77bd-91e5-5396-c0e2817b5fc0",
+          "name": "Check if Asset Title is Unique",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/00000/IsTitleUnique",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to check if asset title is not unique.\n\nYou need to parse AdvertiserId and asset uuid in your request body."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "627f9c9a-5426-8cfe-8196-19f4fbf555d2",
+          "name": "Get Assets by Filter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/List",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 0000,\r\n  \"Types\": [\r\n    0\r\n  ],\r\n  \"SearchText\": \"string\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
+            },
+            "description": "This method allows you to get assets using filter schema set in request body.\n\nYou need to parse AdvertiserId in your request body."
           },
           "response": []
         }
@@ -634,52 +546,12 @@
       ]
     },
     {
-      "_postman_id": "482c92e5-8295-3e40-63ff-1b317264eac3",
-      "name": "Operation Results",
+      "_postman_id": "abcf04ab-f087-cf24-9e52-e05675feaced",
+      "name": "Flash Assets",
       "description": "",
       "item": [
         {
-          "_postman_id": "151eaf04-feb1-661b-7758-9f6f6d2966c5",
-          "name": "Operation Results",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/OperationResults/00000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method returns results by CorrelationId which is generated in asset request responses.\n\nPlease note, that if operation results retrieves no content, it should be re-sent as this operation is asynchronious from other operations. Therefore, it may be in process of generating once it is requested.\n\nEXAMPLE: /api/v1/Assets/OperationResults/00000\n(00000 - CorrelationId)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "53301d30-8760-2f74-a1f7-817d8e5ef0ae",
-      "name": "Assets",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "76ed02e8-d808-5cab-4b1e-dd182dfd71f1",
+          "_postman_id": "9dd19c48-b6ba-1473-91c9-ea6a3a2f4114",
           "name": "Asset by uuid",
           "event": [
             {
@@ -697,7 +569,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/api/v1/Assets/00000",
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/000000",
             "method": "GET",
             "header": [
               {
@@ -707,133 +579,12 @@
               }
             ],
             "body": {},
-            "description": "This method allows you to retrieve asset by uuid.\n\nYou need to parse asset uuid on your request URL.\n\nEXAMPLE: api/v1/Assets/00000\n(00000 - Asset uuid)"
+            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FlashAssets/000000\n(00000 - Asset uuid)"
           },
           "response": []
         },
         {
-          "_postman_id": "d5bebc51-cb15-a65d-e631-ae1f20ebb87e",
-          "name": "Asset Usage",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/00000/Usage",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to get a list of objects where asset is used.\n\nYou need to parse asset uuid on your request URL.\n\nEXAMPLE: api/v1/Assets/00000/Usage\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "1a604512-cd38-6de0-94c7-dc3d229a3099",
-          "name": "Unique Asset Title",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/UniqueTitle",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to get a unique asset title, if current is not unique.\n\nYou need to parse AdvertiserId and asset uuid in your request body."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d077f626-77bd-91e5-5396-c0e2817b5fc0",
-          "name": "Check if Asset Title is Unique",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/00000/IsTitleUnique",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to check if asset title is not unique.\n\nYou need to parse AdvertiserId and asset uuid in your request body."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "627f9c9a-5426-8cfe-8196-19f4fbf555d2",
+          "_postman_id": "7f733aed-265e-6ab3-9780-f21bdf1ff9ed",
           "name": "Get Assets by Filter",
           "event": [
             {
@@ -854,7 +605,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/api/v1/Assets/List",
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/Search",
             "method": "POST",
             "header": [
               {
@@ -870,9 +621,892 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 0000,\r\n  \"Types\": [\r\n    0\r\n  ],\r\n  \"SearchText\": \"string\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
             },
-            "description": "This method allows you to get assets using filter schema set in request body.\n\nYou need to parse AdvertiserId in your request body."
+            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c8e6e44e-abfd-58bd-847a-8206828048e4",
+          "name": "Create Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  " \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".swf\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .swf"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7c7e9864-d590-128c-68ca-9600e347a094",
+          "name": "Rename Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Title",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f13f076a-aad1-1abc-3e75-910eba416cf0",
+          "name": "Update Asset File",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/File",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".swf\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3bd8b28c-8156-6b3c-4c2e-c1d550492c5f",
+          "name": "Update Asset Batch",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Batch",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "41687245-c7f6-d5bd-c014-bc5a19d27365",
+          "name": "Update Asset ClickTAGs",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/ClickTags",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ClickTags\": [\r\n    {\r\n      \"Name\": \"ClickTag\"\r\n    }\r\n  ]\r\n}"
+            },
+            "description": "This method allows you to update your asset ClickTags.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/ClickTags\n(00000 - Asset uuid)\n\nNOTE: You cannot update asset ClickTags, if asset is in use."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aa38d7a0-a217-6ece-baf3-5127bd937f1b",
+          "name": "Update Asset Events",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Events",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Events\": [\r\n    {\r\n      \"Id\": 0,\r\n      \"Name\": \"Name\"\r\n    }\r\n  ]\r\n}"
+            },
+            "description": "This method allows you to update your asset events.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Events\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "640a14f8-4379-599a-4c85-dfd27b693a0f",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/000000",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FlashAssets/000000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "9a075534-8f5e-3baa-54ef-b8cb5d3275b1",
+      "name": "Font Assets",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a9c15b9d-0eb9-9754-7106-7c7b16889c22",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/000000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FontAssets/000000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "98940941-679d-0999-84c4-cde821838b43",
+          "name": "Get Assets by Filter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  " .code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/Search",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
+            },
+            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "afa076d7-14ac-e411-7c2b-c57c2bd23fac",
+          "name": "Create Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".eot\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .eot .ttf .otf .svg .woff .woff2 .swf"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "dc5d6eb9-1907-9e19-9a30-772b74ceb8cb",
+          "name": "Rename Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/Title",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "13228e01-ba4c-caf4-ffe0-210fb21f170c",
+          "name": "Update Asset File",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/File",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".eot\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "446d34ae-fabc-c795-eff3-52254d1a3b3e",
+          "name": "Update Asset Batch",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/Batch",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f7c0b601-6eb9-4829-12ca-9d32e8002b7d",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/FontAssets/000000",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FontAssets/000000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "99b45d0a-0d1d-61b6-28af-f85c5629376f",
+      "name": "Generic Assets",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a9e4fd14-f131-f864-167d-a4390ffac94d",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/000000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/GenericAssets/000000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5abdff27-1cad-2cb9-733e-f75e72912457",
+          "name": "Get Assets by Filter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/Search",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
+            },
+            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ffda81a3-7013-5dbc-2a6a-bd7abc5c66ea",
+          "name": "Create Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".xls\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .xls .xlsx .obj .svg .js .pdf .json"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "08f7d025-088d-81f4-9600-408870cf1090",
+          "name": "Rename Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/Title",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "82a855b2-f33d-0201-f988-ed9c452ef4ef",
+          "name": "Update Asset File",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/File",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".xls\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8731653c-3c6b-b61a-6897-da78fd399040",
+          "name": "Update Asset Batch",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/Batch",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c2466428-af67-3980-68bc-413ab672e9a2",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/000000",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/GenericAssets/000000\n(00000 - Asset uuid)"
           },
           "response": []
         }
@@ -1553,6 +2187,390 @@
       ]
     },
     {
+      "_postman_id": "482c92e5-8295-3e40-63ff-1b317264eac3",
+      "name": "Operation Results",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "151eaf04-feb1-661b-7758-9f6f6d2966c5",
+          "name": "Operation Results",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/OperationResults/00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method returns results by CorrelationId which is generated in asset request responses.\n\nPlease note, that if operation results retrieves no content, it should be re-sent as this operation is asynchronious from other operations. Therefore, it may be in process of generating once it is requested.\n\nEXAMPLE: /api/v1/Assets/OperationResults/00000\n(00000 - CorrelationId)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "eb25b5cd-447d-0220-7619-d8c635e9d07b",
+      "name": "Package",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "29ced684-015b-ed56-c47b-f7be92cfbee9",
+          "name": "Generate New Asset From Package",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/Package",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 000000,\r\n  \"File\": {\r\n    \"FullFileName\": \".zip\",\r\n    \"FileDataBase64\": \"string\"\r\n  },\r\n  \"DefaultSettings\": {\r\n    \"Batch\": {\r\n      \"Value\": \"Value\"\r\n    }\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create a new package by parsing asset details in request body.\n\nYou need to parse AdvertiserId, file format type (for example: .png, .jpg) and file data encoded in base64.\n\nPossible \"FullFileName\" values: .zip"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "1db0c585-431c-3a0d-109d-2b73b3ffe9c2",
+      "name": "Video assets",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "31b8b0f4-03e1-ca32-ee4e-5d3d49a0ac91",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/000000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "547b2d01-2df7-86cd-43dc-ebabc74f2128",
+          "name": "Get Assets by Filter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/Search",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
+            },
+            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7defacae-98dc-e01e-ece3-65e2352e7640",
+          "name": "Create Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".flv\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .flv .mp4 .webm .ogv .f4v .wmv .mov .mpg .mpeg .3gp .m4v .mkv"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "503c3848-78fb-b843-d50a-60fb3b3af621",
+          "name": "Rename Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/Title",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
+            },
+            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "003bd4fe-b7fa-5b42-8356-bbdac718b630",
+          "name": "Update Asset File",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/File",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".mp4\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f91b7109-364a-bc0e-3591-68ac5a905231",
+          "name": "Update Asset Batch",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/00000/Batch",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3f864751-f7a7-fc3e-25db-8bb982dcac14",
+          "name": "Asset by uuid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/VideoAssets/000000",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/VideoAssets/000000\n(00000 - Asset uuid)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "94ab3d0e-36e4-3c06-85f4-4d3cede5d1ef",
       "name": "Xml assets",
       "description": "",
@@ -1840,1024 +2858,6 @@
             ],
             "body": {},
             "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "99b45d0a-0d1d-61b6-28af-f85c5629376f",
-      "name": "Generic Assets",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a9e4fd14-f131-f864-167d-a4390ffac94d",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/000000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/GenericAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5abdff27-1cad-2cb9-733e-f75e72912457",
-          "name": "Get Assets by Filter",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/Search",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
-            },
-            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ffda81a3-7013-5dbc-2a6a-bd7abc5c66ea",
-          "name": "Create Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".xls\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .xls .xlsx .obj .svg .js .pdf .json"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "08f7d025-088d-81f4-9600-408870cf1090",
-          "name": "Rename Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/Title",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "82a855b2-f33d-0201-f988-ed9c452ef4ef",
-          "name": "Update Asset File",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/File",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".xls\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8731653c-3c6b-b61a-6897-da78fd399040",
-          "name": "Update Asset Batch",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/00000/Batch",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c2466428-af67-3980-68bc-413ab672e9a2",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/GenericAssets/000000",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/GenericAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "9a075534-8f5e-3baa-54ef-b8cb5d3275b1",
-      "name": "Font Assets",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a9c15b9d-0eb9-9754-7106-7c7b16889c22",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/000000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FontAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "98940941-679d-0999-84c4-cde821838b43",
-          "name": "Get Assets by Filter",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  " .code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/Search",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
-            },
-            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "afa076d7-14ac-e411-7c2b-c57c2bd23fac",
-          "name": "Create Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".eot\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .eot .ttf .otf .svg .woff .woff2 .swf"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "dc5d6eb9-1907-9e19-9a30-772b74ceb8cb",
-          "name": "Rename Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/Title",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "13228e01-ba4c-caf4-ffe0-210fb21f170c",
-          "name": "Update Asset File",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/File",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".eot\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "446d34ae-fabc-c795-eff3-52254d1a3b3e",
-          "name": "Update Asset Batch",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/00000/Batch",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f7c0b601-6eb9-4829-12ca-9d32e8002b7d",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FontAssets/000000",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FontAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "abcf04ab-f087-cf24-9e52-e05675feaced",
-      "name": "Flash Assets",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "9dd19c48-b6ba-1473-91c9-ea6a3a2f4114",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/000000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to retrieve asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FlashAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7f733aed-265e-6ab3-9780-f21bdf1ff9ed",
-          "name": "Get Assets by Filter",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/Search",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 00000,\r\n  \"Batch\": \"Batch\",\r\n  \"Size\": {\r\n    \"Width\": 0,\r\n    \"Height\": 0\r\n  },\r\n  \"SearchText\": \"string\",\r\n  \"PageSize\": 0,\r\n  \"PageIndex\": 0,\r\n  \"SortBy\": \"Title\",\r\n  \"SortDirection\": \"ASC\"\r\n}"
-            },
-            "description": "This method allows you to retrieve asset files using filter.\n\nAdvertiserId is required in your request body.\n\nPossible sorting directions: ASC and DESC"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c8e6e44e-abfd-58bd-847a-8206828048e4",
-          "name": "Create Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  " \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".swf\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .swf"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7c7e9864-d590-128c-68ca-9600e347a094",
-          "name": "Rename Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Title",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\"\r\n}"
-            },
-            "description": "This method allows you to change the title of your asset.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Title\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f13f076a-aad1-1abc-3e75-910eba416cf0",
-          "name": "Update Asset File",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/File",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".swf\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3bd8b28c-8156-6b3c-4c2e-c1d550492c5f",
-          "name": "Update Asset Batch",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Batch",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Batch\": {\r\n    \"Value\": \"Batch\"\r\n  }\r\n}"
-            },
-            "description": "This method allows you to change your asset batch.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Batch\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "41687245-c7f6-d5bd-c014-bc5a19d27365",
-          "name": "Update Asset ClickTAGs",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/ClickTags",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"ClickTags\": [\r\n    {\r\n      \"Name\": \"ClickTag\"\r\n    }\r\n  ]\r\n}"
-            },
-            "description": "This method allows you to update your asset ClickTags.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/ClickTags\n(00000 - Asset uuid)\n\nNOTE: You cannot update asset ClickTags, if asset is in use."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "aa38d7a0-a217-6ece-baf3-5127bd937f1b",
-          "name": "Update Asset Events",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 202;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/00000/Events",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Events\": [\r\n    {\r\n      \"Id\": 0,\r\n      \"Name\": \"Name\"\r\n    }\r\n  ]\r\n}"
-            },
-            "description": "This method allows you to update your asset events.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/Events\n(00000 - Asset uuid)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "640a14f8-4379-599a-4c85-dfd27b693a0f",
-          "name": "Asset by uuid",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/FlashAssets/000000",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/FlashAssets/000000\n(00000 - Asset uuid)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "eb25b5cd-447d-0220-7619-d8c635e9d07b",
-      "name": "Package",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "29ced684-015b-ed56-c47b-f7be92cfbee9",
-          "name": "Generate New Asset From Package",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/Assets/Package",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"AdvertiserId\": 000000,\r\n  \"File\": {\r\n    \"FullFileName\": \".zip\",\r\n    \"FileDataBase64\": \"string\"\r\n  },\r\n  \"DefaultSettings\": {\r\n    \"Batch\": {\r\n      \"Value\": \"Value\"\r\n    }\r\n  }\r\n}"
-            },
-            "description": "This method allows you to create a new package by parsing asset details in request body.\n\nYou need to parse AdvertiserId, file format type (for example: .png, .jpg) and file data encoded in base64.\n\nPossible \"FullFileName\" values: .zip"
           },
           "response": []
         }
