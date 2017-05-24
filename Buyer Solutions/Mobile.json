@@ -1,0 +1,98 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Mobile",
+    "_postman_id": "6791b0a9-4c4d-be7d-ecdb-2f164bbe1164",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "a263e7c3-e1e0-3e3e-31cf-eb5b39b43d7c",
+      "name": "Search for Applications",
+      "request": {
+        "url": "https://api.adform.com/v1/mobile/apps?search=yyyy",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "Returns a list of found applications and their metadata based on specified search keywords.\n\nParameters:\n\n1. \"search\" - mandatory. Stands for keywords to search.\n2. \"source\" - optional. Default value - active. Possible values: active (used to search only applications with active advertisement in Adform system), all (to search for all applications)."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "e59bf415-0679-cc10-ab29-b6a1278962cb",
+      "name": "Batch Search for Applications",
+      "request": {
+        "url": "https://api.adform.com/v1/mobile/apps",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "value": "",
+              "type": "file",
+              "enabled": true
+            }
+          ]
+        },
+        "description": "This is a batch search for applications (with file upload).\n\nAttached CSV file should have one application name or bundle per one line and should be saved with UTF-8 encoding."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "48d66dac-2a57-a5cf-4a68-07b932f0a5f3",
+      "name": "Stores",
+      "request": {
+        "url": "https://api.adform.com/v1/mobile/apps/stores",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "This method retrieves a list of application stores."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "5f97c218-bc58-8550-0398-e7c3aafbd856",
+      "name": "Categories",
+      "request": {
+        "url": "https://api.adform.com/v1/mobile/apps/categories",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "This method retrieves a list of application categories."
+      },
+      "response": []
+    }
+  ]
+}
