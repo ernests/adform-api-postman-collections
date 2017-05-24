@@ -8,111 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "bb3df28c-b446-deff-1981-b2e4c9f6e712",
-      "name": "Points",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "f160f28d-0c91-96c1-a0ac-06b31595a0a1",
-          "name": "Tracking points",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = ",
-                  "    request.headers.Ticket;",
-                  "",
-                  "tests[\"Request was successful\"] =",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/tracking/points?advertiserId=00000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method allows you to search for tracking points.\n\nYou need to parse advertiserId on your request URL.\n\nEXAMPLE: /v1/tracking/points?advertiserId=00000"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bfa6bb0f-85a8-4db3-4b61-8abbc0731e4c",
-          "name": "Get Specific Tracking Point",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = ",
-                  "    request.headers.Ticket;",
-                  "",
-                  "tests[\"Request was successful\"] =",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/tracking/points/00000",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method allows you to get specific tracking point details.\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000\n(00000 - tracking point ID)"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "263a876a-a041-0808-97c8-6a0149306f43",
-          "name": "Update Tracking Point Status",
-          "request": {
-            "url": "https://api.adform.com/v1/tracking/points/00000/active",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"active\": true\r\n}"
-            },
-            "description": "This method allows you to update tracking point status (\"active\": true || false).\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000/active\n(00000 - tracking point ID)"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "c8e3a327-6903-1b3d-620b-179f58cceaf8",
       "name": "Filters",
       "description": "",
@@ -386,6 +281,111 @@
               "raw": ""
             },
             "description": "This method allows you to set Tracking point filter as default.\n\nYou need to parse Filter Id on your request URL.\n\nEXAMPLE: /v1/tracking/filters/00000/points\n(00000 - FilterId)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "bb3df28c-b446-deff-1981-b2e4c9f6e712",
+      "name": "Points",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f160f28d-0c91-96c1-a0ac-06b31595a0a1",
+          "name": "Tracking points",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = ",
+                  "    request.headers.Ticket;",
+                  "",
+                  "tests[\"Request was successful\"] =",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/tracking/points?advertiserId=00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method allows you to search for tracking points.\n\nYou need to parse advertiserId on your request URL.\n\nEXAMPLE: /v1/tracking/points?advertiserId=00000"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bfa6bb0f-85a8-4db3-4b61-8abbc0731e4c",
+          "name": "Get Specific Tracking Point",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = ",
+                  "    request.headers.Ticket;",
+                  "",
+                  "tests[\"Request was successful\"] =",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/tracking/points/00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method allows you to get specific tracking point details.\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000\n(00000 - tracking point ID)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "263a876a-a041-0808-97c8-6a0149306f43",
+          "name": "Update Tracking Point Status",
+          "request": {
+            "url": "https://api.adform.com/v1/tracking/points/00000/active",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"active\": true\r\n}"
+            },
+            "description": "This method allows you to update tracking point status (\"active\": true || false).\n\nYou need to parse tracking point ID on your request URL.\n\nEXAMPLE: /v1/tracking/points/00000/active\n(00000 - tracking point ID)"
           },
           "response": []
         }
