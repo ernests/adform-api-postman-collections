@@ -1824,8 +1824,8 @@
           "response": []
         },
         {
-          "_postman_id": "f97d792f-c90d-490a-0c01-540c4cd5c767",
-          "name": "Search inventories (campaign or line item scope) copy",
+          "_postman_id": "700e8dc8-3dc1-0d22-2b2d-33da23a596e2",
+          "name": "Create Deal copy",
           "event": [
             {
               "listen": "test",
@@ -1842,20 +1842,25 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/dsp/v1/inventoriesoverview?campaignid=00000",
-            "method": "GET",
+            "url": "https://api.adform.com/dsp/v1/deals",
+            "method": "POST",
             "header": [
               {
                 "key": "Ticket",
                 "value": "{{Ticket}}",
                 "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "{\r\n  \"DealId\": \"TestDeal\",\r\n  \"InventorySourceId\": 780,\r\n  \"Name\": \"string\",\r\n  \"CpmPrice\": 0,\r\n  \"DealState\": \"New\"\r\n}"
             },
-            "description": "This method returns a list of available inventories for a specified campaign or line item and matches specified filter parameters.\n\nPlease note that either CampaignId or ActivityId is required on your request URL.\n\nExample: /v1/inventoriesoverview?campaignid=000000\n\nMore info about search parameters: \nhttp://api.adform.com/v1/help/buyer/inventories#!/InventoriesOverview/InventoriesOverview_GetList"
+            "description": "This method creates marketplace manual deal."
           },
           "response": []
         }
