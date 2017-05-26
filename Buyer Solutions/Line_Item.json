@@ -1947,8 +1947,8 @@
           "response": []
         },
         {
-          "_postman_id": "b095e224-d0f4-b625-5e2d-61b714142c8d",
-          "name": "Update Line Item Targeting copy",
+          "_postman_id": "6c2674b6-9cd3-394e-2204-8d9e214c94a4",
+          "name": "Line Item Targeting copy",
           "event": [
             {
               "listen": "test",
@@ -1957,36 +1957,28 @@
                 "exec": [
                   "tests[\"Request header includes authentication Ticket\"] = \r",
                   "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "    \r",
+                  "\r",
                   "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 204;"
+                  "  responseCode.code === 200;"
                 ]
               }
             }
           ],
           "request": {
             "url": "https://api.adform.com/dsp/v1/activities/11111/targeting",
-            "method": "PUT",
+            "method": "GET",
             "header": [
               {
                 "key": "Ticket",
                 "value": "{{Ticket}}",
                 "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"SetupId\": 386954,\n  \"Groups\": [\n    {\n      \"GroupId\": \"d14ab530-6d07-4b80-b223-2156fa3ef1bd\",\n      \"Id\": 1,\n      \"Rules\": [\n        {\n          \"$type\": \"FromLocationTargetingRule\",\n          \"DimensionId\": 6,\n          \"Locations\": [\n            {\n              \"Id\": 124,\n              \"Name\": \"Canada - country\",\n              \"Type\": 2,\n              \"CountryCode\": \"CA\"\n            }\n          ]\n        },\n        {\n            \"$type\" : \"AudienceIsTargetingRule\",\n            \"TrackingPoints\" : [ 0]\n        }\n      ],\n      \"Settings\": {\n        \"PriceMultiplier\": 1\n      }\n    }\n  ]\n}"
+              "raw": ""
             },
-            "description": "This method updates RTB Line Item targeting settings.\n\nYou need to parse ActivityId on your request URL.\n\nEXAMPLE: /dsp/v1/activities/11111/targeting\n(11111 - ActivityId)"
+            "description": "This method returns RTB Line Item targeting settings.\n\nYou need to parse ActivityId on your request URL.\n\nEXAMPLE: /dsp/v1/activities/11111/targeting\n(11111 - ActivityId)"
           },
           "response": []
         }
