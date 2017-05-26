@@ -1438,6 +1438,43 @@
             "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
           },
           "response": []
+        },
+        {
+          "_postman_id": "6faca874-7cb4-7d37-139b-9051ab99c908",
+          "name": "Tracking Campaigns copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 200;\r",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/campaigns/trackingCampaigns?advertiserId=11111",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns a list of Advertiser's tracking campaigns.\n\nAdvertiser ID parameter is required in your request url. \n\nEXAMPLE: ?advertiserId=00000\n\nYou can retrieve Advertiser ID using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
+          },
+          "response": []
         }
       ]
     },
