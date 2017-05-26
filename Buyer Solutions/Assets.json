@@ -2860,6 +2860,50 @@
             "description": "This method allows you to delete asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/000000\n(00000 - Asset uuid)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "bfc31c50-bbdd-703c-7139-1aeb994b1aef",
+          "name": "Create Asset copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Assets/XmlAssets",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".xml\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .xml"
+          },
+          "response": []
         }
       ]
     }
