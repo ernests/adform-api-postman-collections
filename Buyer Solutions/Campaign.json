@@ -1440,8 +1440,8 @@
           "response": []
         },
         {
-          "_postman_id": "6faca874-7cb4-7d37-139b-9051ab99c908",
-          "name": "Tracking Campaigns copy",
+          "_postman_id": "bb778b93-eb90-8dd9-8863-4a40816c8b96",
+          "name": "Campaigns copy",
           "event": [
             {
               "listen": "test",
@@ -1459,7 +1459,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/campaigns/trackingCampaigns?advertiserId=11111",
+            "url": "https://api.adform.com/v1/campaigns",
             "method": "GET",
             "header": [
               {
@@ -1472,7 +1472,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": "This method returns a list of Advertiser's tracking campaigns.\n\nAdvertiser ID parameter is required in your request url. \n\nEXAMPLE: ?advertiserId=00000\n\nYou can retrieve Advertiser ID using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
+            "description": "This method returns a list of campaigns that the user has access to at the agency level. When no filter parameters are specified, list contains of 100 active campaigns.\n\nMore information about possible query parameters: \nhttp://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/Campaigns_GetList"
           },
           "response": []
         }
