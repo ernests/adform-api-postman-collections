@@ -4588,50 +4588,6 @@
             "description": "This method updates banner activation status (Active/not active).\n\nYou need to parse banner uuid on you request URL.\n\nEXAMPLE: /api/v1/LinkBanners/00000/Backup\n(00000 - banner uuid)"
           },
           "response": []
-        },
-        {
-          "_postman_id": "c44b1f41-c893-8c20-be8c-6813753f24b6",
-          "name": "Create Banner copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/ThirdPartyBanners",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Content\": {\r\n    \"Script\": {\r\n      \"Code\": \"Past your script code here. Please use single quotation marks.\"\r\n    },\r\n    \"ThirdPartyBannerType\": 0,\r\n    \"Size\": {\r\n      \"Width\": 0,\r\n      \"Height\": 0\r\n    },\r\n    \"ExpandableSettings\": {\r\n      \"ExpandedSize\": {\r\n        \"Width\": 0,\r\n        \"Height\": 0\r\n      },\r\n      \"ExpansionDirection\": 1\r\n    }\r\n  },\r\n  \"ClickUrl\": {\r\n    \"Url\": \"http://www.adform.com\",\r\n    \"CampaignClickUrlId\": 0\r\n  },\r\n  \"CampaignId\": 00000,\r\n  \"Title\": \"Title\",\r\n  \"CommonSettings\": {\r\n    \"FormatId\": 0\r\n  }\r\n}"
-            },
-            "description": "This method creates a new Third Party Banner.\n\nCampaignId is required in your request body.\n\nYou can define ClickUrl by either specifying full link in \"Url\" field or choosing already existing campaign landing page and indicating its id in \"CampaignClickUrlId\" field."
-          },
-          "response": []
         }
       ]
     },
