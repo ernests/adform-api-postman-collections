@@ -2862,8 +2862,8 @@
           "response": []
         },
         {
-          "_postman_id": "bfc31c50-bbdd-703c-7139-1aeb994b1aef",
-          "name": "Create Asset copy",
+          "_postman_id": "05fd1b8e-3da5-26f3-5110-07cc216ba9b5",
+          "name": "Update Asset File copy",
           "event": [
             {
               "listen": "test",
@@ -2877,14 +2877,14 @@
                   "  request.headers[\"Content-Type\"] === \"application/json\";\r",
                   "\r",
                   "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
+                  "  responseCode.code === 202;"
                 ]
               }
             }
           ],
           "request": {
-            "url": "https://api.adform.com/api/v1/Assets/XmlAssets",
-            "method": "POST",
+            "url": "https://api.adform.com/api/v1/Assets/XmlAssets/00000/File",
+            "method": "PUT",
             "header": [
               {
                 "key": "Ticket",
@@ -2899,9 +2899,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"Title\": \"Title\",\r\n  \"AdvertiserId\": 00000,\r\n  \"File\": {\r\n    \"FullFileName\": \".xml\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \".xml\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
             },
-            "description": "This method allows you to create Assets using Base64 encoding.\n\nYou need to specify  AdvertiserId and file format name in your request body.\n\nPossible \"FullFileName\" values: .xml"
+            "description": "This method allows you to change your asset file.\n\nAsset uuid is required on your request URL.\n\nEXAMPLE: /api/v1/Assets/XmlAssets/00000/File\n(00000 - Asset uuid)"
           },
           "response": []
         }
