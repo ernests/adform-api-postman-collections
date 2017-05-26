@@ -1438,43 +1438,6 @@
             "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
           },
           "response": []
-        },
-        {
-          "_postman_id": "bb778b93-eb90-8dd9-8863-4a40816c8b96",
-          "name": "Campaigns copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 200;\r",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method returns a list of campaigns that the user has access to at the agency level. When no filter parameters are specified, list contains of 100 active campaigns.\n\nMore information about possible query parameters: \nhttp://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/Campaigns_GetList"
-          },
-          "response": []
         }
       ]
     },
