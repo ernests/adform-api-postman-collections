@@ -3869,6 +3869,50 @@
             "description": "This method uploads new image or flash banners.\n\nYou need to parse CampaignId in you request body.\n\nPlease note that FullFileName should also include file name extension. For example: Name.png\n"
           },
           "response": []
+        },
+        {
+          "_postman_id": "7da57fc9-ac25-13d7-ec50-932c24f91b62",
+          "name": "Create Banner copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/Packages",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"CampaignId\": 0,\r\n  \"File\": {\r\n    \"FullFileName\": \"string\",\r\n    \"FileDataBase64\": \"string\"\r\n  }\r\n}"
+            },
+            "description": "This method uploads a new banner package.\n\nYou need to parse CampaignId in you request body.\n\nPlease note that FullFileName should also include file name extension. For example: Name.zip\n"
+          },
+          "response": []
         }
       ]
     },
