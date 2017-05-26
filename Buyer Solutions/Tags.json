@@ -661,45 +661,6 @@
         "description": "This method allows you to get tag script.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/Script\n(00000 - Tag uuid)"
       },
       "response": []
-    },
-    {
-      "_postman_id": "f38ddb0a-4937-2509-8aa9-81bf287291f3",
-      "name": "Get Tags copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags?campaignId=000000",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": "This method allows you to get AG Tags, filtered by such parameter keys:\n\n1. campaignId\n2. lineItemIds\n3. adType (banner, rotator, schedule, nestedRotator)\n4. adUuid\n5. active (true/false)\n6. paused (true/false)\n7. search\n8. sort (e.x.\"name asc\")\n9. limit\n10. offset"
-      },
-      "response": []
     }
   ]
 }
