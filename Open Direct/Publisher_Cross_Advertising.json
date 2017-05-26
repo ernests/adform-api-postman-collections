@@ -995,6 +995,27 @@
             "description": "Change request can be updated only if it has Pending status"
           },
           "response": []
+        },
+        {
+          "_postman_id": "d5ad218f-2d5b-4fde-6ac3-236692b36ffa",
+          "name": "Get All Accounts for current organization copy",
+          "request": {
+            "url": "https://api.adform.com/v1/od/publisher/ca/accounts",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
