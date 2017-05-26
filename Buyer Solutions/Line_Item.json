@@ -1822,6 +1822,47 @@
             "description": "This method returns logo for specified inventory sources. Content value is returned as Base64 string.\n\nYou need to parse inventory source ID on your request URL.\n\nExample: /dsp/v1/inventoriesoverview/logos/?id=1"
           },
           "response": []
+        },
+        {
+          "_postman_id": "700e8dc8-3dc1-0d22-2b2d-33da23a596e2",
+          "name": "Create Deal copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/dsp/v1/deals",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"DealId\": \"TestDeal\",\r\n  \"InventorySourceId\": 780,\r\n  \"Name\": \"string\",\r\n  \"CpmPrice\": 0,\r\n  \"DealState\": \"New\"\r\n}"
+            },
+            "description": "This method creates marketplace manual deal."
+          },
+          "response": []
         }
       ]
     },
