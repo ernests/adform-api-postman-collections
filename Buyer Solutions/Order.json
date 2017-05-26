@@ -298,8 +298,8 @@
           "response": []
         },
         {
-          "_postman_id": "0d185103-ec52-1c4b-6cb1-b3fbef199580",
-          "name": "Create Order copy",
+          "_postman_id": "4ea065e9-4187-d2e1-ee41-97f809a2c43c",
+          "name": "Orders copy",
           "event": [
             {
               "listen": "test",
@@ -308,9 +308,6 @@
                 "exec": [
                   "tests[\"Request header includes authentication Ticket\"] = \r",
                   "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
                   "\r",
                   "tests[\"Request was successful\"] = \r",
                   "  responseCode.code === 200;"
@@ -319,25 +316,17 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/buyer/orders",
-            "method": "POST",
+            "url": "https://api.adform.com/v1/buyer/orders?campaignId=742090",
+            "method": "GET",
             "header": [
               {
                 "key": "Ticket",
                 "value": "{{Ticket}}",
                 "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"name\": \"NewTestOrder\",\r\n  \"startDate\": \"2016-07-25T06:32:20.901Z\", \r\n  \"endDate\": \"2016-07-25T06:32:20.901Z\",\r\n  \"budget\": 0,\r\n  \"campaignId\": 00000\r\n}"
-            },
-            "description": "This method allows you to create a new Order.\n\nYou need to specify CampaignId in the body that you are sending.\n\nYou can retrieve CampaignId using method \"GET Campaigns\" or Dictionaries."
+            "body": {},
+            "description": "This method returns a list of orders for the specific campaign.\n\nYou have to parse \"campaignId\" parameters on your request URL.\n\nEXAMPLE: /v1/buyer/orders?campaignId=00000\n\nFYI: You can click \"Params\" button for easier parameter management on Postman. \n\nNOTE: You can retrieve a specific order by parsing OrderId.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OderId)"
           },
           "response": []
         }
