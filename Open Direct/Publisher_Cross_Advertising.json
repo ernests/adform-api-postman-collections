@@ -995,32 +995,6 @@
             "description": "Change request can be updated only if it has Pending status"
           },
           "response": []
-        },
-        {
-          "_postman_id": "b6df2667-00b2-ed8e-1c3c-8f11bfb0a073",
-          "name": "Update Client (Top Level) Organization object copy",
-          "request": {
-            "url": "https://api.adform.com/v1/od/publisher/ca/organizations/clients/{organizationId}",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"string\",\r\n  \"name\": \"string\",\r\n  \"status\": \"string\",\r\n  \"disapprovalReason\": \"string\",\r\n  \"fax\": \"string\",\r\n  \"industry\": \"string\",\r\n  \"phone\": \"string\",\r\n  \"providerData\": \"string\",\r\n  \"address\": {\r\n    \"city\": \"string\",\r\n    \"country\": \"string\",\r\n    \"addressLine1\": \"string\",\r\n    \"addressLine2\": \"string\",\r\n    \"postalCode\": \"string\",\r\n    \"state\": \"string\"\r\n  },\r\n  \"contacts\": [\r\n    {\r\n      \"type\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"address\": {\r\n        \"city\": \"string\",\r\n        \"country\": \"string\",\r\n        \"addressLine1\": \"string\",\r\n        \"addressLine2\": \"string\",\r\n        \"postalCode\": \"string\",\r\n        \"state\": \"string\"\r\n      },\r\n      \"email\": \"string\",\r\n      \"honorific\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"phone\": \"string\",\r\n      \"title\": \"string\"\r\n    }\r\n  ],\r\n  \"url\": \"string\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
