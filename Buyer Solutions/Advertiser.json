@@ -1322,6 +1322,54 @@
             "description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_rtbDomains_excludedDomains"
           },
           "response": []
+        },
+        {
+          "_postman_id": "274aa586-2979-c9ce-64e5-0a652ba7e7b3",
+          "name": "Create Advertisers copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;\r",
+                  "  \r",
+                  "if(responseCode.code === 200) {\r",
+                  "  var jsonData = JSON.parse(responseBody);\r",
+                  "  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+                  "    tests[\"AgencyId was set as a global variable\"] =\r",
+                  "      globals.AgencyId !== undefined;\r",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/advertisers",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Pepsi\",\r\n  \"industryVertical\": \"Arts & Entertainment\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"managerId\": 5,\r\n  \"coManagerId\": 6,\r\n  \"lineItemView\": \"RTB\",\r\n  \"netAmountCalcMethod\": \"NetAmount1\",\r\n  \"hourlyBillingRate\": 10.7,\r\n  \"vatPercent\": 22.3,\r\n  \"cookieMatchingOnImpressionsEnabled\": true,\r\n  \"cookieMatchingOnTrackingPointsEnabled\": true,\r\n  \"adsquareClientId\": \"1234567890abcdef1234567\",\r\n  \"vatNumber\": \"123456789\"\r\n}"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/post_v1_buyer_advertisers"
+          },
+          "response": []
         }
       ]
     }
