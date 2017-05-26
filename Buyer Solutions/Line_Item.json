@@ -862,50 +862,6 @@
             "description": "This method returns Trading Desk Fee Change Log."
           },
           "response": []
-        },
-        {
-          "_postman_id": "fe7ec050-3faa-4817-04b2-370f4462923c",
-          "name": "Upload IP Ranges copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/dsp/v1/upload/ipranges",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "2.125.125.3,8.144.144.9"
-            },
-            "description": "This method is for IP ranges upload. IP ranges are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, IP ranges separated by new line."
-          },
-          "response": []
         }
       ]
     },
