@@ -1822,6 +1822,42 @@
             "description": "This method returns logo for specified inventory sources. Content value is returned as Base64 string.\n\nYou need to parse inventory source ID on your request URL.\n\nExample: /dsp/v1/inventoriesoverview/logos/?id=1"
           },
           "response": []
+        },
+        {
+          "_postman_id": "f97d792f-c90d-490a-0c01-540c4cd5c767",
+          "name": "Search inventories (campaign or line item scope) copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/dsp/v1/inventoriesoverview?campaignid=00000",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns a list of available inventories for a specified campaign or line item and matches specified filter parameters.\n\nPlease note that either CampaignId or ActivityId is required on your request URL.\n\nExample: /v1/inventoriesoverview?campaignid=000000\n\nMore info about search parameters: \nhttp://api.adform.com/v1/help/buyer/inventories#!/InventoriesOverview/InventoriesOverview_GetList"
+          },
+          "response": []
         }
       ]
     },
