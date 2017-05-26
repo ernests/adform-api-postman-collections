@@ -1822,6 +1822,42 @@
             "description": "This method returns logo for specified inventory sources. Content value is returned as Base64 string.\n\nYou need to parse inventory source ID on your request URL.\n\nExample: /dsp/v1/inventoriesoverview/logos/?id=1"
           },
           "response": []
+        },
+        {
+          "_postman_id": "458fa768-ca8c-edbf-8ed4-4d031f6426f5",
+          "name": "Inventory Source Logo copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/dsp/v1/inventoriesoverview/logos?id=1",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns logo for specified inventory sources. Content value is returned as Base64 string.\n\nYou need to parse inventory source ID on your request URL.\n\nExample: /dsp/v1/inventoriesoverview/logos/?id=1"
+          },
+          "response": []
         }
       ]
     },
