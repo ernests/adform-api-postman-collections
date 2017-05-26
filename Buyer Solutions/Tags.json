@@ -663,8 +663,8 @@
       "response": []
     },
     {
-      "_postman_id": "f38ddb0a-4937-2509-8aa9-81bf287291f3",
-      "name": "Get Tags copy",
+      "_postman_id": "b9c704fe-35b7-a98d-044f-081d95dd1358",
+      "name": "Get Tags by uuids copy",
       "event": [
         {
           "listen": "test",
@@ -684,20 +684,25 @@
         }
       ],
       "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags?campaignId=000000",
-        "method": "GET",
+        "url": "https://api.adform.com/v1/buyer/ag/tags/List",
+        "method": "POST",
         "header": [
           {
             "key": "Ticket",
             "value": "{{Ticket}}",
             "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": ""
+          "raw": "[ \"TagUuid\" ]"
         },
-        "description": "This method allows you to get AG Tags, filtered by such parameter keys:\n\n1. campaignId\n2. lineItemIds\n3. adType (banner, rotator, schedule, nestedRotator)\n4. adUuid\n5. active (true/false)\n6. paused (true/false)\n7. search\n8. sort (e.x.\"name asc\")\n9. limit\n10. offset"
+        "description": "This method allows you  to get AG Tags by Tag uuids.\n\nYou need to provide Tags uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/0000\n(00000 - Tag uuid)"
       },
       "response": []
     }
