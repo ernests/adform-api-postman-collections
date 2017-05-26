@@ -161,7 +161,7 @@
               }
             ],
             "body": {},
-            "description": "This method returns a list of orders for the specific campaign.\n\nYou have to parse \"campaignId\" parameters on your request URL.\n\nEXAMPLE: /v1/buyer/orders?campaignId=00000\n\nFYI: You can click \"Params\" button for easier parameter management on Postman. \n\nNOTE: You can retrieve a spesific order by parsing OrderId.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OderId)"
+            "description": "This method returns a list of orders for the specific campaign.\n\nYou have to parse \"campaignId\" parameters on your request URL.\n\nEXAMPLE: /v1/buyer/orders?campaignId=00000\n\nFYI: You can click \"Params\" button for easier parameter management on Postman. \n\nNOTE: You can retrieve a specific order by parsing OrderId.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OderId)"
           },
           "response": []
         },
