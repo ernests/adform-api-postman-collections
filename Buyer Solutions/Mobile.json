@@ -49,8 +49,7 @@
             {
               "key": "file",
               "value": "",
-              "type": "file",
-              "enabled": true
+              "type": "file"
             }
           ]
         },
@@ -91,6 +90,38 @@
         ],
         "body": {},
         "description": "This method retrieves a list of application categories."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "6d92f667-1541-6cef-56fc-83b975da5de8",
+      "name": "Batch Search for Applications copy",
+      "request": {
+        "url": "https://api.adform.com/v1/mobile/apps",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "value": null,
+              "type": "file"
+            }
+          ]
+        },
+        "description": "This is a batch search for applications (with file upload).\n\nAttached CSV file should have one application name or bundle per one line and should be saved with UTF-8 encoding."
       },
       "response": []
     }
