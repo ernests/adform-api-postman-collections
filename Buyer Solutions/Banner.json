@@ -2335,50 +2335,6 @@
             "description": "This method updates banner activation status (Active/not active).\n\nYou need to parse banner uuid on you request URL.\n\nEXAMPLE: /api/v1/ImageBanners/00000/Backup\n(00000 - banner uuid)"
           },
           "response": []
-        },
-        {
-          "_postman_id": "c0615aee-63f0-03b5-6ce5-e12562b47d67",
-          "name": "Create Banner copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/api/v1/ImageBanners",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \"FileName.png\",\r\n    \"FileDataBase64\": \"string\"\r\n  },\r\n  \"CampaignId\": 000000,\r\n  \"Title\": \"Banner Title\"\r\n}"
-            },
-            "description": "This method creates a new image banner.\n\nYou need to parse CampaignId in you request body.\n\nPlease note that FullFileName should also include file name extension. For example: Name.png\n"
-          },
-          "response": []
         }
       ]
     },
@@ -3772,6 +3728,50 @@
               "raw": ""
             },
             "description": "This method returns the object that was created and its information.\n\nYou need to parse correlationId on your request URL.\n\nEXAMPLE: /api/v1/AssetBanners/OperationResults/00000"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "789e5815-9a5b-f5b4-c765-5acaa498ddc2",
+          "name": "Create Banner copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 202;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/AssetBanners/NativeAds",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Icon\": {\r\n    \"Uuid\": \"string\"\r\n  },\r\n  \"Thumbnail\": {\r\n    \"Uuid\": \"string\"\r\n  },\r\n  \"ClickUrl\": {\r\n    \"Url\": \"http://www.adform.com\",\r\n    \"CampaignClickUrlId\": 0\r\n  },\r\n  \"NativeAdSettings\": {\r\n    \"Headline\": \"string\",\r\n    \"Description\": \"string\",\r\n    \"Brand\": \"string\"\r\n  },\r\n  \"CampaignId\": 00000,\r\n  \"Title\": \"Native Ad\"\r\n}"
+            },
+            "description": "This method creates Native Ad.\n\nYou need to define CampaignId, Native Ad settings and ClickUrls in your request body."
           },
           "response": []
         }
