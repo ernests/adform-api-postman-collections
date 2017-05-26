@@ -1363,6 +1363,50 @@
             "description": "This method updates banner activation status (Active/not active).\n\nYou need to parse banner uuid on you request URL.\n\nEXAMPLE: /api/v1/FlashBanners/00000/Backup\n(00000 - banner uuid)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "a99fa4c2-afdc-40d3-b7a5-40d1106f85e8",
+          "name": "Create Banner copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/api/v1/FlashBanners",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"File\": {\r\n    \"FullFileName\": \"FileName.swf\",\r\n    \"FileDataBase64\": \"string\"\r\n  },\r\n  \"CampaignId\": 000000,\r\n  \"Title\": \"Banner Title\"\r\n}"
+            },
+            "description": "This method creates a new Flash banner.\n\nYou need to parse CampaignId in you request body.\n\nPlease note that FullFileName should also include file name extension. For example: Name.swf\n"
+          },
+          "response": []
         }
       ]
     },
