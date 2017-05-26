@@ -296,50 +296,6 @@
             "description": "This method allows yuo to update an existing order.\n\nYou need to parse OrderId on the reqest URL that you are sending.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OrderId)\n\nYou also need to specify parent CampaignId in your request body.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method or Dictionaries."
           },
           "response": []
-        },
-        {
-          "_postman_id": "cd1260ab-6237-2515-eb3e-a553d0fbe5b2",
-          "name": "Update Order copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/buyer/orders/11111",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Name\": \"OrderName\",\r\n  \"StartDate\": \"2016-06-16T00:00:00\",\r\n  \"EndDate\": \"2016-06-16T00:00:00\",\r\n  \"Budget\": 0,\r\n  \"CurrencyCode\": \"EUR\",\r\n  \"Currency\": \"Euro\",\r\n  \"CampaignId\": 00000,\r\n  \"State\": \"Running\",\r\n  \"Active\": true,\r\n  \"Timezone\": \"(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius\",\r\n  \"DefaultPlacementView\": 2\r\n}"
-            },
-            "description": "This method allows yuo to update an existing order.\n\nYou need to parse OrderId on the reqest URL that you are sending.\n\nEXAMPLE: /v1/buyer/orders/11111\n(11111 - OrderId)\n\nYou also need to specify parent CampaignId in your request body.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method or Dictionaries."
-          },
-          "response": []
         }
       ]
     }
