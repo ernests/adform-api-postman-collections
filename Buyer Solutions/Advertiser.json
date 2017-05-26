@@ -1322,6 +1322,49 @@
             "description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/put_v1_buyer_advertisers_id_rtbDomains_excludedDomains"
           },
           "response": []
+        },
+        {
+          "_postman_id": "d5a360e0-78fa-0e24-2e45-694d8c1729c4",
+          "name": "Advertisers copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;\r",
+                  "  \r",
+                  "if(responseCode.code === 200) {\r",
+                  "  var jsonData = JSON.parse(responseBody);\r",
+                  "  postman.setGlobalVariable('AgencyId', jsonData.Advertisers[0].AgencyId);\r",
+                  "    tests[\"AgencyId was set as a global variable\"] =\r",
+                  "      globals.AgencyId !== undefined;\r",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/advertisers",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "https://api.adform.com/v1/help/buyer/advertisers#!/Advertisers/get_v1_buyer_advertisers"
+          },
+          "response": []
         }
       ]
     }
