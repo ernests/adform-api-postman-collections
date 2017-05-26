@@ -262,50 +262,6 @@
           "response": []
         },
         {
-          "_postman_id": "5d2ec483-4776-f614-2f2a-5486b872a5e9",
-          "name": "Update Comment Content",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/seller/comments/00000/content",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "\"Your message\""
-            },
-            "description": "This method allows to update the content of comment.\n\nEXAMPLE: /v1/seller/comments/00000/content (where 00000 is comment Id)"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d0ffcf65-0be5-f26b-f56f-a01e4954bc72",
           "name": "Update Comment copy",
           "event": [
