@@ -304,6 +304,50 @@
             "description": "This method allows to fully update comment.\n\nEXAMPLE: /v1/seller/comments/00000 (where 00000 is comment Id)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "67e5502d-c196-5a50-3768-c22db575a026",
+          "name": "Create Comment copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/seller/comments",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"inventorySourceId\": 1,\r\n  \"commentatorId\": 1,\r\n  \"entityType\": \"LineItem\",\r\n  \"entityId\": 1,\r\n  \"content\": \"Test API Comment\"\r\n}"
+            },
+            "description": "This method allows to create a new comment."
+          },
+          "response": []
         }
       ]
     }
