@@ -1438,6 +1438,51 @@
             "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
           },
           "response": []
+        },
+        {
+          "_postman_id": "6aa1f360-50c2-9be8-492c-17ce9cb6792e",
+          "name": "Update Campaign Status copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 204;\r",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/campaigns",
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"State\": \"Active\",\r\n  \"Ids\": [\r\n    00000,\r\n    11111\r\n  ]\r\n}"
+            },
+            "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
+          },
+          "response": []
         }
       ]
     },
@@ -1485,86 +1530,6 @@
         {
           "_postman_id": "806d2f32-2855-0874-a714-7665b3ad74e2",
           "name": "Campaign RTB Settings",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 204;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns/00000/rtbsettings",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"budget\": {\r\n    \"cost\": {\r\n      \"budget\": 123,\r\n      \"periodType\": \"Total\",\r\n      \"pacingType\": \"Evenly\"\r\n    }\r\n  },\r\n  \"capping\": [\r\n    {\r\n      \"type\": \"Accumulated\",\r\n      \"period\": {\r\n        \"type\": \"Days\",\r\n        \"duration\": 5\r\n      },\r\n      \"viewability\": {\r\n        \"type\": \"Time\",\r\n        \"duration\": 2000\r\n      }\r\n    },\r\n    {\r\n      \"type\": \"Frequency\",\r\n      \"impressions\": 10,\r\n      \"period\": {\r\n        \"type\": \"Campaign\"\r\n      },\r\n      \"viewability\": {\r\n        \"type\": \"BrandExposure\",\r\n        \"duration\": 5000\r\n      }\r\n    }\r\n  ]\r\n}"
-            },
-            "description": "This method updates campaign RTB settings such as budget and capping. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8891f601-feab-8237-96d0-93fdba5d9a9c",
-          "name": "Campaign RTB Settings copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns/00000/rtbsettings",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method returns campaign RTB settings. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3a808a6b-fe91-7b3a-141c-e2ab420f3e6c",
-          "name": "Campaign RTB Settings copy",
           "event": [
             {
               "listen": "test",
