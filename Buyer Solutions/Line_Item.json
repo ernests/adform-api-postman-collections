@@ -1806,7 +1806,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/dsp/v1/inventoriesoverview/logos/?id=1",
+            "url": "https://api.adform.com/dsp/v1/inventoriesoverview/logos?id=1",
             "method": "GET",
             "header": [
               {
