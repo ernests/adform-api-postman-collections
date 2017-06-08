@@ -1,0 +1,1062 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Media",
+    "_postman_id": "614fd8b0-49f6-a62b-2fe4-3af1ec4507e3",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "ebadbea2-41fc-adef-6bf8-944a5f2b8382",
+      "name": "Media",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "98d5208c-e337-57f7-d461-9c65bd0bfe64",
+          "name": "Get media list.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media?fields={{fields}}&limit={{limit}}&offset={{offset}}&sort={{sort}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "{{fields}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "sort",
+                  "value": "{{sort}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eaa9a6dd-2ee6-ce7a-c80c-820b02162295",
+          "name": "Create a new media.",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/media",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "54a5d1f7-7f84-9537-c0c9-d8e83d469177",
+          "name": "Get media by UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "920757b3-665f-a48e-bbcf-5be3b8725392",
+          "name": "Update a media by UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "58b2663f-aa2f-d77f-a9ed-58fb40035062",
+          "name": "Delete media with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "46e9792f-5bd8-88ea-4885-f0727a69f0d4",
+          "name": "Search media by object.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/search?fields={{fields}}&limit={{limit}}&offset={{offset}}&sort={{sort}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "{{fields}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "sort",
+                  "value": "{{sort}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "959c124c-6a6e-fc7d-cf55-22b636f818ac",
+      "name": "Contact",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c3cfe078-ceb4-264d-8f8f-cc2c3f36b48b",
+          "name": "Get list of media contacts by media UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid/mediacontacts?limit={{limit}}&offset={{offset}}&fields={{fields}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid",
+                "mediacontacts"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "fields",
+                  "value": "{{fields}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3e51b0b4-c50b-2ee4-ce54-0ee5520bc8a3",
+          "name": "Delete media contact with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacontacts/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacontacts",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "257b8ca0-fd25-12ff-79f9-3ff6dd82b88a",
+          "name": "Get media contact by media contact UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacontacts/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacontacts",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9a075ada-80e4-1b18-4440-f92f59659f54",
+          "name": "Create a new media contact.",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/mediacontacts",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4174e281-24f6-9f40-4367-7f072d71bbb6",
+          "name": "Edit media contact with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacontacts/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacontacts",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f311c410-ab96-86d8-385d-320771d3da3c",
+      "name": "Creative",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "fd7517f9-7135-a2b3-8226-a6823c4d8b7b",
+          "name": "Create a new media creative.",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/mediacreatives",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cca60053-8ca1-96bc-6e41-904cf4c777bd",
+          "name": "Delete media creative with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacreatives/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacreatives",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e019ba12-cb9c-df38-3993-9532ee3ab802",
+          "name": "Get media creative by UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacreatives/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacreatives",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cdb6448c-5556-a94a-65d3-1f9528dd2d27",
+          "name": "Edit media creative with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediacreatives/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediacreatives",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "97f89847-a7b9-e136-c46b-4a30b6e5b28d",
+          "name": "Get list of media creatives by media UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid/mediacreatives?limit={{limit}}&offset={{offset}}&fields={{fields}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid",
+                "mediacreatives"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "fields",
+                  "value": "{{fields}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "949afccc-f1f7-8cf3-4b7b-cc9d480f16ec",
+      "name": "Section",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "178b61a2-ca1e-3b81-f939-27956c545628",
+          "name": "Get list of media section by media UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/media/:uuid/mediasections?limit={{limit}}&offset={{offset}}&fields={{fields}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "media",
+                ":uuid",
+                "mediasections"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{limit}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "offset",
+                  "value": "{{offset}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "fields",
+                  "value": "{{fields}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "250fda0a-97d6-7e32-109c-4b66f86cbde2",
+          "name": "Get media section by UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediasections/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediasections",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0f96194d-1e85-322f-3b83-f45016159a34",
+          "name": "Edit media section with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediasections/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediasections",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b84ea909-c54b-cacb-342d-ee796f58f10a",
+          "name": "Delete media section with specified UUID.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/mediasections/:uuid",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "mediasections",
+                ":uuid"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "",
+                  "key": "uuid",
+                  "value": "{{uuid}}"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f49b7ac5-fa88-7d75-05b9-f1de137ee1ad",
+          "name": "Create a new media section.",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/mediasections",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
