@@ -226,6 +226,50 @@
             "description": "This method allows to update existing clients' identifier of the advertiser entry in the external publisher adserver (not PPAS)."
           },
           "response": []
+        },
+        {
+          "_postman_id": "62bf13ab-c746-8d79-4ed5-015c76e2bf87",
+          "name": "Create Advertiser copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/seller/advertisers",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"API Test Advertiser\",\r\n  \"active\": true,\r\n  \"categoryId\": 1\r\n}"
+            },
+            "description": "This method allows to create a new Advertiser.\n\nCategory Id has to be greater than 0."
+          },
+          "response": []
         }
       ]
     },
