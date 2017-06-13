@@ -86,34 +86,33 @@
       "_postman_id": "8f484feb-743d-97e7-a6bc-9d743e953aae",
       "name": "Cookies",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "8e28d12f-68a1-67bc-11dd-bb9df9070ea1",
-          "name": "Upload cookies",
-          "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/cookies",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "text/csv",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{AdformUUID}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}\n{AdvertiserId}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}"
-            },
+      "item": []
+    },
+    {
+      "_postman_id": "8e28d12f-68a1-67bc-11dd-bb9df9070ea1",
+      "name": "Upload cookies",
+      "request": {
+        "url": "https://api.adform.com/v1/dmp/dataproviders/10284/cookies",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
             "description": ""
           },
-          "response": []
-        }
-      ]
+          {
+            "key": "Content-Type",
+            "value": "text/csv",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{AdformUUID}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}\n{AdvertiserId}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}"
+        },
+        "description": ""
+      },
+      "response": []
     },
     {
       "_postman_id": "dc733f74-9660-a332-f329-031c24901bf6",
