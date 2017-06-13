@@ -415,7 +415,7 @@
           "_postman_id": "65a66559-f0f2-7f50-6114-73ecb7ceec76",
           "name": "Specific Order",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
             "method": "GET",
             "header": [
               {
