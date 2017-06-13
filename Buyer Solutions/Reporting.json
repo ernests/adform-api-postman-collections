@@ -291,7 +291,7 @@
           "_postman_id": "7202a8fd-fc0a-e278-3417-510788b3c6f8",
           "name": "Download Master Data file by Id",
           "request": {
-            "url": "https://api.adform.com/v1/buyer/masterdata/download/{{setup}}/{{id}}",
+            "url": "https://api.adform.com/v1/buyer/masterdata/download/{{setupId}}/{{id}}",
             "method": "GET",
             "header": [
               {
