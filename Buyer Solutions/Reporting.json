@@ -286,6 +286,24 @@
             "description": "This method returs a list of available master data files.\n\nYou need to parse MasterDataId and Authorization ticket returned by calling SecurityServiceAPI.\n\nEXAMPLE: 8652/list/00000?render=json&authTicket=11111\n(00000  MasterDataId, 111111 - Authorization ticket)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "7202a8fd-fc0a-e278-3417-510788b3c6f8",
+          "name": "Download Master Data file by Id",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/masterdata/download/{{setupId}}/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "setupId - Master data setup ID\nId - Requested file ID"
+          },
+          "response": []
         }
       ]
     },
