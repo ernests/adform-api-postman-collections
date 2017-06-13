@@ -300,7 +300,7 @@
           "_postman_id": "32adfb78-3186-b6b9-1363-3cf11b133ad7",
           "name": "Create Account",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts",
+            "url": "https://api.adform.com/v1/od/buyer/accounts",
             "method": "POST",
             "header": [
               {
