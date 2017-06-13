@@ -115,7 +115,7 @@
         },
         {
           "_postman_id": "987ede7f-73e3-5141-3cfc-9e895c15aebd",
-          "name": "Upload cookies copy",
+          "name": "Request cookies fot the set of segments",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/cookies",
             "method": "POST",
