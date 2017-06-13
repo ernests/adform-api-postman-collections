@@ -674,7 +674,7 @@
           "_postman_id": "d4e228b6-277a-5bb9-84ab-e12f01e423a7",
           "name": "Get Specific Assignment",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
             "method": "GET",
             "header": [
               {
