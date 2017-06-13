@@ -326,7 +326,7 @@
           "_postman_id": "0157d046-32bf-f47c-df3b-cca555cba045",
           "name": "Specific Account",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000",
             "method": "GET",
             "header": [
               {
