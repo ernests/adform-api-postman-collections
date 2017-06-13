@@ -32,29 +32,29 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "807fb52e-4d7d-ee4a-6ed8-193b19744fc0",
+          "name": "Get all segments of data provider",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/segments",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "807fb52e-4d7d-ee4a-6ed8-193b19744fc0",
-      "name": "Get all segments of data provider",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/segments",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": ""
-      },
-      "response": []
     },
     {
       "_postman_id": "aa1471b3-17f4-34dc-9b05-84cf172a8277",
