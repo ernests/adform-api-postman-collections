@@ -147,7 +147,7 @@
       "_postman_id": "2d71788e-2c9a-884c-b084-628fc1a5098a",
       "name": "Update all data usage policies for a specific data provider",
       "request": {
-        "url": "https://api.adform.com/v1/dmp/dataproviders/10603/datausagepermissions",
+        "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/datausagepermissions",
         "method": "PUT",
         "header": [
           {
