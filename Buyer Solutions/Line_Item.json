@@ -545,7 +545,7 @@
         },
         {
           "_postman_id": "def694ea-d590-2d2b-32a2-d3845e4e9c34",
-          "name": "Delete/Deactivate Line item",
+          "name": "Delete/Deactivate Line item OLD",
           "event": [
             {
               "listen": "test",
@@ -860,50 +860,6 @@
               "raw": ""
             },
             "description": "This method returns Trading Desk Fee Change Log."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0b7ed60f-c291-cdfa-9109-65bf2180e381",
-          "name": "Upload Cookies copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/dsp/v1/upload/cookies",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "-8654654654654654654\r\n8798798798798798798\r\n44457"
-            },
-            "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
           },
           "response": []
         }
@@ -1850,7 +1806,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/dsp/v1/inventoriesoverview/logos/?id=1",
+            "url": "https://api.adform.com/dsp/v1/inventoriesoverview/logos?id=1",
             "method": "GET",
             "header": [
               {
