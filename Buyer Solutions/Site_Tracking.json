@@ -560,6 +560,12 @@
       ]
     },
     {
+      "_postman_id": "1a900dfb-3b6b-4fa5-2402-4a3bdbab0c6f",
+      "name": "Health check",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "d6546ab5-fc4c-6829-4ada-4efcdf55ce6d",
       "name": "Create Tracking Code",
       "event": [
