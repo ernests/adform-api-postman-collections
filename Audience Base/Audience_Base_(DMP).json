@@ -53,34 +53,34 @@
             "description": ""
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "aa1471b3-17f4-34dc-9b05-84cf172a8277",
-      "name": "Create a segment",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/segments",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
+        },
+        {
+          "_postman_id": "aa1471b3-17f4-34dc-9b05-84cf172a8277",
+          "name": "Create a segment",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/segments",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"dataProviderId\": \"00000\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
+            },
             "description": ""
           },
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"dataProviderId\": \"00000\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
-        },
-        "description": ""
-      },
-      "response": []
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "8e28d12f-68a1-67bc-11dd-bb9df9070ea1",
