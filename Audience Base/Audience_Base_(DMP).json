@@ -147,33 +147,34 @@
       "_postman_id": "c1ac0552-dea7-703f-6759-7cb2db90381c",
       "name": "Data Provider Data Usage Permissions",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "2d71788e-2c9a-884c-b084-628fc1a5098a",
-      "name": "Update all data usage policies for a specific data provider",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/datausagepermissions",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
-            "description": ""
+      "item": [
+        {
+          "_postman_id": "2d71788e-2c9a-884c-b084-628fc1a5098a",
+          "name": "Update all data usage policies for a specific data provider",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/datausagepermissions",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \r\n   \"forCountries\":{  \r\n      \"rule\":\"include\",\r\n      \"items\":[  \r\n         {  \r\n            \"id\":\"30\",\r\n            \"forAgencies\":{  \r\n               \"rule\":\"include\",\r\n               \"items\":[  \r\n                  {  \r\n                     \"id\":\"211\",\r\n                     \"forDataConsumers\":{  \r\n                        \"rule\":\"includeAll\",\r\n                        \"items\":[  \r\n\r\n                        ]\r\n                     }\r\n                  }\r\n               ]\r\n            }\r\n         }\r\n      ]\r\n   }\r\n}"
+            },
+            "description": "Update all data usage policies for this data provider."
           },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{  \r\n   \"forCountries\":{  \r\n      \"rule\":\"include\",\r\n      \"items\":[  \r\n         {  \r\n            \"id\":\"30\",\r\n            \"forAgencies\":{  \r\n               \"rule\":\"include\",\r\n               \"items\":[  \r\n                  {  \r\n                     \"id\":\"211\",\r\n                     \"forDataConsumers\":{  \r\n                        \"rule\":\"includeAll\",\r\n                        \"items\":[  \r\n\r\n                        ]\r\n                     }\r\n                  }\r\n               ]\r\n            }\r\n         }\r\n      ]\r\n   }\r\n}"
-        },
-        "description": "Update all data usage policies for this data provider."
-      },
-      "response": []
+          "response": []
+        }
+      ]
     }
   ]
 }
