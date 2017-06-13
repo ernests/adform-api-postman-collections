@@ -325,9 +325,9 @@
         },
         {
           "_postman_id": "1c3e5e8a-f930-97e7-745b-c9a044ec9246",
-          "name": "Get list of Master Data files copy",
+          "name": "Get Master Data file properties by Id",
           "request": {
-            "url": "https://api.adform.com/v1/buyer/masterdata/files/{{setupId}}",
+            "url": "https://api.adform.com/v1/buyer/masterdata/files/{{setupId}}/{{Id}}",
             "method": "GET",
             "header": [
               {
