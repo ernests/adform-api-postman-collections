@@ -279,7 +279,7 @@
           "_postman_id": "9ed2d626-7881-d507-84a4-2a5d50692422",
           "name": "All Accounts",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts",
+            "url": "https://api.adform.com/v1/od/buyer/accounts",
             "method": "GET",
             "header": [
               {
