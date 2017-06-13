@@ -133,7 +133,7 @@
           "_postman_id": "833ef258-8db4-e788-75bc-2d2754f707bf",
           "name": "Client Organizations",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations",
+            "url": "https://api.adform.com/v1/od/buyer/organizations",
             "method": "GET",
             "header": [
               {
