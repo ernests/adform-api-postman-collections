@@ -304,6 +304,24 @@
             "description": "setupId - Master data setup ID\nId - Requested file ID"
           },
           "response": []
+        },
+        {
+          "_postman_id": "c36527d6-c307-3356-59cb-1c49b3efa9f9",
+          "name": "Download Master Data file by Id copy",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/masterdata/files/{{setupId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "setupId - Master data setup ID\nId - Requested file ID"
+          },
+          "response": []
         }
       ]
     },
