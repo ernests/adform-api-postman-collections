@@ -509,7 +509,7 @@
           "_postman_id": "d7fec295-2dee-bc33-48ed-b4dcc40795a3",
           "name": "Delete Lines",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
             "method": "DELETE",
             "header": [
               {
@@ -530,7 +530,7 @@
           "_postman_id": "967d7705-0790-29a2-a3fa-dd422bea764d",
           "name": "Specific Lines",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
             "method": "GET",
             "header": [
               {
@@ -551,7 +551,36 @@
           "_postman_id": "ad2e8c14-8e6e-6454-f6ee-6548bd2d0872",
           "name": "Update Specific Lines",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
+            "url": {
+              "raw": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "od",
+                "buyer",
+                "accounts",
+                "00000",
+                "orders",
+                "11111",
+                "lines",
+                "22222"
+              ],
+              "query": [
+                {
+                  "key": "x",
+                  "value": "",
+                  "equals": false,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "PUT",
             "header": [
               {
