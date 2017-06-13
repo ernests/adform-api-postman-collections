@@ -909,7 +909,7 @@
         },
         {
           "_postman_id": "ef396f19-8f2a-fc17-6b03-d8984c117e63",
-          "name": "Delete/restore Line Item copy",
+          "name": "Pause/resume Line Item",
           "request": {
             "url": {
               "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted?deleted=true",
