@@ -862,6 +862,24 @@
             "description": "This method returns Trading Desk Fee Change Log."
           },
           "response": []
+        },
+        {
+          "_postman_id": "4f202aa2-d5b8-b278-e144-748efedd4fe2",
+          "name": "Delete/restore Line Item",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
