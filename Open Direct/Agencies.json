@@ -253,7 +253,7 @@
           "_postman_id": "c3ecdda1-989f-3b78-00cc-d93be7ad95da",
           "name": "Update Client Organization Object",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations/clients/00000",
+            "url": "https://api.adform.com/v1/od/buyer/organizations/clients/00000",
             "method": "PUT",
             "header": [
               {
