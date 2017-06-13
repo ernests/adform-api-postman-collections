@@ -462,7 +462,7 @@
           "_postman_id": "45a714a0-cb1b-ec32-4d25-cfbe864bb6fa",
           "name": "All Lines in Order",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
             "method": "GET",
             "header": [
               {
@@ -483,7 +483,7 @@
           "_postman_id": "5185f689-af0f-8d20-d8a3-406a794b8630",
           "name": "Create Lines",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
             "method": "POST",
             "header": [
               {
@@ -509,7 +509,7 @@
           "_postman_id": "d7fec295-2dee-bc33-48ed-b4dcc40795a3",
           "name": "Delete Lines",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
             "method": "DELETE",
             "header": [
               {
