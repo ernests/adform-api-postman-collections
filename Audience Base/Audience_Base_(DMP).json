@@ -11,28 +11,29 @@
       "_postman_id": "143215b7-7dfc-815a-4bb0-431317c8b102",
       "name": "Segments",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "19ca506e-3f04-ae00-2867-61bbe6dcab50",
-      "name": "Get all segments",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/segments",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
+      "item": [
+        {
+          "_postman_id": "19ca506e-3f04-ae00-2867-61bbe6dcab50",
+          "name": "Get all segments",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/segments",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": ""
-      },
-      "response": []
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "807fb52e-4d7d-ee4a-6ed8-193b19744fc0",
