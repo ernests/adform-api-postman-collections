@@ -206,7 +206,7 @@
           "_postman_id": "a96e99c2-340a-112a-fee4-25607514a301",
           "name": "Current Top Level Organization",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations/current",
+            "url": "https://api.adform.com/v1/od/buyer/organizations/current",
             "method": "GET",
             "header": [
               {
