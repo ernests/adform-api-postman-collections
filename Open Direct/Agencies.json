@@ -107,7 +107,7 @@
           "_postman_id": "fcf6d522-b886-eb9e-b1de-ea0f445cfc17",
           "name": "Get Pricing and Availability",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/products/avails",
+            "url": "https://api.adform.com/v1/od/buyer/products/avails",
             "method": "POST",
             "header": [
               {
