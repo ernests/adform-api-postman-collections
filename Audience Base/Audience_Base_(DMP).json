@@ -51,7 +51,7 @@
     },
     {
       "_postman_id": "aa1471b3-17f4-34dc-9b05-84cf172a8277",
-      "name": "https://api.adform.com/v1/dmp/segments",
+      "name": "Create a segment",
       "request": {
         "url": "https://api.adform.com/v1/dmp/segments",
         "method": "POST",
@@ -69,7 +69,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"dataProviderId\": \"10284\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
+          "raw": "{\n    \"dataProviderId\": \"00000\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
         },
         "description": ""
       },
