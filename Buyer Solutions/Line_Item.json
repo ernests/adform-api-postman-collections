@@ -906,6 +906,50 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "ef396f19-8f2a-fc17-6b03-d8984c117e63",
+          "name": "Delete/restore Line Item copy",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted?deleted=true",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "rtb",
+                "lineitems",
+                "{{lineItemId}}",
+                "deleted"
+              ],
+              "query": [
+                {
+                  "key": "deleted",
+                  "value": "true",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
