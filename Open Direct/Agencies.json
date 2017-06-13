@@ -368,7 +368,7 @@
           "_postman_id": "c535235b-269e-0f8d-a810-d492282f7917",
           "name": "Create Order",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders",
             "method": "POST",
             "header": [
               {
