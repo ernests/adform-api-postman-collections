@@ -227,7 +227,7 @@
           "_postman_id": "78946c6a-ef30-d200-2671-87dcb225ded9",
           "name": "Create New Client Organization Object",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations/clients",
+            "url": "https://api.adform.com/v1/od/buyer/organizations/clients",
             "method": "POST",
             "header": [
               {
