@@ -462,7 +462,7 @@
           "_postman_id": "45a714a0-cb1b-ec32-4d25-cfbe864bb6fa",
           "name": "All Lines in Order",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
             "method": "GET",
             "header": [
               {
