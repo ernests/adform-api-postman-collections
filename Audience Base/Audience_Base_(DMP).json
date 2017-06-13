@@ -83,6 +83,12 @@
       ]
     },
     {
+      "_postman_id": "8f484feb-743d-97e7-a6bc-9d743e953aae",
+      "name": "Cookies",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "8e28d12f-68a1-67bc-11dd-bb9df9070ea1",
       "name": "https://api.adform.com/v1/dmp/dataproviders/10284/cookies",
       "request": {
