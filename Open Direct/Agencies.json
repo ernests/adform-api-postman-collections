@@ -180,7 +180,7 @@
           "_postman_id": "00d592fc-36e1-4260-91af-b2e7d87cb0f9",
           "name": "Update Agency (Top Level)",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations/00000",
+            "url": "https://api.adform.com/v1/od/buyer/organizations/00000",
             "method": "PUT",
             "header": [
               {
