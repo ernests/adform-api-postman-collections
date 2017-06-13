@@ -135,7 +135,7 @@
               "mode": "raw",
               "raw": "{AdformUUID}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}\n{AdvertiserId}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}"
             },
-            "description": ""
+            "description": "userIdentityTypeId values are:\r\n1 - Cookie ID\r\n2 - External Cookie ID\r\n3 - Advertising ID"
           },
           "response": []
         }
