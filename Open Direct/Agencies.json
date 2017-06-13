@@ -551,36 +551,7 @@
           "_postman_id": "ad2e8c14-8e6e-6454-f6ee-6548bd2d0872",
           "name": "Update Specific Lines",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "od",
-                "buyer",
-                "accounts",
-                "00000",
-                "orders",
-                "11111",
-                "lines",
-                "22222"
-              ],
-              "query": [
-                {
-                  "key": "x",
-                  "value": "",
-                  "equals": false,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222?x",
             "method": "PUT",
             "header": [
               {
@@ -606,7 +577,7 @@
           "_postman_id": "62d85448-c477-8ef1-ab40-620628627368",
           "name": "All Assignments",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
             "method": "GET",
             "header": [
               {
