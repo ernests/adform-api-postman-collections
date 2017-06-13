@@ -483,7 +483,7 @@
           "_postman_id": "5185f689-af0f-8d20-d8a3-406a794b8630",
           "name": "Create Lines",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines",
             "method": "POST",
             "header": [
               {
