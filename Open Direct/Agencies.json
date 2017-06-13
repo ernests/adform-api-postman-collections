@@ -627,7 +627,7 @@
           "_postman_id": "7c558ba9-f0a9-6aeb-6a85-face01f74da6",
           "name": "Create Assignment",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
             "method": "POST",
             "header": [
               {
