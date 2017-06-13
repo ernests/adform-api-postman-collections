@@ -154,7 +154,7 @@
           "_postman_id": "08513d3a-2693-cd25-7d70-c06eb47a5d7e",
           "name": "Create new Agency (Top Level)",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/organizations",
+            "url": "https://api.adform.com/v1/od/buyer/organizations",
             "method": "POST",
             "header": [
               {
