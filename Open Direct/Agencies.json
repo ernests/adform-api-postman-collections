@@ -606,7 +606,7 @@
           "_postman_id": "62d85448-c477-8ef1-ab40-620628627368",
           "name": "All Assignments",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
             "method": "GET",
             "header": [
               {
@@ -627,7 +627,7 @@
           "_postman_id": "7c558ba9-f0a9-6aeb-6a85-face01f74da6",
           "name": "Create Assignment",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
             "method": "POST",
             "header": [
               {
@@ -653,7 +653,7 @@
           "_postman_id": "083a788d-365d-df89-2c7e-f575d8d00000",
           "name": "Delete Assignment",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
             "method": "DELETE",
             "header": [
               {
@@ -674,7 +674,7 @@
           "_postman_id": "d4e228b6-277a-5bb9-84ab-e12f01e423a7",
           "name": "Get Specific Assignment",
           "request": {
-            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
+            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments/22222",
             "method": "GET",
             "header": [
               {
