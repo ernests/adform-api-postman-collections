@@ -322,6 +322,24 @@
             "description": "setupId - Master data setup ID"
           },
           "response": []
+        },
+        {
+          "_postman_id": "1c3e5e8a-f930-97e7-745b-c9a044ec9246",
+          "name": "Get list of Master Data files copy",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/masterdata/files/{{setupId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "setupId - Master data setup ID"
+          },
+          "response": []
         }
       ]
     },
