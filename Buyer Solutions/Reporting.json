@@ -319,7 +319,7 @@
               }
             ],
             "body": {},
-            "description": "setupId - Master data setup ID\nId - Requested file ID"
+            "description": "setupId - Master data setup ID"
           },
           "response": []
         }
