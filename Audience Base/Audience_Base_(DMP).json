@@ -117,7 +117,31 @@
           "_postman_id": "987ede7f-73e3-5141-3cfc-9e895c15aebd",
           "name": "Request cookies fot the set of segments",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/cookies",
+            "url": {
+              "raw": "https://api.adform.com/v1/dmp/cookies/export?userIdentityTypeId=1",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "dmp",
+                "cookies",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "userIdentityTypeId",
+                  "value": "1",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
@@ -127,13 +151,13 @@
               },
               {
                 "key": "Content-Type",
-                "value": "text/csv",
+                "value": "application/json",
                 "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{AdformUUID}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}\n{AdvertiserId}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}"
+              "raw": "{\r\n  \"DataProviderIds\": [\r\n    \"string\"\r\n  ],\r\n  \"SegmentIds\": [\r\n    \"string\"\r\n  ],\r\n  \"SegmentSource\": 0,\r\n  \"Fields\": [\r\n    \"cookieId\"\r\n  ],\r\n  \"IgnoreDeletedSegments\": true,\r\n  \"SingleFile\": true\r\n}"
             },
             "description": "userIdentityTypeId values are:\r\n1 - Cookie ID\r\n2 - External Cookie ID\r\n3 - Advertising ID"
           },
