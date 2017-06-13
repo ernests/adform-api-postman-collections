@@ -912,7 +912,7 @@
           "name": "Pause/resume Line Item",
           "request": {
             "url": {
-              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted?deleted=true",
+              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/paused?paused=true",
               "protocol": "https",
               "auth": {},
               "host": [
@@ -926,11 +926,11 @@
                 "rtb",
                 "lineitems",
                 "{{lineItemId}}",
-                "deleted"
+                "paused"
               ],
               "query": [
                 {
-                  "key": "deleted",
+                  "key": "paused",
                   "value": "true",
                   "equals": true,
                   "description": ""
