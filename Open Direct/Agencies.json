@@ -394,7 +394,7 @@
           "_postman_id": "9d174001-165f-e46c-3ca5-ec9a6e18f679",
           "name": "Delete Order",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111",
             "method": "DELETE",
             "header": [
               {
