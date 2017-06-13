@@ -116,25 +116,32 @@
       ]
     },
     {
-      "_postman_id": "dc733f74-9660-a332-f329-031c24901bf6",
-      "name": "Get activity by ID",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/activities/{{activityId}}",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
+      "_postman_id": "1dab8826-d0c4-3c6e-f7e8-9d97177a4be0",
+      "name": "Event",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "dc733f74-9660-a332-f329-031c24901bf6",
+          "name": "Get activity by ID",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/activities/{{activityId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": ""
-      },
-      "response": []
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "2d71788e-2c9a-884c-b084-628fc1a5098a",
