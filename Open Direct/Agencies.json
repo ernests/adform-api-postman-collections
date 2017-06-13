@@ -606,7 +606,7 @@
           "_postman_id": "62d85448-c477-8ef1-ab40-620628627368",
           "name": "All Assignments",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
+            "url": "https://api.adform.com/v1/od/buyer/00000/accounts/11111/assignments",
             "method": "GET",
             "header": [
               {
