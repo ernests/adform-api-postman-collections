@@ -867,7 +867,33 @@
           "_postman_id": "4f202aa2-d5b8-b278-e144-748efedd4fe2",
           "name": "Delete/restore Line Item",
           "request": {
-            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted",
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/deleted?deleted=true",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "rtb",
+                "lineitems",
+                "{{lineItemId}}",
+                "deleted"
+              ],
+              "query": [
+                {
+                  "key": "deleted",
+                  "value": "true",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "PUT",
             "header": [
               {
