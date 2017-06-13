@@ -509,7 +509,7 @@
           "_postman_id": "d7fec295-2dee-bc33-48ed-b4dcc40795a3",
           "name": "Delete Lines",
           "request": {
-            "url": "https:/api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
+            "url": "https://api.adform.com/v1/od/buyer/accounts/00000/orders/11111/lines/22222",
             "method": "DELETE",
             "header": [
               {
