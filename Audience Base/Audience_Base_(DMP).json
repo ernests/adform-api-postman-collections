@@ -119,7 +119,7 @@
       "_postman_id": "dc733f74-9660-a332-f329-031c24901bf6",
       "name": "Get activity by ID",
       "request": {
-        "url": "https://api.adform.com/v1/dmp/activities/7975a7de-bbaa-4637-870b-db48e316e0b6",
+        "url": "https://api.adform.com/v1/dmp/activities/{{activityId}}",
         "method": "GET",
         "header": [
           {
