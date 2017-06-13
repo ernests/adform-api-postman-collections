@@ -30,7 +30,7 @@
     },
     {
       "_postman_id": "807fb52e-4d7d-ee4a-6ed8-193b19744fc0",
-      "name": "https://api.adform.com/v1/dmp/dataproviders/10284/segments",
+      "name": "Get all segments of data provider",
       "request": {
         "url": "https://api.adform.com/v1/dmp/dataproviders/10284/segments",
         "method": "GET",
