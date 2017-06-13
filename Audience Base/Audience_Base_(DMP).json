@@ -9,7 +9,7 @@
   "item": [
     {
       "_postman_id": "19ca506e-3f04-ae00-2867-61bbe6dcab50",
-      "name": "https://api.adform.com/v1/dmp/segments",
+      "name": "Get all segments",
       "request": {
         "url": "https://api.adform.com/v1/dmp/segments",
         "method": "GET",
@@ -145,32 +145,6 @@
           "raw": "{  \r\n   \"forCountries\":{  \r\n      \"rule\":\"include\",\r\n      \"items\":[  \r\n         {  \r\n            \"id\":\"30\",\r\n            \"forAgencies\":{  \r\n               \"rule\":\"include\",\r\n               \"items\":[  \r\n                  {  \r\n                     \"id\":\"211\",\r\n                     \"forDataConsumers\":{  \r\n                        \"rule\":\"includeAll\",\r\n                        \"items\":[  \r\n\r\n                        ]\r\n                     }\r\n                  }\r\n               ]\r\n            }\r\n         }\r\n      ]\r\n   }\r\n}"
         },
         "description": "Update all data usage policies for this data provider."
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "55340f45-9f97-8424-6b52-cf40c92b7e4d",
-      "name": "https://api.adform.com/v1/dmp/segments copy",
-      "request": {
-        "url": "https://api.adform.com/v1/dmp/segments",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"dataProviderId\": \"10284\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
-        },
-        "description": ""
       },
       "response": []
     }
