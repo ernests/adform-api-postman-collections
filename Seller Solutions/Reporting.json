@@ -13,32 +13,6 @@
       "description": "This services allow you to get a list of possible Dimensions and Metrics along with their respective descriptions",
       "item": [
         {
-          "_postman_id": "b98a5fe2-bce5-a9d8-21bd-a48a1bd24130",
-          "name": "Get Dimensions metadata",
-          "request": {
-            "url": "https://api.adform.com/v1/reportingstats/publisher/metadata/dimensions",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n   \"dimensions\": [\"publisher\"]\r\n}"
-            },
-            "description": "Leave [ ] empty in order to get a full list of Dimensions"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "98a53057-7027-a259-d796-fa91762611b0",
           "name": "Get Metrics metadata",
           "request": {
@@ -98,6 +72,32 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "b98a5fe2-bce5-a9d8-21bd-a48a1bd24130",
+      "name": "Get Dimensions metadata",
+      "request": {
+        "url": "https://api.adform.com/v1/reportingstats/publisher/metadata/dimensions",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Ticket",
+            "value": "{{Ticket}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"dimensions\": [\"publisher\"]\r\n}"
+        },
+        "description": "Leave [ ] empty in order to get a full list of Dimensions"
+      },
+      "response": []
     }
   ]
 }
