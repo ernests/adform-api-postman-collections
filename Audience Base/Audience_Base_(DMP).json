@@ -331,6 +331,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "8a31d9ca-1afd-9cb2-ad0a-443ee9409360",
+          "name": "Get event by ID copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/events/{{eventId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
