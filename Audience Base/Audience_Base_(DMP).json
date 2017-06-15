@@ -176,7 +176,7 @@
         },
         {
           "_postman_id": "ddf68250-218d-d3c2-68e4-73ce98cbbb1a",
-          "name": "Get segment by ID copy",
+          "name": "Update a segment by ID",
           "request": {
             "url": "https://api.adform.com/v1/dmp/segments/{{segmentId}}",
             "method": "GET",
