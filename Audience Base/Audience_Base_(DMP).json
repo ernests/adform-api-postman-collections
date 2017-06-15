@@ -350,7 +350,62 @@
       "_postman_id": "215dbf22-867c-92ae-feee-cee8de887099",
       "name": "Report",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "4b6fe5f9-2e2f-b660-fefc-7dd23c27f620",
+          "name": "https://api.adform.com/v1/dmp/reports/datausage?from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/dmp/reports/datausage?from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "dmp",
+                "reports",
+                "datausage"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "{{startDate}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "to",
+                  "value": "{{endDate}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "groupBy",
+                  "value": "{{groupBy}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetDataUsageAsync"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
