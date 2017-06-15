@@ -53,20 +53,17 @@
                 {
                   "key": "grant_type",
                   "value": "password",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 },
                 {
                   "key": "password",
                   "value": "{{DMPpassword}}",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 },
                 {
                   "key": "username",
                   "value": "{{DMPusername}}",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 }
               ]
             },
