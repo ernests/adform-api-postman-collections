@@ -334,7 +334,7 @@
         },
         {
           "_postman_id": "8a31d9ca-1afd-9cb2-ad0a-443ee9409360",
-          "name": "Get event by ID copy",
+          "name": "Get events by data provider",
           "request": {
             "url": "https://api.adform.com/v1/dmp/events",
             "method": "GET",
