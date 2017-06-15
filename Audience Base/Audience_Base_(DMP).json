@@ -150,7 +150,7 @@
         },
         {
           "_postman_id": "39552c93-433f-2b45-d692-2dcb6b951dfe",
-          "name": "Delete a segment copy",
+          "name": "Get segment by ID",
           "request": {
             "url": "https://api.adform.com/v1/dmp/segments/{{segmentId}}",
             "method": "DELETE",
