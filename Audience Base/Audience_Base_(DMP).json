@@ -118,7 +118,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": ""
+            "description": "Available parameters listed here - https://api.adform.com/v1/help/dmp#!/Segment/Segment_GetAsyncByDataconsumerid"
           },
           "response": []
         }
