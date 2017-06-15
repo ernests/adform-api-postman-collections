@@ -513,7 +513,7 @@
           "name": "Overall audience stats by all data providers",
           "request": {
             "url": {
-              "raw": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/audience?from={{startDate}}&to={{endDate}}",
+              "raw": "https://api.adform.com/v1/dmp/report/dataproviders/audience?from={{startDate}}&to={{endDate}}",
               "protocol": "https",
               "auth": {},
               "host": [
@@ -524,8 +524,8 @@
               "path": [
                 "v1",
                 "dmp",
+                "report",
                 "dataproviders",
-                "{{dataProviderId}}",
                 "audience"
               ],
               "query": [
