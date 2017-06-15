@@ -173,6 +173,32 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "ddf68250-218d-d3c2-68e4-73ce98cbbb1a",
+          "name": "Get segment by ID copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/segments/{{segmentId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
