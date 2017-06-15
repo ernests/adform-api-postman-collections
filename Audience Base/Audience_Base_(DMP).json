@@ -510,7 +510,7 @@
         },
         {
           "_postman_id": "5db0d17c-4419-927d-aaa7-e0eb8bc69e9a",
-          "name": "Overall audience stats by data provider copy",
+          "name": "Overall audience stats by all data providers",
           "request": {
             "url": {
               "raw": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/audience?from={{startDate}}&to={{endDate}}",
