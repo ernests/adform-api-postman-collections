@@ -461,7 +461,7 @@
         },
         {
           "_postman_id": "830844c8-4bd1-29cd-b963-b2d28919c1a1",
-          "name": "Audience reports copy",
+          "name": "Overall audience stats by data provider",
           "request": {
             "url": {
               "raw": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/audience?from={{startDate}}&to={{endDate}}",
@@ -504,7 +504,7 @@
               }
             ],
             "body": {},
-            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetAudienceAsync"
+            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetOverallAudienceAsyncByDataproviderid"
           },
           "response": []
         }
