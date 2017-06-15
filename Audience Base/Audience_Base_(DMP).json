@@ -380,8 +380,8 @@
           "_postman_id": "37b6151f-8ace-283e-1772-fe872c35b674",
           "name": "Update event by ID",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/events/{{eventId}}",
-            "method": "GET",
+            "url": "https://api.adform.com/v1/dmp/events/{{eventId}}/acknowledgment",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
