@@ -559,7 +559,7 @@
         },
         {
           "_postman_id": "218a8f3e-d159-2c25-a23b-1f27fb197a8a",
-          "name": "Overall audience stats by all data providers copy",
+          "name": "Billing overall report",
           "request": {
             "url": "https://api.adform.com/v1/dmp/reports/billing/overall",
             "method": "GET",
