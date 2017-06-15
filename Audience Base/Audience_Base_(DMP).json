@@ -553,7 +553,7 @@
               }
             ],
             "body": {},
-            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetOverallAudienceAsyncByDataproviderid"
+            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetOverallAudienceAsync"
           },
           "response": []
         }
