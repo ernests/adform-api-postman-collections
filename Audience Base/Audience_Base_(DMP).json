@@ -100,6 +100,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "3af759d2-9096-d1ea-c687-457a6b950202",
+          "name": "Get all segments of data provider copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/segments",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
