@@ -313,9 +313,9 @@
         },
         {
           "_postman_id": "dadb0505-02bb-ba5b-c7fc-775ddbabe28a",
-          "name": "Get activity by ID copy",
+          "name": "Get event by ID",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/activities/{{activityId}}",
+            "url": "https://api.adform.com/v1/dmp/events/{{eventId}}",
             "method": "GET",
             "header": [
               {
