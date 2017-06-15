@@ -458,6 +458,55 @@
             "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetAudienceAsync"
           },
           "response": []
+        },
+        {
+          "_postman_id": "830844c8-4bd1-29cd-b963-b2d28919c1a1",
+          "name": "Audience reports copy",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/audience?from={{startDate}}&to={{endDate}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "dmp",
+                "dataproviders",
+                "{{dataProviderId}}",
+                "audience"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "{{startDate}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "to",
+                  "value": "{{endDate}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Report/Report_GetOverallAudienceAsyncByDataproviderid"
+          },
+          "response": []
         }
       ]
     }
