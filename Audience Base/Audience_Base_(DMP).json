@@ -121,6 +121,32 @@
             "description": "Available parameters listed here - https://api.adform.com/v1/help/dmp#!/Segment/Segment_GetAsyncByDataconsumerid"
           },
           "response": []
+        },
+        {
+          "_postman_id": "f2e7b11e-f655-be3e-b226-6dc0ba720cbc",
+          "name": "Create a segment copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/segments",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"dataProviderId\": \"00000\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
