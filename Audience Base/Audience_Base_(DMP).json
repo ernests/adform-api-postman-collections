@@ -126,8 +126,8 @@
           "_postman_id": "f2e7b11e-f655-be3e-b226-6dc0ba720cbc",
           "name": "Delete a segment",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/segments",
-            "method": "POST",
+            "url": "https://api.adform.com/v1/dmp/segments/{{segmentId}}",
+            "method": "DELETE",
             "header": [
               {
                 "key": "Content-Type",
@@ -142,7 +142,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"dataProviderId\": \"00000\",\n    \"status\": \"inactive\",\n    \"categoryId\": \"398426\",\n    \"refId\": \"Test\",\n    \"fee\": 2,\n    \"ttl\": 21,\n    \"name\": \"Test\",\n    \"frequency\": 1,\n    }"
+              "raw": ""
             },
             "description": ""
           },
