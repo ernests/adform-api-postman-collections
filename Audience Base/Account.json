@@ -70,65 +70,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "53a7ad39-199e-3e35-dc57-253ffb0b9fbf",
-          "name": "Login copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Content-Type is application/json\"] =",
-                  "  request.headers[\"Content-Type\"] === \"application/x-www-form-urlencoded\";",
-                  "",
-                  "tests[\"Request was successful\"] = ",
-                  "  responseCode.code === 200;",
-                  "",
-                  "if(responseCode.code === 200) {",
-                  "  var jsonData = JSON.parse(responseBody);",
-                  "  postman.setGlobalVariable('access_token', jsonData.access_token);",
-                  "    tests[\"Access token was set as a global variable\"] =",
-                  "      globals.AccessToken !== undefined;",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/dmp/token",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "password",
-                  "type": "text"
-                },
-                {
-                  "key": "password",
-                  "value": "{{DMPpassword}}",
-                  "type": "text"
-                },
-                {
-                  "key": "username",
-                  "value": "{{DMPusername}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     }
