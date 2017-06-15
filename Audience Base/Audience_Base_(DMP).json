@@ -353,7 +353,7 @@
       "item": [
         {
           "_postman_id": "4b6fe5f9-2e2f-b660-fefc-7dd23c27f620",
-          "name": "https://api.adform.com/v1/dmp/reports/datausage?from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
+          "name": "Usage (revenue and impressions) reports",
           "request": {
             "url": {
               "raw": "https://api.adform.com/v1/dmp/reports/datausage?from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
