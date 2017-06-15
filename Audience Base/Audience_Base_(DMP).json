@@ -336,7 +336,30 @@
           "_postman_id": "8a31d9ca-1afd-9cb2-ad0a-443ee9409360",
           "name": "Get events by data provider",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/events",
+            "url": {
+              "raw": "https://api.adform.com/v1/dmp/events?dataProviderId={{dataProviderId}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "dmp",
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "dataProviderId",
+                  "value": "{{dataProviderId}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
