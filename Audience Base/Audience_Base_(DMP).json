@@ -349,7 +349,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": ""
+            "description": "All available parameters are listed here - https://api.adform.com/v1/help/dmp#!/Event/Event_GetAsync"
           },
           "response": []
         }
