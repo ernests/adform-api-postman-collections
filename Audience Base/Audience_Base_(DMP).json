@@ -105,7 +105,7 @@
           "_postman_id": "3af759d2-9096-d1ea-c687-457a6b950202",
           "name": "Get segments available for particular data consumer",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/segments",
+            "url": "https://api.adform.com/v1/dmp/dataconsumers/{{dataConsumerId}}/segments",
             "method": "GET",
             "header": [
               {
