@@ -2012,7 +2012,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/dsp/v1/activities/11111/targeting",
+            "url": "https://api.adform.com/dsp/v1/activities/545467/targeting",
             "method": "PUT",
             "header": [
               {
@@ -2028,7 +2028,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"SetupId\": 386954,\n  \"Groups\": [\n    {\n      \"GroupId\": \"d14ab530-6d07-4b80-b223-2156fa3ef1bd\",\n      \"Id\": 1,\n      \"Rules\": [\n        {\n          \"$type\": \"FromLocationTargetingRule\",\n          \"DimensionId\": 6,\n          \"Locations\": [\n            {\n              \"Id\": 124,\n              \"Name\": \"Canada - country\",\n              \"Type\": 2,\n              \"CountryCode\": \"CA\"\n            }\n          ]\n        },\n        {\n            \"$type\" : \"AudienceIsTargetingRule\",\n            \"TrackingPoints\" : [ 0]\n        }\n      ],\n      \"Settings\": {\n        \"PriceMultiplier\": 1\n      }\n    }\n  ]\n}"
+              "raw": "{\n    \"SetupId\": 545467,\n    \"Groups\": [\n        {\n            \"Id\": 1,\n            \"Name\": \"Audience 1\",\n            \"Rules\": [\n                {\n                    \"$type\": \"ExternalDataTargetingRule\",\n                    \"DimensionId\": 21,\n                    \"RuleId\": \"cb6aa395-1150-4470-92e9-93bfcf928ce9\",\n                    \"TypeId\": 405071,\n                    \"ProviderId\": 10639,\n                    \"Fee\": 0,\n                    \"FeeInCampaignCurrency\": 0,\n                    \"CurrencyId\": 2,\n                    \"ProviderName\": \"ADmantX Smart Profile Remarketing\",\n                    \"TypeName\": \"Click_on_Profile_To_Use_The_Service\",\n                    \"SegmentsCostInProviderCurrency\": {\n                        \"533766\": 0\n                    },\n                    \"ExternalDataValues\": [\n                        {\n                            \"Id\": 533766,\n                            \"Name\": \"Click_on_profile_To_Use_The_AdmantX_Segments\",\n                            \"Fee\": 0,\n                            \"MatchMode\": 1\n                        }\n                    ],\n                    \"InventorySourcesAllowedByProvider\": null\n                },\n                {\n                    \"$type\": \"ExternalDataTargetingRule\",\n                    \"TypeId\": 539280,\n                    \"ProviderId\": 10009,\n                    \"ExternalDataValues\": [\n                        {\n                            \"Id\": 538907\n                        }\n                    ],\n                    \"InventorySourcesAllowedByProvider\": null\n                }\n            ],\n            \"Settings\": {\n                \"PriceMultiplier\": 1\n            }\n        }\n    ]\n}"
             },
             "description": "This method updates RTB Line Item targeting settings.\n\nYou need to parse ActivityId on your request URL.\n\nEXAMPLE: /dsp/v1/activities/11111/targeting\n(11111 - ActivityId)"
           },
