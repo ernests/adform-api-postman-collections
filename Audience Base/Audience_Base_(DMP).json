@@ -753,6 +753,24 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "24932f89-9c10-801a-ae3b-6fe4a5f9f1d1",
+          "name": "Get all categories copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/categories",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
