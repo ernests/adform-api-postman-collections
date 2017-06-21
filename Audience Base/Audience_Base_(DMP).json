@@ -792,26 +792,18 @@
         },
         {
           "_postman_id": "57e57421-a833-f3e1-026c-b75809586a62",
-          "name": "Update category by Id",
+          "name": "Get category by Id copy",
           "request": {
             "url": "https://api.adform.com/v1/dmp/categories/{{categoryId}}",
-            "method": "PUT",
+            "method": "GET",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
                 "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Id\": \"string\",\r\n  \"Name\": \"string\",\r\n  \"DataProviderId\": \"string\",\r\n  \"ParentId\": \"string\",\r\n  \"UpdatedAt\": \"2017-06-21T07:02:27.905Z\",\r\n  \"CreatedAt\": \"2017-06-21T07:02:27.905Z\"\r\n}"
-            },
+            "body": {},
             "description": ""
           },
           "response": []
