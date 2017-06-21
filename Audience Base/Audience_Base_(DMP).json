@@ -822,7 +822,26 @@
       "_postman_id": "a92d0b67-78c2-f432-d698-50c8eafb830a",
       "name": "Taxonomy",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "42c290ad-2e65-5b5c-53c6-90532f7055f6",
+          "name": "Get a list of taxonomy uploads",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/uploads/taxonomy",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
