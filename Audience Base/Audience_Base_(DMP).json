@@ -897,14 +897,19 @@
         },
         {
           "_postman_id": "340a3fdc-4228-a5b8-51d3-652fbbf3c39c",
-          "name": "Export taxonomy for data provider copy",
+          "name": "Upload taxonomy for import",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/taxonomy",
-            "method": "GET",
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/upload/taxonomy",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/csv",
                 "description": ""
               }
             ],
