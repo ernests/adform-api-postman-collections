@@ -662,6 +662,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "e1fd63ad-9f79-72e6-61de-65ae12971b0b",
+      "name": "Categories",
+      "description": "",
+      "item": []
     }
   ]
 }
