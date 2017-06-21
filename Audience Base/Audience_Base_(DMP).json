@@ -861,7 +861,7 @@
         },
         {
           "_postman_id": "f87f82a4-f90a-b561-1a05-80ec5316eb9f",
-          "name": "Delete uploaded file by Id copy",
+          "name": "Get data stream by file Id",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/uploads/taxonomy/{{fileId}}",
             "method": "GET",
