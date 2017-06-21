@@ -774,7 +774,7 @@
         },
         {
           "_postman_id": "53ad6c0c-df64-8042-f88e-8076304c3623",
-          "name": "Delete a category copy",
+          "name": "Get category by Id",
           "request": {
             "url": "https://api.adform.com/v1/dmp/categories/{{categoryId}}",
             "method": "DELETE",
