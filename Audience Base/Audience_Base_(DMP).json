@@ -843,7 +843,7 @@
         },
         {
           "_postman_id": "86b6e5eb-efa3-ffe4-c7a7-fb55e2c2d392",
-          "name": "Get a list of taxonomy uploads copy",
+          "name": "Delete uploaded file by Id",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/uploads/taxonomy/{{fileId}}",
             "method": "GET",
