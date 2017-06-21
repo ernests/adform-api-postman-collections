@@ -688,7 +688,7 @@
         },
         {
           "_postman_id": "33c547b0-d0c2-ae80-89e7-32ce86db772d",
-          "name": "Get all categories copy",
+          "name": "Create a category",
           "request": {
             "url": "https://api.adform.com/v1/dmp/categories",
             "method": "POST",
