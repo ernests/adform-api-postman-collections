@@ -879,7 +879,7 @@
         },
         {
           "_postman_id": "36e6fa9a-0d6d-42f7-24bb-8b823a538e41",
-          "name": "Get data stream by file Id copy",
+          "name": "Export taxonomy for data provider",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/uploads/taxonomy/{{fileId}}",
             "method": "GET",
