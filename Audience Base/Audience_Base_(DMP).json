@@ -737,7 +737,7 @@
           "_postman_id": "088e48b6-4083-96ae-e4db-b31e05b3b789",
           "name": "Get all categories related to data provider copy",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/categories",
+            "url": "https://api.adform.com/v1/dmp/dataconsumers/{{dataConsumerId}}/categories",
             "method": "GET",
             "header": [
               {
