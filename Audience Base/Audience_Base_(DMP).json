@@ -732,6 +732,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "088e48b6-4083-96ae-e4db-b31e05b3b789",
+          "name": "Get all categories related to data provider copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/categories",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"string\",\r\n  \"DataProviderId\": \"string\",\r\n  \"ParentId\": \"string\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
