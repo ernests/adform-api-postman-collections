@@ -777,7 +777,7 @@
           "name": "Get category by Id",
           "request": {
             "url": "https://api.adform.com/v1/dmp/categories/{{categoryId}}",
-            "method": "DELETE",
+            "method": "GET",
             "header": [
               {
                 "key": "Authorization",
