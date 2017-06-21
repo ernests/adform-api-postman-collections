@@ -711,6 +711,32 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "6e7d193c-08f4-fbbe-3d14-aabc9739cc64",
+          "name": "Create a category copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/categories",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"string\",\r\n  \"DataProviderId\": \"string\",\r\n  \"ParentId\": \"string\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
