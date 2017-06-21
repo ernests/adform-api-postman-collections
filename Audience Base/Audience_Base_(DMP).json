@@ -667,7 +667,26 @@
       "_postman_id": "e1fd63ad-9f79-72e6-61de-65ae12971b0b",
       "name": "Categories",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "4a2898a5-9539-eb7b-2b50-de15a0334e4d",
+          "name": "Get all categories",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/categories",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
