@@ -714,7 +714,7 @@
         },
         {
           "_postman_id": "6e7d193c-08f4-fbbe-3d14-aabc9739cc64",
-          "name": "Create a category copy",
+          "name": "Get all categories related to data provider",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/categories",
             "method": "GET",
