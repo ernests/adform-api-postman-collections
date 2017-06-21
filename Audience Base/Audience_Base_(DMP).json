@@ -913,7 +913,10 @@
                 "description": ""
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": "//Put text in csv fortmat in here"
+            },
             "description": ""
           },
           "response": []
