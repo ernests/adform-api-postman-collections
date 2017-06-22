@@ -768,11 +768,6 @@
                 "key": "Ticket",
                 "value": "{{Ticket}}",
                 "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
               }
             ],
             "body": {
