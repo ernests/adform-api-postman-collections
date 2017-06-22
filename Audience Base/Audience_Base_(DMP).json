@@ -927,7 +927,26 @@
       "_postman_id": "7f6c11c1-e9bf-17b7-ae4c-5fb32846a8ee",
       "name": "Data Providers",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "c88fe3ab-1310-2472-f030-56bcaa123bd8",
+          "name": "Get list of available data providers",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
