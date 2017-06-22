@@ -986,7 +986,7 @@
           "_postman_id": "80e25dd6-5000-ee4d-20d2-375b90fde8e6",
           "name": "Get data provider by ID",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders",
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}",
             "method": "GET",
             "header": [
               {
