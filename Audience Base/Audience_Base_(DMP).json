@@ -966,7 +966,7 @@
         },
         {
           "_postman_id": "835c20fd-3bc5-07a7-3373-5bb05a29f412",
-          "name": "Get info of data provider if it is availalbe for particular data consumer copy",
+          "name": "Get list of data provider if it is availalbe for particular data consumer copy",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataconsumers/{{dataConsumerId}}/dataproviders/{{dataProviderId}}",
             "method": "GET",
