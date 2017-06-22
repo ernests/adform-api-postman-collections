@@ -1005,15 +1005,23 @@
           "name": "Get data provider by ID copy",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}",
-            "method": "GET",
+            "method": "PUT",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
                 "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Id\": \"string\",\r\n  \"Name\": \"string\",\r\n  \"DataPlatformId\": \"string\",\r\n  \"CurrencyCode\": \"string\",\r\n  \"Description\": \"string\",\r\n  \"Pricing\": \"max\",\r\n  \"Type\": \"dataProvider\",\r\n  \"TypeId\": \"string\",\r\n  \"Status\": \"active\",\r\n  \"SegmentsCount\": 0,\r\n  \"SmartSegmentCount\": 0,\r\n  \"ExtendedSegmentCount\": 0,\r\n  \"MaxSegmentCount\": 0,\r\n  \"MaxSmartSegmentCount\": 0,\r\n  \"MaxExtendedSegmentCount\": 0,\r\n  \"MaxSegmentationRulesCount\": 0,\r\n  \"MinimalPrice\": 0,\r\n  \"RevenueShare\": 0,\r\n  \"PixelUrl\": \"string\",\r\n  \"PixelProfileEnabled\": true,\r\n  \"UseExtendedAmountOfSystemVariables\": true,\r\n  \"UseExtendedAmountOfNumericSystemVariables\": true,\r\n  \"ActiveCountryIds\": [\r\n    \"string\"\r\n  ],\r\n  \"EnabledCrossDeviceProviders\": [\r\n    \"string\"\r\n  ],\r\n  \"InventorySourceIds\": [\r\n    \"string\"\r\n  ],\r\n  \"Features\": [\r\n    \"string\"\r\n  ],\r\n  \"Regions\": [\r\n    \"europe\"\r\n  ],\r\n  \"MonthlyFee\": 0,\r\n  \"StoresInAppSegments\": true,\r\n  \"MarketplaceDescription\": \"string\",\r\n  \"LogoUrl\": \"string\",\r\n  \"UpdatedAt\": \"2017-06-22T13:01:09.163Z\",\r\n  \"CreatedAt\": \"2017-06-22T13:01:09.163Z\"\r\n}"
+            },
             "description": ""
           },
           "response": []
