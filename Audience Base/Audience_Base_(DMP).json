@@ -1032,26 +1032,7 @@
       "_postman_id": "1a41915b-87f8-f55a-0a42-d24f322c5770",
       "name": "Advertiser",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "b6395410-5bc0-c6bb-b510-aeea9fb040ac",
-          "name": "Get a list of available advertisers by data provider",
-          "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/advertisers",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        }
-      ]
+      "item": []
     }
   ]
 }
