@@ -999,6 +999,24 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "32165565-403c-f2d5-bac6-fa6bf75c9d7b",
+          "name": "Get data provider by ID copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
