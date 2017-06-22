@@ -984,7 +984,7 @@
         },
         {
           "_postman_id": "80e25dd6-5000-ee4d-20d2-375b90fde8e6",
-          "name": "Get list of available data providers copy",
+          "name": "Get data provider by ID",
           "request": {
             "url": "https://api.adform.com/v1/dmp/dataproviders",
             "method": "GET",
