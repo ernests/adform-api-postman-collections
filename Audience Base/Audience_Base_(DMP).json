@@ -950,7 +950,25 @@
           "_postman_id": "ca49ffe2-12ae-b701-53f7-a059973de5dc",
           "name": "Get info of data provider if it is availalbe for particular data consumer",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders",
+            "url": "https://api.adform.com/v1/dmp/dataconsumers/{{dataConsumerId}}/dataproviders/{{dataProviderId}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "835c20fd-3bc5-07a7-3373-5bb05a29f412",
+          "name": "Get info of data provider if it is availalbe for particular data consumer copy",
+          "request": {
+            "url": "https://api.adform.com/v1/dmp/dataconsumers/{{dataConsumerId}}/dataproviders/{{dataProviderId}}",
             "method": "GET",
             "header": [
               {
