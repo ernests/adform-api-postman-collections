@@ -63,8 +63,7 @@
                 "header": [
                   {
                     "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
+                    "value": "application/json"
                   }
                 ],
                 "body": {
@@ -161,26 +160,22 @@
                 {
                   "key": "client_secret",
                   "value": "",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 },
                 {
                   "key": "grant_type",
-                  "value": "",
-                  "type": "text",
-                  "enabled": true
+                  "value": "client_credentials",
+                  "type": "text"
                 },
                 {
                   "key": "client_id",
                   "value": "",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 },
                 {
                   "key": "scope",
                   "value": "",
-                  "type": "text",
-                  "enabled": true
+                  "type": "text"
                 }
               ]
             },
