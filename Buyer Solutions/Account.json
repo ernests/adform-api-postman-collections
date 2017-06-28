@@ -158,6 +158,11 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "key": "client_id",
+                  "value": "",
+                  "type": "text"
+                },
+                {
                   "key": "client_secret",
                   "value": "",
                   "type": "text"
@@ -165,11 +170,6 @@
                 {
                   "key": "grant_type",
                   "value": "client_credentials",
-                  "type": "text"
-                },
-                {
-                  "key": "client_id",
-                  "value": "",
                   "type": "text"
                 },
                 {
