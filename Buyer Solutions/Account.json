@@ -174,7 +174,7 @@
                 },
                 {
                   "key": "scope",
-                  "value": "",
+                  "value": "https://api.adform.com/scope/eapi",
                   "type": "text"
                 }
               ]
