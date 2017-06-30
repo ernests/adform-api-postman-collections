@@ -442,7 +442,7 @@
           "name": "Usage (revenue and impressions) reports",
           "request": {
             "url": {
-              "raw": "https://api.adform.com/v1/dmp/reports/datausage?from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
+              "raw": "https://api.adform.com/v1/dmp/reports/datausage?dataProviderId={{dataProviderId}}&from={{startDate}}&to={{endDate}}&groupBy={{groupBy}}",
               "protocol": "https",
               "auth": {},
               "host": [
@@ -457,6 +457,12 @@
                 "datausage"
               ],
               "query": [
+                {
+                  "key": "dataProviderId",
+                  "value": "{{dataProviderId}}",
+                  "equals": true,
+                  "description": ""
+                },
                 {
                   "key": "from",
                   "value": "{{startDate}}",
