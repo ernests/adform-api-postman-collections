@@ -906,42 +906,24 @@
           "_postman_id": "ef396f19-8f2a-fc17-6b03-d8984c117e63",
           "name": "Pause/resume Line Item",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/paused?paused=true",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "rtb",
-                "lineitems",
-                "{{lineItemId}}",
-                "paused"
-              ],
-              "query": [
-                {
-                  "key": "paused",
-                  "value": "true",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/paused",
             "method": "PUT",
             "header": [
               {
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
                 "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": "true"
+            },
             "description": ""
           },
           "response": []
