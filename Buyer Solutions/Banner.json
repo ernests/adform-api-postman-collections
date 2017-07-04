@@ -2182,7 +2182,7 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/api/v1/ImageBanners/00000/ClickUrl",
+            "url": "https://api.adform.com/api/v1/ImageBanners/{{bannerUUID}}/ClickUrl",
             "method": "PUT",
             "header": [
               {
@@ -2198,7 +2198,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"ClickUrl\": {\r\n    \"Id\": 0,\r\n    \"ClickTag\": \"http://test.clicktag.com\",\r\n    \"Title\": \"ClickTag\",\r\n    \"Url\": \"http://test.clicktag.com\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"ClickUrl\": {\r\n    \"ClickTag\": \"http://test.clicktag.com\",\r\n    \"Title\": \"ClickTag\",\r\n    \"Url\": \"http://test.clicktag.com\"\r\n  }\r\n}"
             },
             "description": "This method updates image banner click url.\n\nYou need to parse banner uuid on you request URL.\n\nEXAMPLE: /api/v1/ImageBanners/00000/ClickUrl\n(00000 - banner uuid)\n\nNOTE: You can add \"CampaignClickUrlId\" and specify already existing Campaign LandingPage. In such case you do not need to define full Click Url structure."
           },
