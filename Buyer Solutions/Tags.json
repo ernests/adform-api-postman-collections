@@ -716,47 +716,6 @@
           "response": []
         },
         {
-          "_postman_id": "4e63e138-beb5-b6fc-6ea8-d52ce50b934d",
-          "name": "Get Tags copy",
-          "request": {
-            "url": {
-              "raw": "https://api.adform.com/Services/Tag/Tags?CampaignId={{campaignId}}",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "Services",
-                "Tag",
-                "Tags"
-              ],
-              "query": [
-                {
-                  "key": "CampaignId",
-                  "value": "{{campaignId}}",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/get-tags"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "a62e3318-757c-3c27-e803-470d4e270602",
           "name": "Create Tag",
           "request": {
