@@ -55,52 +55,52 @@
             "description": "This method allows you to create an AG tag.\n\nIn order to create an AG tag you must parse these parameters in your reqest body:\n1. CampaignId\n2. AdUuid\n3. LineItemId (placementId) \n4. Name for your tag"
           },
           "response": []
+        },
+        {
+          "_postman_id": "d627003f-4870-c8e0-0e9a-0e4e4f2e2c7e",
+          "name": "Get Tags by uuids",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/List",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[ \"TagUuid\" ]"
+            },
+            "description": "This method allows you  to get AG Tags by Tag uuids.\n\nYou need to provide Tags uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/0000\n(00000 - Tag uuid)"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "d627003f-4870-c8e0-0e9a-0e4e4f2e2c7e",
-      "name": "Get Tags by uuids",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/List",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "[ \"TagUuid\" ]"
-        },
-        "description": "This method allows you  to get AG Tags by Tag uuids.\n\nYou need to provide Tags uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/0000\n(00000 - Tag uuid)"
-      },
-      "response": []
     },
     {
       "_postman_id": "944ff026-eb8f-ec6f-a365-8b2d24c32dd0",
