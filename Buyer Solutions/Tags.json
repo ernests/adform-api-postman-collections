@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "39d86651-105d-949d-4fdf-02921a815e4c",
+      "name": "AG and Direct Tags",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "582beac1-44fa-8958-c8f8-56602530271d",
       "name": "Create Tag",
       "event": [
