@@ -755,32 +755,6 @@
             "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/get-tags"
           },
           "response": []
-        },
-        {
-          "_postman_id": "a62e3318-757c-3c27-e803-470d4e270602",
-          "name": "Create Tag",
-          "request": {
-            "url": "https://api.adform.com/Services/Tag/Tags",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Tag\": {\r\n    \"CampaignId\": 000000,\r\n    \"PlacementId\": 000000,\r\n    \"Name\": \"Tag\",\r\n    \"Content\": {\r\n      \"Id\": 0000000,\r\n      \"ContentType\": \"ScheduleTagContent\",\r\n      \"DestinationUrl\": {\r\n        \"Type\": \"Replace\",\r\n        \"Url\": null\r\n      },\r\n      \"InnerContents\": [\r\n        {\r\n          \"Id\": 0000000,\r\n          \"ContentType\": \"AdTagContent\",\r\n          \"DestinationUrl\": {\r\n            \"Type\": \"Replace\",\r\n            \"Url\": \"http://www.adform.com?v=1\"\r\n          }\r\n        },\r\n        {\r\n          \"Id\": 0000000,\r\n          \"ContentType\": \"AdTagContent\",\r\n          \"DestinationUrl\": {\r\n            \"Type\": \"Replace\",\r\n            \"Url\": \"http://www.adform.com?v=2\"\r\n          }\r\n        },\r\n        {\r\n          \"Id\": 0000000,\r\n          \"ContentType\": \"RotatorTagContent\",\r\n          \"DestinationUrl\": {\r\n            \"Type\": \"Replace\",\r\n            \"Url\": null\r\n          },\r\n          \"InnerContents\": [\r\n            {\r\n              \"Id\": 0000000,\r\n              \"ContentType\": \"AdTagContent\",\r\n              \"DestinationUrl\": {\r\n                \"Type\": \"Replace\",\r\n                \"Url\": \"http://www.adform.com?v=2&a=1\"\r\n              }\r\n            },\r\n            {\r\n              \"Id\": 0000000,\r\n              \"ContentType\": \"AdTagContent\",\r\n              \"DestinationUrl\": {\r\n                \"Type\": \"Replace\",\r\n                \"Url\": \"http://www.adform.com?v=2&a=2\"\r\n              }\r\n            },\r\n            {\r\n              \"Id\": 0000000,\r\n              \"ContentType\": \"AdTagContent\",\r\n              \"DestinationUrl\": {\r\n                \"Type\": \"Replace\",\r\n                \"Url\": \"http://www.adform.com?v=2&a=3\"\r\n              }\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
-            },
-            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/create-tag"
-          },
-          "response": []
         }
       ]
     }
