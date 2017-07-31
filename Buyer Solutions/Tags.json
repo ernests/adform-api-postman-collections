@@ -138,184 +138,184 @@
             "description": "This method allows you to get AG Tags, filtered by such parameter keys:\n\n1. campaignId\n2. lineItemIds\n3. adType (banner, rotator, schedule, nestedRotator)\n4. adUuid\n5. active (true/false)\n6. paused (true/false)\n7. search\n8. sort (e.x.\"name asc\")\n9. limit\n10. offset"
           },
           "response": []
+        },
+        {
+          "_postman_id": "cbea2730-d1d7-9eb2-5d87-5ca981eed353",
+          "name": "Change Tag Activation Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ActivationStatus",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"active\": true\r\n}"
+            },
+            "description": "This method allows you to change tag activation status.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ActivationStatus\n(00000 - Tag uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "95eb52d3-accc-e0e8-d5be-6aa49ba96322",
+          "name": "Change Tag Pause Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/PauseStatus",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"paused\": true\r\n}"
+            },
+            "description": "This method allows you to change tag pause status.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/PauseStatus\n(00000 - Tag uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "01500c5b-48ce-6099-3d33-8483ab237932",
+          "name": "Change Tag Destination Url",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/DestinationUrl",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tagMember\": {\r\n    \"rotatorMemberId\": \"string\",\r\n    \"scheduleMemberId\": \"string\",\r\n    \"innerBannerId\": \"string\"\r\n  },\r\n  \"url\": \"www.adform.com\"\r\n}"
+            },
+            "description": "This method allows you to change tag destination url.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/DestinationUrl\n(00000 - Tag uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2440c7fe-af08-d217-2e4d-9af89c999215",
+          "name": "Delete Tag Destination Url",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/DestinationUrl",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"rotatorMemberId\": \"string\",\r\n  \"scheduleMemberId\": \"string\",\r\n  \"innerBannerId\": \"string\"\r\n}"
+            },
+            "description": "This method allows you to delete tag destination url.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/DestinationUrl\n(00000 - Tag uuid)"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "cbea2730-d1d7-9eb2-5d87-5ca981eed353",
-      "name": "Change Tag Activation Status",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ActivationStatus",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"active\": true\r\n}"
-        },
-        "description": "This method allows you to change tag activation status.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ActivationStatus\n(00000 - Tag uuid)"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "95eb52d3-accc-e0e8-d5be-6aa49ba96322",
-      "name": "Change Tag Pause Status",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/PauseStatus",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"paused\": true\r\n}"
-        },
-        "description": "This method allows you to change tag pause status.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/PauseStatus\n(00000 - Tag uuid)"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "01500c5b-48ce-6099-3d33-8483ab237932",
-      "name": "Change Tag Destination Url",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/DestinationUrl",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"tagMember\": {\r\n    \"rotatorMemberId\": \"string\",\r\n    \"scheduleMemberId\": \"string\",\r\n    \"innerBannerId\": \"string\"\r\n  },\r\n  \"url\": \"www.adform.com\"\r\n}"
-        },
-        "description": "This method allows you to change tag destination url.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/DestinationUrl\n(00000 - Tag uuid)"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "2440c7fe-af08-d217-2e4d-9af89c999215",
-      "name": "Delete Tag Destination Url",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/DestinationUrl",
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"rotatorMemberId\": \"string\",\r\n  \"scheduleMemberId\": \"string\",\r\n  \"innerBannerId\": \"string\"\r\n}"
-        },
-        "description": "This method allows you to delete tag destination url.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/DestinationUrl\n(00000 - Tag uuid)"
-      },
-      "response": []
     },
     {
       "_postman_id": "e4889885-449f-374d-f977-a656563a6aeb",
