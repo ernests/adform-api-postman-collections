@@ -807,32 +807,6 @@
             "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/get-destination-urls"
           },
           "response": []
-        },
-        {
-          "_postman_id": "5617b02a-91ba-2392-5d50-ac96d7ed1961",
-          "name": "Add Destination URL",
-          "request": {
-            "url": "https://api.adform.com/Services/Tag/DestinationUrls",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"TagDestinationUrls\": [\r\n    {\r\n      \"TagId\": 0000000,\r\n      \"Type\": \"Append\",\r\n      \"DestinationUrlType\": \"ScheduleMemberDestinationUrl\",\r\n      \"Url\": \"http://www.adform.com?v=1_updates\",\r\n      \"ScheduleMemberId\": 0000000,\r\n      \"RotatorMemberId\": null\r\n    },\r\n    {\r\n      \"TagId\": 0000000,\r\n      \"Type\": \"Replace\",\r\n      \"DestinationUrlType\": \"ScheduleMemberDestinationUrl\",\r\n      \"Url\": \"http://www.adform.com?v=2_updates\",\r\n      \"ScheduleMemberId\": 0000000,\r\n      \"RotatorMemberId\": null\r\n    }\r\n  ]\r\n}"
-            },
-            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/add-destination-urls"
-          },
-          "response": []
         }
       ]
     }
