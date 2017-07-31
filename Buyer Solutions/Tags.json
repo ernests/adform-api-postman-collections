@@ -740,32 +740,6 @@
             "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/create-tag"
           },
           "response": []
-        },
-        {
-          "_postman_id": "c420c99a-435f-abdb-e3b8-519c03514ccf",
-          "name": "Change Tag pause status",
-          "request": {
-            "url": "https://api.adform.com/Services/Tag/PauseStatus",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"TagId\": 0000000,\r\n    \"IsPaused\": true\r\n}"
-            },
-            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/change-tag-pause-status"
-          },
-          "response": []
         }
       ]
     }
