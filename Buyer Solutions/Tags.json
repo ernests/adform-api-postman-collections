@@ -740,6 +740,73 @@
             "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/create-tag"
           },
           "response": []
+        },
+        {
+          "_postman_id": "c420c99a-435f-abdb-e3b8-519c03514ccf",
+          "name": "Change Tag pause status",
+          "request": {
+            "url": "https://api.adform.com/Services/Tag/PauseStatus",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"TagId\": 0000000,\r\n    \"IsPaused\": true\r\n}"
+            },
+            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/change-tag-pause-status"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "091d4b4e-b1a2-036c-480c-2a8f4d3b69d9",
+          "name": "Get Destination URL",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/Services/Tag/DestinationUrls?TagIds={{tagID}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "Services",
+                "Tag",
+                "DestinationUrls"
+              ],
+              "query": [
+                {
+                  "key": "TagIds",
+                  "value": "{{tagID}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://api.adform.com/help/references/buyer-solutions/tag/management/get-destination-urls"
+          },
+          "response": []
         }
       ]
     }
