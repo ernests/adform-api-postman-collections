@@ -314,96 +314,96 @@
             "description": "This method allows you to delete tag destination url.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/DestinationUrl\n(00000 - Tag uuid)"
           },
           "response": []
+        },
+        {
+          "_postman_id": "e4889885-449f-374d-f977-a656563a6aeb",
+          "name": "Set Tag External Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ExternalScripts",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[ \r\n   { \r\n     \"source\": \"http://this-is-my-test-external-script.adform.com/\", \r\n     \"scriptPosition\": \"before\" \r\n   } \r\n ] "
+            },
+            "description": "This method allows you to set tag external scripts.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ExternalScripts\n(00000 - Tag uuid)"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f5cf7f8b-be34-3ff9-96d7-088ad2d9ecae",
+          "name": "Delete Tag External Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ExternalScripts",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"http://this-is-my-test-external-script.adform.com/\"]"
+            },
+            "description": "This method allows you to delete tag external scripts.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ExternalScripts\n(00000 - Tag uuid)"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "e4889885-449f-374d-f977-a656563a6aeb",
-      "name": "Set Tag External Scripts",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ExternalScripts",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "[ \r\n   { \r\n     \"source\": \"http://this-is-my-test-external-script.adform.com/\", \r\n     \"scriptPosition\": \"before\" \r\n   } \r\n ] "
-        },
-        "description": "This method allows you to set tag external scripts.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ExternalScripts\n(00000 - Tag uuid)"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "f5cf7f8b-be34-3ff9-96d7-088ad2d9ecae",
-      "name": "Delete Tag External Scripts",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Request header includes authentication Ticket\"] = \r",
-              "  request.headers.Ticket;\r",
-              "    \r",
-              "tests[\"Content-Type is application/json\"] =\r",
-              "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-              "\r",
-              "tests[\"Request was successful\"] = \r",
-              "  responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://api.adform.com/v1/buyer/ag/tags/00000/ExternalScripts",
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Ticket",
-            "value": "{{Ticket}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "[\"http://this-is-my-test-external-script.adform.com/\"]"
-        },
-        "description": "This method allows you to delete tag external scripts.\n\nYou need to parse Tag uuid on your request URL.\n\nEXAMPLE: /v1/buyer/ag/tags/00000/ExternalScripts\n(00000 - Tag uuid)"
-      },
-      "response": []
     },
     {
       "_postman_id": "79dd2d48-b32b-8e49-3242-ea134ad5584d",
