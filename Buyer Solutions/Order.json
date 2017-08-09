@@ -151,7 +151,30 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/buyer/orders?campaignId=742090",
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/orders?campaignId=00000",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "campaignId",
+                  "value": "00000",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
