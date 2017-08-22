@@ -696,45 +696,6 @@
           "response": []
         },
         {
-          "_postman_id": "74b39f2c-ff09-e31f-979a-02a565e2a425",
-          "name": "Upload Advertising Ids",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/dsp/v1/upload/advertisingids",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "5024D65F-EBBD-11FF-23AB-823FC255913A"
-            },
-            "description": "This method is for advertising Ids upload. Advertising Ids are read from the request body.\n\n\nIMPORTANT: Request body should be sent as plain text, advertising Ids (GUIDs) separated by new line."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d4a24e99-c5bd-9fa5-3262-0c51a1278927",
           "name": "Upload IP Ranges",
           "event": [
@@ -2443,6 +2404,45 @@
               "raw": "-8654654654654654654\r\n8798798798798798798\r\n44457"
             },
             "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "74b39f2c-ff09-e31f-979a-02a565e2a425",
+          "name": "Upload Advertising Ids",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/dsp/v1/upload/advertisingids",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "5024D65F-EBBD-11FF-23AB-823FC255913A"
+            },
+            "description": "This method is for advertising Ids upload. Advertising Ids are read from the request body.\n\n\nIMPORTANT: Request body should be sent as plain text, advertising Ids (GUIDs) separated by new line."
           },
           "response": []
         }
