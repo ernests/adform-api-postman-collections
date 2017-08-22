@@ -616,50 +616,6 @@
           "response": []
         },
         {
-          "_postman_id": "1519e317-1f74-70fb-d58a-ac3aa8c6f557",
-          "name": "DSP Forecasting",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/forecasting",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{  \n   \"LineItemType\": 1,\n   \"Id\":0,\n   \"AdvertiserId\":0000,\n   \"CampaignId\":11111,\n   \"DateFormat2\":\"MM/dd/yyyy\",\n   \"SchedulingType\":2,\n   \"SchedulerStartDate\":\"01/15/2017\",\n   \"SchedulerEndDate\":\"01/21/2017\",\n   \"Periods\":[  \n\n   ],\n   \"CappingSettings\":[  \n\n   ],\n   \"Budget\":10,\n   \"BudgetPacingType\":\"0\",\n   \"Inventories\":[  \n      {  \n         \"InventorySourceId\":1,\n         \"SourceId\":1,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":3,\n         \"SourceId\":3,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":6,\n         \"SourceId\":6,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":7,\n         \"SourceId\":7,\n         \"SourceType\":1\n      }\n   ],\n   \"CategoryType\":10,\n   \"IABCategories\":[1,2 \n\n   ],\n   \"IABCategoriesFilteringMethod\":1,\n   \"Targeting\":{  \n      \"Groups\":[  \n        \n      ],\n      \"SetupId\":279205,\n      \"EstimatedReach\":88622900\n   },\n   \"TimeZone\":\"(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb\"\n}"
-            },
-            "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "27d31048-03ab-417a-6f55-500f2d165136",
           "name": "Deals and Packages",
           "event": [
@@ -2452,7 +2408,52 @@
       "_postman_id": "f481e3b4-f646-7618-79c9-85b7f4a5688e",
       "name": "DSP Forecasting",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "1519e317-1f74-70fb-d58a-ac3aa8c6f557",
+          "name": "DSP Forecasting",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/forecasting",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \n   \"LineItemType\": 1,\n   \"Id\":0,\n   \"AdvertiserId\":0000,\n   \"CampaignId\":11111,\n   \"DateFormat2\":\"MM/dd/yyyy\",\n   \"SchedulingType\":2,\n   \"SchedulerStartDate\":\"01/15/2017\",\n   \"SchedulerEndDate\":\"01/21/2017\",\n   \"Periods\":[  \n\n   ],\n   \"CappingSettings\":[  \n\n   ],\n   \"Budget\":10,\n   \"BudgetPacingType\":\"0\",\n   \"Inventories\":[  \n      {  \n         \"InventorySourceId\":1,\n         \"SourceId\":1,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":3,\n         \"SourceId\":3,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":6,\n         \"SourceId\":6,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":7,\n         \"SourceId\":7,\n         \"SourceType\":1\n      }\n   ],\n   \"CategoryType\":10,\n   \"IABCategories\":[1,2 \n\n   ],\n   \"IABCategoriesFilteringMethod\":1,\n   \"Targeting\":{  \n      \"Groups\":[  \n        \n      ],\n      \"SetupId\":279205,\n      \"EstimatedReach\":88622900\n   },\n   \"TimeZone\":\"(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb\"\n}"
+            },
+            "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
