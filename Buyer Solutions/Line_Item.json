@@ -720,6 +720,32 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "6043627a-64ee-aa99-fe64-b4b82f2662b1",
+          "name": "Update line item inventories",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/inventories",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"id\": 1,\r\n    \"buyingType\": \"OpenExchange\",\r\n    \"bidMultiplier\": 1.5,\r\n    \"deals\": [\r\n      {\r\n        \"id\": \"DealId\",\r\n        \"bidPrice\": 3.5\r\n      }\r\n    ],\r\n    \"packages\": [\r\n      {\r\n        \"id\": 1,\r\n        \"bidMultiplier\": 1.5\r\n      }\r\n    ]\r\n  }\r\n]"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/rtb/lineitems#!/LineItems/LineItems_PutInventories"
+          },
+          "response": []
         }
       ]
     },
