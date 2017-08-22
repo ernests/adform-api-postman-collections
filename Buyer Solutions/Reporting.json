@@ -787,6 +787,27 @@
             "description": "https://api.adform.com/v1/help/buyer/stats#!/Data/Data_Accept"
           },
           "response": []
+        },
+        {
+          "_postman_id": "35205423-31b1-32e3-d0b7-7e51b80b63b1",
+          "name": "Get data",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/stats/data/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Beaere {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dimensions\": [\r\n    \"date\",\r\n    \"client\",\r\n    \"campaign\"\r\n  ],\r\n  \"metrics\": [\r\n    {\r\n      \"metric\": \"impressions\",\r\n      \"specs\": {\r\n        \"adUniqueness\": \"campaignUnique\"\r\n      }\r\n    },\r\n    {\r\n      \"metric\": \"clicks\",\r\n      \"specs\": {\r\n        \"adUniqueness\": \"campaignUnique\"\r\n      }\r\n    }\r\n  ],\r\n  \"filter\": {\r\n    \"date\": {\r\n      \"from\": \"2017-08-21T06:36:38.5181689Z\",\r\n      \"to\": \"2017-08-21T06:36:38.5181689Z\"\r\n    }\r\n  },\r\n  \"paging\": {\r\n    \"offset\": 0,\r\n    \"limit\": 3000\r\n  },\r\n  \"includeRowCount\": true,\r\n  \"includeTotals\": true,\r\n  \"sort\": [\r\n    {\r\n      \"dimension\": \"date\",\r\n      \"direction\": \"desc\"\r\n    },\r\n    {\r\n      \"metric\": \"impressions\",\r\n      \"specs\": {\r\n        \"adUniqueness\": \"campaignUnique\"\r\n      },\r\n      \"direction\": \"asc\"\r\n    }\r\n  ]\r\n}"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/stats#!/Data/Data_Get"
+          },
+          "response": []
         }
       ]
     }
