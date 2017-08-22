@@ -696,50 +696,6 @@
           "response": []
         },
         {
-          "_postman_id": "d4a24e99-c5bd-9fa5-3262-0c51a1278927",
-          "name": "Upload IP Ranges",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/dsp/v1/upload/ipranges",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "2.125.125.3,8.144.144.9"
-            },
-            "description": "This method is for IP ranges upload. IP ranges are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, IP ranges separated by new line."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "0a14f8d9-f2ac-c10c-5a35-d87a99a98a80",
           "name": "Trading Desk Fee Change Log",
           "event": [
@@ -2443,6 +2399,50 @@
               "raw": "5024D65F-EBBD-11FF-23AB-823FC255913A"
             },
             "description": "This method is for advertising Ids upload. Advertising Ids are read from the request body.\n\n\nIMPORTANT: Request body should be sent as plain text, advertising Ids (GUIDs) separated by new line."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d4a24e99-c5bd-9fa5-3262-0c51a1278927",
+          "name": "Upload IP Ranges",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/dsp/v1/upload/ipranges",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "2.125.125.3,8.144.144.9"
+            },
+            "description": "This method is for IP ranges upload. IP ranges are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, IP ranges separated by new line."
           },
           "response": []
         }
