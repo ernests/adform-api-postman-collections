@@ -808,6 +808,27 @@
             "description": "https://api.adform.com/v1/help/buyer/stats#!/Data/Data_Get"
           },
           "response": []
+        },
+        {
+          "_postman_id": "91634630-51c2-4a49-f9ee-7738d78ff7cb",
+          "name": "Delete data",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/stats/data/{{id}}",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Beaere {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "https://api.adform.com/v1/help/buyer/stats#!/Data/Data_Delete"
+          },
+          "response": []
         }
       ]
     }
