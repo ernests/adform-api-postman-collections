@@ -756,6 +756,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "2662093a-f3b6-38cb-dc40-59b652d8108f",
+      "name": "Stats (Async)",
+      "description": "",
+      "item": []
     }
   ]
 }
