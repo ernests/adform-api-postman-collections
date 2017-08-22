@@ -746,6 +746,27 @@
             "description": "https://api.adform.com/v1/help/buyer/rtb/lineitems#!/LineItems/LineItems_PutInventories"
           },
           "response": []
+        },
+        {
+          "_postman_id": "85869e81-c17d-9dee-3153-fa426f4335b0",
+          "name": "Get line item inventories",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/inventories",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"id\": 1,\r\n    \"buyingType\": \"OpenExchange\",\r\n    \"bidMultiplier\": 1.5,\r\n    \"deals\": [\r\n      {\r\n        \"id\": \"DealId\",\r\n        \"bidPrice\": 3.5\r\n      }\r\n    ],\r\n    \"packages\": [\r\n      {\r\n        \"id\": 1,\r\n        \"bidMultiplier\": 1.5\r\n      }\r\n    ]\r\n  }\r\n]"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/rtb/lineitems#!/LineItems/LineItems_GetInventories"
+          },
+          "response": []
         }
       ]
     },
