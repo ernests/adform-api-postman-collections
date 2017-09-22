@@ -196,7 +196,32 @@
           "_postman_id": "8e28d12f-68a1-67bc-11dd-bb9df9070ea1",
           "name": "Upload cookies",
           "request": {
-            "url": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/cookies",
+            "url": {
+              "raw": "https://api.adform.com/v1/dmp/dataproviders/{{dataProviderId}}/cookies?userIdentityTypeId=1",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "dmp",
+                "dataproviders",
+                "{{dataProviderId}}",
+                "cookies"
+              ],
+              "query": [
+                {
+                  "key": "userIdentityTypeId",
+                  "value": "1",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "POST",
             "header": [
               {
