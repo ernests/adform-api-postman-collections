@@ -239,7 +239,7 @@
               "mode": "raw",
               "raw": "{AdformUUID}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}\n{AdvertiserId}{tab_separator}{SegmentRefID1},{SegmentRefID2},{SegmentRefIDN}"
             },
-            "description": ""
+            "description": "userIdentityTypeId values are: 1 - Cookie ID 2 - External Cookie ID 3 - Advertising ID"
           },
           "response": []
         },
