@@ -402,12 +402,36 @@
             }
           ],
           "request": {
-            "url": "https://api.adform.com/v1/buyer/rtb/lineitems?campaignIds=00000",
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/rtb/lineitems?campaignIds=00000",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "rtb",
+                "lineitems"
+              ],
+              "query": [
+                {
+                  "key": "campaignIds",
+                  "value": "00000",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
@@ -544,42 +568,6 @@
           "response": []
         },
         {
-          "_postman_id": "def694ea-d590-2d2b-32a2-d3845e4e9c34",
-          "name": "Delete/Deactivate Line item OLD",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/Services/RTBActivity/v20141111/Activities?campaignId=00000&ActivityId=11111",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method deletes a specified RTB Line Item.\n\nYou need to parse CampaignId and ActivityId on your request URL.\n\nEXAMPLE: /Activities?campaignId=00000&ActivityId=11111\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve ActivityId \"GET RTB Line Items\" method."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "fc341db7-877f-76f6-10d4-3317736840b0",
           "name": "Inventory Sources",
           "event": [
@@ -612,50 +600,6 @@
               "raw": ""
             },
             "description": "This method returns a list of available inventory sources.\n\nYou need to parse CampaignId on your request URL.\n\nEXAMPLE: /Activities/InventorySources?campaignId=11111\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "1519e317-1f74-70fb-d58a-ac3aa8c6f557",
-          "name": "DSP Forecasting",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/forecasting",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{  \n   \"LineItemType\": 1,\n   \"Id\":0,\n   \"AdvertiserId\":0000,\n   \"CampaignId\":11111,\n   \"DateFormat2\":\"MM/dd/yyyy\",\n   \"SchedulingType\":2,\n   \"SchedulerStartDate\":\"01/15/2017\",\n   \"SchedulerEndDate\":\"01/21/2017\",\n   \"Periods\":[  \n\n   ],\n   \"CappingSettings\":[  \n\n   ],\n   \"Budget\":10,\n   \"BudgetPacingType\":\"0\",\n   \"Inventories\":[  \n      {  \n         \"InventorySourceId\":1,\n         \"SourceId\":1,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":3,\n         \"SourceId\":3,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":6,\n         \"SourceId\":6,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":7,\n         \"SourceId\":7,\n         \"SourceType\":1\n      }\n   ],\n   \"CategoryType\":10,\n   \"IABCategories\":[1,2 \n\n   ],\n   \"IABCategoriesFilteringMethod\":1,\n   \"Targeting\":{  \n      \"Groups\":[  \n        \n      ],\n      \"SetupId\":279205,\n      \"EstimatedReach\":88622900\n   },\n   \"TimeZone\":\"(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb\"\n}"
-            },
-            "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
           },
           "response": []
         },
@@ -798,6 +742,53 @@
               "raw": "true"
             },
             "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6043627a-64ee-aa99-fe64-b4b82f2662b1",
+          "name": "Update line item inventories",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/inventories",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"id\": 1,\r\n    \"buyingType\": \"OpenExchange\",\r\n    \"bidMultiplier\": 1.5,\r\n    \"deals\": [\r\n      {\r\n        \"id\": \"DealId\",\r\n        \"bidPrice\": 3.5\r\n      }\r\n    ],\r\n    \"packages\": [\r\n      {\r\n        \"id\": 1,\r\n        \"bidMultiplier\": 1.5\r\n      }\r\n    ]\r\n  }\r\n]"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/rtb/lineitems#!/LineItems/LineItems_PutInventories"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "85869e81-c17d-9dee-3153-fa426f4335b0",
+          "name": "Get line item inventories",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/{{lineItemId}}/inventories",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"id\": 1,\r\n    \"buyingType\": \"OpenExchange\",\r\n    \"bidMultiplier\": 1.5,\r\n    \"deals\": [\r\n      {\r\n        \"id\": \"DealId\",\r\n        \"bidPrice\": 3.5\r\n      }\r\n    ],\r\n    \"packages\": [\r\n      {\r\n        \"id\": 1,\r\n        \"bidMultiplier\": 1.5\r\n      }\r\n    ]\r\n  }\r\n]"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/rtb/lineitems#!/LineItems/LineItems_GetInventories"
           },
           "response": []
         }
@@ -2443,6 +2434,57 @@
               "raw": "2.125.125.3,8.144.144.9"
             },
             "description": "This method is for IP ranges upload. IP ranges are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, IP ranges separated by new line."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f481e3b4-f646-7618-79c9-85b7f4a5688e",
+      "name": "DSP Forecasting",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "1519e317-1f74-70fb-d58a-ac3aa8c6f557",
+          "name": "DSP Forecasting",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/rtb/lineitems/forecasting",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \n   \"LineItemType\": 1,\n   \"Id\":0,\n   \"AdvertiserId\":0000,\n   \"CampaignId\":11111,\n   \"DateFormat2\":\"MM/dd/yyyy\",\n   \"SchedulingType\":2,\n   \"SchedulerStartDate\":\"01/15/2017\",\n   \"SchedulerEndDate\":\"01/21/2017\",\n   \"Periods\":[  \n\n   ],\n   \"CappingSettings\":[  \n\n   ],\n   \"Budget\":10,\n   \"BudgetPacingType\":\"0\",\n   \"Inventories\":[  \n      {  \n         \"InventorySourceId\":1,\n         \"SourceId\":1,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":3,\n         \"SourceId\":3,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":6,\n         \"SourceId\":6,\n         \"SourceType\":1\n      },\n      {  \n         \"InventorySourceId\":7,\n         \"SourceId\":7,\n         \"SourceType\":1\n      }\n   ],\n   \"CategoryType\":10,\n   \"IABCategories\":[1,2 \n\n   ],\n   \"IABCategoriesFilteringMethod\":1,\n   \"Targeting\":{  \n      \"Groups\":[  \n        \n      ],\n      \"SetupId\":279205,\n      \"EstimatedReach\":88622900\n   },\n   \"TimeZone\":\"(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb\"\n}"
+            },
+            "description": "This method is for cookie upload. Cookies are read from the request body.\n\nIMPORTANT: Request body should be sent as plain text, cookies separated by new line."
           },
           "response": []
         }
