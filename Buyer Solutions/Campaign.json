@@ -1154,7 +1154,39 @@
       "_postman_id": "63c7b8ed-a766-be5e-423a-f083e6dc2d6e",
       "name": "Management",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "a2158ee6-f29e-5dd4-975c-25a156870cee",
+          "name": "Creates a new campaign",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/campaigns",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "CorrelationId",
+                "value": "{{CorrelationId}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "new campaign parameters"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "5db3c59d-377c-23a6-5b56-70dea6a3ed3e",
