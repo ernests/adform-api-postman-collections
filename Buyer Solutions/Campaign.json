@@ -1352,8 +1352,9 @@
               "query": [],
               "variable": [
                 {
-                  "value": "{{id}}",
-                  "id": "id"
+                  "description": "",
+                  "key": "id",
+                  "value": "{{id}}"
                 }
               ]
             },
@@ -1370,14 +1371,14 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "New status as json string. Possible values - \"Active\" or \"Inactive\""
+              "raw": "\"Active\" or \"Inactive\""
             },
             "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_status"
           },
