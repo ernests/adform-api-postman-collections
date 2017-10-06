@@ -1364,30 +1364,7 @@
           "_postman_id": "daf237df-3d31-bf9a-a1c6-513124b1c06c",
           "name": "Returns campaign's Brand Safety settings. Requires Brand Safety to be enabled for user's agency.",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/brandSafety",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "brandSafety"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/brandSafety",
             "method": "GET",
             "header": [
               {
@@ -1401,8 +1378,8 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
