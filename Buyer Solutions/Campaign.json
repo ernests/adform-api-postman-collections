@@ -1156,46 +1156,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "42943401-bd50-c696-a914-5f1529633518",
-          "name": "Campaigns (old version)",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 200;\r",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/Services/Campaign/Campaigns",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Campaign\": {\r\n    \"AdvertiserId\": 00000,\r\n    \"Name\": \"Name\",\r\n    \"StartDate\": \"2016-06-16T00:00:00\",\r\n    \"EndDate\": \"2018-10-22T23:59:00\",\r\n    \"ResponsibleUserId\": 11111,\r\n    \"CoResponsibleUserId\": \"11111\",\r\n    \"Type\": \"Display\"\r\n  }\r\n}"
-            },
-            "description": "This method returns a list of all campaigns which are under the same client as you have logged in.\n\nYou can filter campaigns by parsing these parametes on the request URL (variable types are specified in brackets):\n\n1. Status (byte; 1 - running, 2 - pending, 3 - finished)\n2. AdvertiserId\n3. Type (byte; 1 - display, 2 - email, 3 affiliate, 4 - mobile, 5 - social media, 6 - mixed, 7 - non campaign, 8 - Google, 9 - Yahoo, 10 - search/non api, 11 - search/all, 12 - realtimebidding, 13 - Microsoft)\n4. DateFrom (dateTime)\n5. DateTo (dateTime)\n6. State (byte; 1- active, 2 inactive, 3 - deleted)\n7. ... (find more on http://api.adform.com/)\n\nEXAMPLES: \n?State=1\n?DateFrom=2010-10-22T23:59:00\n\nFYI: You can use \"Params\" button for easier parameter management."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "1aa855d7-b30d-6699-a408-fdbe3817327d",
           "name": "Campaigns",
           "event": [
@@ -1532,7 +1492,48 @@
       "_postman_id": "768930de-5f74-fd01-666c-d6cf22e7c3fb",
       "name": "(Legacy)",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "42943401-bd50-c696-a914-5f1529633518",
+          "name": "Campaigns (old version)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 200;\r",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Campaign/Campaigns",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Campaign\": {\r\n    \"AdvertiserId\": 00000,\r\n    \"Name\": \"Name\",\r\n    \"StartDate\": \"2016-06-16T00:00:00\",\r\n    \"EndDate\": \"2018-10-22T23:59:00\",\r\n    \"ResponsibleUserId\": 11111,\r\n    \"CoResponsibleUserId\": \"11111\",\r\n    \"Type\": \"Display\"\r\n  }\r\n}"
+            },
+            "description": "This method returns a list of all campaigns which are under the same client as you have logged in.\n\nYou can filter campaigns by parsing these parametes on the request URL (variable types are specified in brackets):\n\n1. Status (byte; 1 - running, 2 - pending, 3 - finished)\n2. AdvertiserId\n3. Type (byte; 1 - display, 2 - email, 3 affiliate, 4 - mobile, 5 - social media, 6 - mixed, 7 - non campaign, 8 - Google, 9 - Yahoo, 10 - search/non api, 11 - search/all, 12 - realtimebidding, 13 - Microsoft)\n4. DateFrom (dateTime)\n5. DateTo (dateTime)\n6. State (byte; 1- active, 2 inactive, 3 - deleted)\n7. ... (find more on http://api.adform.com/)\n\nEXAMPLES: \n?State=1\n?DateFrom=2010-10-22T23:59:00\n\nFYI: You can use \"Params\" button for easier parameter management."
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
