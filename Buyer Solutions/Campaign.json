@@ -812,52 +812,7 @@
       "_postman_id": "7767b115-aa1c-8ee7-9ff9-6f734ef33eb6",
       "name": "Labels",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "79da0f20-7d86-9aac-63a3-120f5e45af34",
-          "name": "Add Campaign Label",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/Services/Label/CampaignLabels",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"CampaignId\" : 000000,\r\n  \"CampaignLabels\": [\r\n    {\r\n      \"Id\": 9121\r\n    }\r\n  ]\r\n}"
-            },
-            "description": "This method adds a new label for the specified campaign label group.\n\nLabelId is required in the request body that you are parsing.\n\nEXAMPLE: \"Id\": 00000\n\nYou can retrieve LabelId using \"GET Labels\" method."
-          },
-          "response": []
-        }
-      ]
+      "item": []
     },
     {
       "_postman_id": "bfa58c57-6272-e4da-e93d-5b5960940323",
@@ -2084,6 +2039,50 @@
               "raw": ""
             },
             "description": "This method returns a list of all label groups, filtered by specified CampaignId. \n\nCampaignId parameter is required in your request url. \n\nEXAMPLE: ?CampaignId=00000\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "79da0f20-7d86-9aac-63a3-120f5e45af34",
+          "name": "Add Campaign Label",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "  request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Label/CampaignLabels",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"CampaignId\" : 000000,\r\n  \"CampaignLabels\": [\r\n    {\r\n      \"Id\": 9121\r\n    }\r\n  ]\r\n}"
+            },
+            "description": "This method adds a new label for the specified campaign label group.\n\nLabelId is required in the request body that you are parsing.\n\nEXAMPLE: \"Id\": 00000\n\nYou can retrieve LabelId using \"GET Labels\" method."
           },
           "response": []
         }
