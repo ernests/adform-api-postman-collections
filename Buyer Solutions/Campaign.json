@@ -863,60 +863,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "75a1de74-ae6a-29b8-0514-d947c19a5501",
-          "name": "Saves campaign's labels",
-          "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/labels",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "labels"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "List of label groups with campaign's labels. Each group can have only one selected label."
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
@@ -1519,6 +1465,60 @@
             "body": {
               "mode": "raw",
               "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "75a1de74-ae6a-29b8-0514-d947c19a5501",
+          "name": "Saves campaign's labels",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/labels",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "campaigns",
+                ":id",
+                "labels"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "value": "{{id}}",
+                  "id": "id"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "CorrelationId",
+                "value": "{{CorrelationId}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "List of label groups with campaign's labels. Each group can have only one selected label."
             },
             "description": ""
           },
