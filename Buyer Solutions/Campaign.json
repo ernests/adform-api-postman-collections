@@ -1156,6 +1156,43 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "1aa855d7-b30d-6699-a408-fdbe3817327d",
+          "name": "Campaigns",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 200;\r",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/campaigns",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns a list of campaigns that the user has access to at the agency level. When no filter parameters are specified, list contains of 100 active campaigns.\n\nMore information about possible query parameters: \nhttp://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/Campaigns_GetList"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "5dd023fa-b010-3175-8285-184c34fe5ab3",
           "name": "Tracking Campaigns",
           "event": [
@@ -1493,43 +1530,6 @@
               "raw": "{\r\n  \"Campaign\": {\r\n    \"AdvertiserId\": 00000,\r\n    \"Name\": \"Name\",\r\n    \"StartDate\": \"2016-06-16T00:00:00\",\r\n    \"EndDate\": \"2018-10-22T23:59:00\",\r\n    \"ResponsibleUserId\": 11111,\r\n    \"CoResponsibleUserId\": \"11111\",\r\n    \"Type\": \"Display\"\r\n  }\r\n}"
             },
             "description": "This method returns a list of all campaigns which are under the same client as you have logged in.\n\nYou can filter campaigns by parsing these parametes on the request URL (variable types are specified in brackets):\n\n1. Status (byte; 1 - running, 2 - pending, 3 - finished)\n2. AdvertiserId\n3. Type (byte; 1 - display, 2 - email, 3 affiliate, 4 - mobile, 5 - social media, 6 - mixed, 7 - non campaign, 8 - Google, 9 - Yahoo, 10 - search/non api, 11 - search/all, 12 - realtimebidding, 13 - Microsoft)\n4. DateFrom (dateTime)\n5. DateTo (dateTime)\n6. State (byte; 1- active, 2 inactive, 3 - deleted)\n7. ... (find more on http://api.adform.com/)\n\nEXAMPLES: \n?State=1\n?DateFrom=2010-10-22T23:59:00\n\nFYI: You can use \"Params\" button for easier parameter management."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "1aa855d7-b30d-6699-a408-fdbe3817327d",
-          "name": "Campaigns",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 200;\r",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method returns a list of campaigns that the user has access to at the agency level. When no filter parameters are specified, list contains of 100 active campaigns.\n\nMore information about possible query parameters: \nhttp://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/Campaigns_GetList"
           },
           "response": []
         }
