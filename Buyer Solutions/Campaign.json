@@ -1235,7 +1235,7 @@
               }
             ],
             "body": {},
-            "description": ""
+            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/get_v1_buyer_campaigns_id"
           },
           "response": []
         },
