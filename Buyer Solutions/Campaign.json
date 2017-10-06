@@ -1637,42 +1637,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "fda0ec9d-fbbd-3395-fa24-12bb7e21997d",
-          "name": "Campaign RTB Settings",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "  request.headers.Ticket;\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "  responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns/00000/rtbsettings",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "This method returns campaign RTB settings. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "806d2f32-2855-0874-a714-7665b3ad74e2",
           "name": "Campaign RTB Settings",
           "event": [
@@ -2084,6 +2048,42 @@
               "raw": "{\r\n  \"CampaignId\" : 000000,\r\n  \"CampaignLabels\": [\r\n    {\r\n      \"Id\": 9121\r\n    }\r\n  ]\r\n}"
             },
             "description": "This method adds a new label for the specified campaign label group.\n\nLabelId is required in the request body that you are parsing.\n\nEXAMPLE: \"Id\": 00000\n\nYou can retrieve LabelId using \"GET Labels\" method."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fda0ec9d-fbbd-3395-fa24-12bb7e21997d",
+          "name": "Campaign RTB Settings",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "  request.headers.Ticket;\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "  responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/campaigns/00000/rtbsettings",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "This method returns campaign RTB settings. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
           },
           "response": []
         }
