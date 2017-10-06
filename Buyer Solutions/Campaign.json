@@ -1212,6 +1212,37 @@
           "response": []
         },
         {
+          "_postman_id": "83713d67-fbe5-7a47-96f4-ca80abf4acb0",
+          "name": "Returns all campaigns",
+          "request": {
+            "url": "https://api.adform.com/v1/buyer/campaigns",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"advertiserId\": 64,\r\n  \"name\": \"Some Campaign\",\r\n  \"budget\": \"1.32\",\r\n  \"currency\": \"EUR\",\r\n  \"startDate\": \"2017-01-01T00:00:00+02:00\",\r\n  \"endDate\": \"2020-01-01T00:00:00+02:00\",\r\n  \"subType\": \"Display\",\r\n  \"placementViewType\": \"Direct\",\r\n  \"managerId\": 12240,\r\n  \"coManagerId\": 12240,\r\n  \"trafficking\": \"Adform\",\r\n  \"supportPackage\": \"InHouse\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"comment\": \"some comment\",\r\n  \"purchaseOrderNumber\": \"12345\",\r\n  \"trackingEnabled\": true,\r\n  \"viewThroughTrackingEnabled\": true,\r\n  \"conversionAttributionPriority\": \"Low\",\r\n  \"crossDeviceTargetingEnabled\": true,\r\n  \"commentForReporting\": \"some really large comment\",\r\n  \"cookieLifeTime\": {\r\n    \"viewHours\": 168,\r\n    \"clickHours\": 672,\r\n    \"recentViewSeconds\": 30,\r\n    \"recentClickSeconds\": 30\r\n  },\r\n  \"visibility\": {\r\n    \"firstLevelTime\": 1,\r\n    \"firstLevelArea\": 50,\r\n    \"secondLevelEnabled\": false,\r\n    \"secondLevelTime\": 1,\r\n    \"secondLevelArea\": 50,\r\n    \"thirdLevelEnabled\": false,\r\n    \"thirdLevelTime\": 1,\r\n    \"thirdLevelArea\": 50\r\n  },\r\n  \"tracking\": {\r\n    \"enabled\": false,\r\n    \"viewThroughEnabled\": false,\r\n    \"conversionAttributionPriority\": \"Low\"\r\n  },\r\n  \"adServing\": {\r\n    \"method\": \"Impressions\",\r\n    \"level\": \"All\"\r\n  },\r\n  \"marathon\": {\r\n    \"orderNumber\": \"valid order number\",\r\n    \"budgetNumber\": \"valid budget number\"\r\n  }\r\n}\r\n"
+            },
+            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/post_v1_buyer_campaigns"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "05e5e2a5-ecf6-107e-4e2e-46cdb7763975",
           "name": "Returns details of a single campaign",
           "request": {
@@ -1499,37 +1530,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "83713d67-fbe5-7a47-96f4-ca80abf4acb0",
-          "name": "Creates a new campaign copy",
-          "request": {
-            "url": "https://api.adform.com/v1/buyer/campaigns",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"advertiserId\": 64,\r\n  \"name\": \"Some Campaign\",\r\n  \"budget\": \"1.32\",\r\n  \"currency\": \"EUR\",\r\n  \"startDate\": \"2017-01-01T00:00:00+02:00\",\r\n  \"endDate\": \"2020-01-01T00:00:00+02:00\",\r\n  \"subType\": \"Display\",\r\n  \"placementViewType\": \"Direct\",\r\n  \"managerId\": 12240,\r\n  \"coManagerId\": 12240,\r\n  \"trafficking\": \"Adform\",\r\n  \"supportPackage\": \"InHouse\",\r\n  \"timeZone\": \"Europe/Berlin\",\r\n  \"comment\": \"some comment\",\r\n  \"purchaseOrderNumber\": \"12345\",\r\n  \"trackingEnabled\": true,\r\n  \"viewThroughTrackingEnabled\": true,\r\n  \"conversionAttributionPriority\": \"Low\",\r\n  \"crossDeviceTargetingEnabled\": true,\r\n  \"commentForReporting\": \"some really large comment\",\r\n  \"cookieLifeTime\": {\r\n    \"viewHours\": 168,\r\n    \"clickHours\": 672,\r\n    \"recentViewSeconds\": 30,\r\n    \"recentClickSeconds\": 30\r\n  },\r\n  \"visibility\": {\r\n    \"firstLevelTime\": 1,\r\n    \"firstLevelArea\": 50,\r\n    \"secondLevelEnabled\": false,\r\n    \"secondLevelTime\": 1,\r\n    \"secondLevelArea\": 50,\r\n    \"thirdLevelEnabled\": false,\r\n    \"thirdLevelTime\": 1,\r\n    \"thirdLevelArea\": 50\r\n  },\r\n  \"tracking\": {\r\n    \"enabled\": false,\r\n    \"viewThroughEnabled\": false,\r\n    \"conversionAttributionPriority\": \"Low\"\r\n  },\r\n  \"adServing\": {\r\n    \"method\": \"Impressions\",\r\n    \"level\": \"All\"\r\n  },\r\n  \"marathon\": {\r\n    \"orderNumber\": \"valid order number\",\r\n    \"budgetNumber\": \"valid budget number\"\r\n  }\r\n}\r\n"
-            },
-            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/post_v1_buyer_campaigns"
           },
           "response": []
         }
