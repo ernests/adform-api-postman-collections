@@ -845,30 +845,7 @@
           "_postman_id": "75a1de74-ae6a-29b8-0514-d947c19a5501",
           "name": "Saves campaign's labels",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/labels",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "labels"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/labels",
             "method": "PUT",
             "header": [
               {
@@ -882,8 +859,8 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
