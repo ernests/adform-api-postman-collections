@@ -1420,57 +1420,6 @@
           "response": []
         },
         {
-          "_postman_id": "67b0cb77-e848-2e76-83e5-9d6dc0191ba8",
-          "name": "Returns campaign's rtb settings.",
-          "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/rtbSettings",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "rtbSettings"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "e961a87d-cb8c-6a3b-b940-9eac8a32df01",
           "name": "Saves campaign's rtb settings.",
           "request": {
@@ -1677,6 +1626,57 @@
               "raw": "{\r\n  \"budget\": {\r\n    \"cost\": {\r\n      \"budget\": 123,\r\n      \"periodType\": \"Total\",\r\n      \"pacingType\": \"Evenly\"\r\n    }\r\n  },\r\n  \"capping\": [\r\n    {\r\n      \"type\": \"Accumulated\",\r\n      \"period\": {\r\n        \"type\": \"Days\",\r\n        \"duration\": 5\r\n      },\r\n      \"viewability\": {\r\n        \"type\": \"Time\",\r\n        \"duration\": 2000\r\n      }\r\n    },\r\n    {\r\n      \"type\": \"Frequency\",\r\n      \"impressions\": 10,\r\n      \"period\": {\r\n        \"type\": \"Campaign\"\r\n      },\r\n      \"viewability\": {\r\n        \"type\": \"BrandExposure\",\r\n        \"duration\": 5000\r\n      }\r\n    }\r\n  ]\r\n}"
             },
             "description": "This method updates campaign RTB settings such as budget and capping. \n\nCampaignId is required in your request url.\n\nEXAMPLE: v1/campaigns/00000/rtbsettings\n(00000 - CampaignId)\n\nYou can retrieve CampaignId using \"Get Campaigns\" method or using Dictionaries."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "67b0cb77-e848-2e76-83e5-9d6dc0191ba8",
+          "name": "Returns campaign's rtb settings.",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/rtbSettings",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "campaigns",
+                ":id",
+                "rtbSettings"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "value": "{{id}}",
+                  "id": "id"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "CorrelationId",
+                "value": "{{CorrelationId}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
           },
           "response": []
         }
