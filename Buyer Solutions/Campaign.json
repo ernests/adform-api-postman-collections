@@ -1156,50 +1156,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "98cfcce7-298d-b382-bfd2-232495579967",
-          "name": "Update Campaign",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/Services/Campaign/Campaigns",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"Campaign\": {\r\n      \"Id\": 864875,\r\n      \"AdvertiserId\": 135662,\r\n      \"Code\": \"prim-it-0191\",\r\n      \"Name\": \"Sorgenia\",\r\n      \"StartDate\": \"2017-03-28T00:00:00\",\r\n      \"EndDate\": \"2017-04-30T23:59:00\",\r\n      \"ResponsibleUserId\": 13270,\r\n      \"CoResponsibleUserId\": 13270,\r\n      \"Type\": \"Rtb\",\r\n      \"Status\": \"Active\",\r\n      \"Comment\": \"\",\r\n      \"CategoryId\": null,\r\n      \"Currency\": \"EUR\",\r\n      \"CommentForReporting\": \"\"\r\n  }\r\n}"
-            },
-            "description": "This method updates an existing advertising campaign which is identified by CampaignId.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve UserId using \"Get Users\" method.\n\nYou have to provide all settings of campaign, even the ones that are not being changed."
-          },
-          "response": []
-        },
-        {
           "_postman_id": "6287e6da-61e2-908f-d297-45ff741e6695",
           "name": "Enabled Features",
           "event": [
@@ -1530,6 +1486,50 @@
               "raw": ""
             },
             "description": "This method returns a list of Advertiser's tracking campaigns.\n\nAdvertiser ID parameter is required in your request url. \n\nEXAMPLE: ?advertiserId=00000\n\nYou can retrieve Advertiser ID using \"GET Advertisers\" method.\n\nFYI: You can use \"Params\" button for easier parameter management."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "98cfcce7-298d-b382-bfd2-232495579967",
+          "name": "Update Campaign",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/Services/Campaign/Campaigns",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Campaign\": {\r\n      \"Id\": 864875,\r\n      \"AdvertiserId\": 135662,\r\n      \"Code\": \"prim-it-0191\",\r\n      \"Name\": \"Sorgenia\",\r\n      \"StartDate\": \"2017-03-28T00:00:00\",\r\n      \"EndDate\": \"2017-04-30T23:59:00\",\r\n      \"ResponsibleUserId\": 13270,\r\n      \"CoResponsibleUserId\": 13270,\r\n      \"Type\": \"Rtb\",\r\n      \"Status\": \"Active\",\r\n      \"Comment\": \"\",\r\n      \"CategoryId\": null,\r\n      \"Currency\": \"EUR\",\r\n      \"CommentForReporting\": \"\"\r\n  }\r\n}"
+            },
+            "description": "This method updates an existing advertising campaign which is identified by CampaignId.\n\nYou can retrieve CampaignId using \"GET Campaigns\" method.\n\nYou can retrieve AdvertiserId using \"GET Advertisers\" method.\n\nYou can retrieve UserId using \"Get Users\" method.\n\nYou have to provide all settings of campaign, even the ones that are not being changed."
           },
           "response": []
         }
