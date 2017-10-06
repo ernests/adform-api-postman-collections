@@ -1139,7 +1139,7 @@
           "name": "Returns all campaigns",
           "request": {
             "url": "https://api.adform.com/v1/buyer/campaigns",
-            "method": "POST",
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
