@@ -1235,6 +1235,59 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "08b78903-d318-4438-cc71-5e30327f1acf",
+          "name": "Updates a single campaign general details",
+          "request": {
+            "url": {
+              "raw": "https://api.adform.com/v1/buyer/campaigns/:id",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "adform",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "buyer",
+                "campaigns",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "value": "{{id}}",
+                  "id": "id"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "CorrelationId",
+                "value": "{{CorrelationId}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "campaign parameters"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
