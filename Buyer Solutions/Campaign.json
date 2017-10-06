@@ -1333,31 +1333,7 @@
           "_postman_id": "6f76754b-65dc-8194-d1f5-ac15d11719aa",
           "name": "Activates or deactivates campaign by changing its status. Does nothing if new status is the same as before",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/status",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "status"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "description": "",
-                  "key": "id",
-                  "value": "{{id}}"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/status",
             "method": "PUT",
             "header": [
               {
