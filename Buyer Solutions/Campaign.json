@@ -866,7 +866,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "List of label groups with campaign's labels. Each group can have only one selected label."
+              "raw": "{\r\n  \"labelGroups\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"Pepsi Labels\",\r\n      \"labels\": [\r\n        {\r\n          \"id\": 12,\r\n          \"name\": \"Christmas Campaign\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"Microsoft Labels\",\r\n      \"labels\": [\r\n        {\r\n          \"id\": 22,\r\n          \"name\": \"Summer Campaign\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
             },
             "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_labels"
           },
