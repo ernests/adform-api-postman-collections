@@ -1305,30 +1305,7 @@
           "_postman_id": "1caf63d7-2e83-1d6d-d9d6-0384e56704db",
           "name": "Returns campaign status as json string. Possible values - \"Active\" or \"Inactive\"",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/status",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "status"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/status",
             "method": "GET",
             "header": [
               {
@@ -1342,8 +1319,8 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
