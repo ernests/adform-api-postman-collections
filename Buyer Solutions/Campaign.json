@@ -1456,30 +1456,7 @@
           "_postman_id": "e961a87d-cb8c-6a3b-b940-9eac8a32df01",
           "name": "Saves campaign's rtb settings.",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/rtbSettings",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "rtbSettings"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/rtbSettings",
             "method": "PUT",
             "header": [
               {
@@ -1493,8 +1470,8 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
