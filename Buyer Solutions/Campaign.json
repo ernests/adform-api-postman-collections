@@ -1428,30 +1428,7 @@
           "_postman_id": "67b0cb77-e848-2e76-83e5-9d6dc0191ba8",
           "name": "Returns campaign's rtb settings.",
           "request": {
-            "url": {
-              "raw": "https://api.adform.com/v1/buyer/campaigns/:id/rtbSettings",
-              "protocol": "https",
-              "auth": {},
-              "host": [
-                "api",
-                "adform",
-                "com"
-              ],
-              "path": [
-                "v1",
-                "buyer",
-                "campaigns",
-                ":id",
-                "rtbSettings"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "value": "{{id}}",
-                  "id": "id"
-                }
-              ]
-            },
+            "url": "https://api.adform.com/v1/buyer/campaigns/{{id}}/rtbSettings",
             "method": "GET",
             "header": [
               {
