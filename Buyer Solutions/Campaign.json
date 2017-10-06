@@ -1502,7 +1502,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "description": ""
+            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_rtbSettings"
           },
           "response": []
         }
