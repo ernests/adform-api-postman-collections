@@ -1379,7 +1379,7 @@
               "mode": "raw",
               "raw": "New status as json string. Possible values - \"Active\" or \"Inactive\""
             },
-            "description": ""
+            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_status"
           },
           "response": []
         },
