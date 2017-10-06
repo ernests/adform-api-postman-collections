@@ -1477,7 +1477,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "{\r\n  \"budget\": {\r\n    \"goalType\": \"Budget\",\r\n    \"amount\": 1221,\r\n    \"periodType\": \"Total\",\r\n    \"pacingType\": \"Evenly\"\r\n  },\r\n  \"capping\": [\r\n    {\r\n      \"type\": \"Frequency\",\r\n      \"impressions\": 122,\r\n      \"period\": {\r\n        \"type\": \"Days\",\r\n        \"duration\": 4\r\n      },\r\n      \"viewability\": {\r\n        \"type\": \"Time\",\r\n        \"duration\": 2000\r\n      }\r\n    }\r\n  ]\r\n}\r\n"
             },
             "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_rtbSettings"
           },
