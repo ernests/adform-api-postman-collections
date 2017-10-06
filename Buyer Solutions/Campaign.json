@@ -868,7 +868,7 @@
               "mode": "raw",
               "raw": "List of label groups with campaign's labels. Each group can have only one selected label."
             },
-            "description": ""
+            "description": "https://api.adform.com/v1/help/buyer/campaigns#!/Campaigns/put_v1_buyer_campaigns_id_labels"
           },
           "response": []
         }
