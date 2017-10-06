@@ -1154,53 +1154,7 @@
       "_postman_id": "63c7b8ed-a766-be5e-423a-f083e6dc2d6e",
       "name": "Management",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "eba157ca-5bc0-0dd2-8d3b-55dedae966b7",
-          "name": "Update Campaign Status",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Request header includes authentication Ticket\"] = \r",
-                  "    request.headers.Ticket;\r",
-                  "    \r",
-                  "tests[\"Content-Type is application/json\"] =\r",
-                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
-                  "\r",
-                  "tests[\"Request was successful\"] = \r",
-                  "    responseCode.code === 204;\r",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://api.adform.com/v1/campaigns",
-            "method": "PATCH",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"State\": \"Active\",\r\n  \"Ids\": [\r\n    00000,\r\n    11111\r\n  ]\r\n}"
-            },
-            "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
-          },
-          "response": []
-        }
-      ]
+      "item": []
     },
     {
       "_postman_id": "5db3c59d-377c-23a6-5b56-70dea6a3ed3e",
@@ -1530,6 +1484,51 @@
               "raw": ""
             },
             "description": "This method returns a list of enabled features for campaigns which are under the same client as you have logged in.\n\nEXAMPLE: You can retrieve on which agencies alerts are enabled."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eba157ca-5bc0-0dd2-8d3b-55dedae966b7",
+          "name": "Update Campaign Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Request header includes authentication Ticket\"] = \r",
+                  "    request.headers.Ticket;\r",
+                  "    \r",
+                  "tests[\"Content-Type is application/json\"] =\r",
+                  "    request.headers[\"Content-Type\"] === \"application/json\";\r",
+                  "\r",
+                  "tests[\"Request was successful\"] = \r",
+                  "    responseCode.code === 204;\r",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://api.adform.com/v1/campaigns",
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"State\": \"Active\",\r\n  \"Ids\": [\r\n    00000,\r\n    11111\r\n  ]\r\n}"
+            },
+            "description": "This method changes campaign status from active to inactive and the other way round by parsing CampaignId in request body (can be more than 1 CampaignId)."
           },
           "response": []
         }
