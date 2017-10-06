@@ -1198,8 +1198,8 @@
                 "description": ""
               },
               {
-                "key": "CorrelationId",
-                "value": "{{CorrelationId}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               }
             ],
