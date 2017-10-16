@@ -325,7 +325,7 @@
           "_postman_id": "4f0e4434-49f3-4b7f-db37-3f2874b05126",
           "name": "Update Default Banner Attribute",
           "request": {
-            "url": "https://api.adform.com/api/v1/Advertisers/DefaultBannerAttributes/00000",
+            "url": "https://api.adform.com/api/v1/Advertisers/DefaultBannerAttributes/62476",
             "method": "POST",
             "header": [
               {
@@ -341,7 +341,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "[\r\n  {\r\n    \"Title\": \"string\",\r\n    \"AttributeValues\": [\r\n      \"string\"\r\n    ]\r\n  }\r\n]"
+              "raw": "[\r\n  {\r\n    \"Title\": \"Banner\",\r\n    \"AttributeValues\": [\r\n      \"string\"\r\n    ]\r\n  }\r\n]"
             },
             "description": "This method allows you to set new or update default banner attributes.\n\nEXAMPLE: /api/v1/Advertisers/DefaultBannerAttributes/00000 (where 00000 is a ClientSiteId)"
           },
