@@ -13,32 +13,6 @@
       "description": "This services allow you to get a list of possible Dimensions and Metrics along with their respective descriptions",
       "item": [
         {
-          "_postman_id": "98a53057-7027-a259-d796-fa91762611b0",
-          "name": "Get Metrics metadata",
-          "request": {
-            "url": "https://api.adform.com/v1/reportingstats/publisher/metadata/metrics",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
-            },
-            "description": "Leave [ ] empty in order to get a full list of Metrics"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "b98a5fe2-bce5-a9d8-21bd-a48a1bd24130",
           "name": "Get Dimensions metadata",
           "request": {
@@ -63,6 +37,32 @@
             "description": "Leave [ ] empty in order to get a full list of Dimensions"
           },
           "response": []
+        },
+        {
+          "_postman_id": "98a53057-7027-a259-d796-fa91762611b0",
+          "name": "Get Metrics metadata",
+          "request": {
+            "url": "https://api.adform.com/v1/reportingstats/publisher/metadata/metrics",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Ticket",
+                "value": "{{Ticket}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
+            },
+            "description": "Leave [ ] empty in order to get a full list of Metrics"
+          },
+          "response": []
         }
       ]
     },
@@ -80,7 +80,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{access_token}}",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjFmcUctLVdSbGR5MXVRYS1vVkxIYm1IQlY3dyIsImtpZCI6IjFmcUctLVdSbGR5MXVRYS1vVkxIYm1IQlY3dyJ9.eyJpc3MiOiJodHRwczovL2lkLmFkZm9ybS5jb20vc3RzIiwiYXVkIjoiaHR0cHM6Ly9pZC5hZGZvcm0uY29tL3N0cy9yZXNvdXJjZXMiLCJleHAiOjE1MDgxNjY4NTgsIm5iZiI6MTUwODE2MzI1OCwiY2xpZW50X2lkIjoicmVwb3J0cy5lbmlyby5zd2VkZW5AY2xpZW50cy5hZGZvcm0uY29tIiwic3ViIjoiMTJlMGI1MTEtYTJjOC00M2QyLTg0NWMtM2ViYmM0N2JhM2JjIiwic2NvcGUiOiJodHRwczovL2FwaS5hZGZvcm0uY29tL3Njb3BlL2VhcGkifQ.Uy32y6enuzMDGWCoxcwWk2OR63SQpZueWVPIMLKOhk458FuuzLArAVBy2wA5NFcrHhOGqyg4kKcFvSmPiLEBCJS_y85Ru9K5Foll10wY1S20HTcUGamokyeW9iXHko1Rtd7HKFPTUJ7MhLQfXbMIwzkYkR1Epzj1X9cFm0QR7SNRT9bx8dQb4ogbOz2nfv_CgiOTYkx5EzfETu5RfLUTSw_Clu1keHJzFqQ1iKLXK8fqiyZIsmn3fyozVqwz5oe5hmRMKZ31_JAnvgVaKlw45LbRaSnwNI4W26puing-9C2kV3FiKSwQcuJvLGeQFUw6hBRV-pCbHtN0JCNQntLIgA",
                 "description": ""
               },
               {
@@ -91,7 +91,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"filter\": {\r\n      \"date\": {\r\n         \"from\": \"2017-01-01\",\r\n         \"to\": \"2017-01-20\"\r\n      }\r\n   },\r\n   \"dimensions\" : [\r\n      \"publisher\"\r\n   ],\r\n   \"metrics\": [\r\n      \"impressions\",\r\n      \"clicks\",\r\n      \"bidRequests\"\r\n   ]\r\n}"
+              "raw": "{\r\n   \"filter\": {\r\n      \"date\": {\r\n         \"from\": \"2016-12-01\",\r\n         \"to\": \"2016-12-31\"\r\n      }\r\n     \r\n   },\r\n   \"dimensions\" : [\r\n      \"advertiserd\",\"year\", \"month\", \"day\", \"campaignId\",\"bannerId\"\r\n   ],\r\n   \"metrics\": [\r\n     \"impressions\", \"clicks\"\r\n   ],\r\n   \"paging\": {\r\n         \"page\": 1,\r\n         \"pageSize\": 1000\r\n      },\r\n      \"includeRowCount\" : true\r\n}"
             },
             "description": "This service allows you to retrieve your reporting data.\nUse Services such as:\n\nMetadata for list of Dimensions and metrics - https://api.adform.com/help/references/seller-solutions/reporting/metadata\n\nFilters - https://api.adform.com/help/references/seller-solutions/reporting/reportdata/filters\n\nPaging - https://api.adform.com/help/references/seller-solutions/reporting/reportdata/paging\n\nSorting- https://api.adform.com/help/references/seller-solutions/reporting/reportdata/sorting\n\nThis endpoint has a request qouta(per inventory source) of:\n10requests/min\n500requests/day"
           },
