@@ -675,6 +675,13 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "d862bb96-b118-d7fa-ba99-4447d5a39c45",
+          "name": "test",
+          "description": "",
+          "item": [],
+          "_postman_isSubFolder": true
+        },
+        {
           "_postman_id": "2f3d9baf-72ff-9b45-1e0d-ee61aa3258d9",
           "name": "Get Tags",
           "request": {
