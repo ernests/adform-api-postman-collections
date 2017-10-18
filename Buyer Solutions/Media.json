@@ -190,7 +190,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media contact."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -244,7 +244,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media contact."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -282,7 +282,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media creative."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -423,7 +423,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media creative."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -691,7 +691,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -805,7 +805,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "{\r\n  \"uuid\": \"string\",\r\n  \"id\": 0,\r\n  \"name\": \"string\",\r\n  \"httpsOn\": true,\r\n  \"agencyCompensation\": 0\r\n}"
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media, <br />https://api.adform.com/scope/buyer.media.readonly"
           },
@@ -978,7 +978,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media section."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
@@ -1050,7 +1050,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "JSON representation of media secion."
             },
             "description": "<br /> OAuth 2.0 Scopes: <br />https://api.adform.com/scope/buyer.media"
           },
