@@ -20,8 +20,8 @@
             "method": "POST",
             "header": [
               {
-                "key": "Ticket",
-                "value": "{{Ticket}}",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
                 "description": ""
               },
               {
@@ -32,7 +32,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"dimensions\": [\"publisher\"]\r\n}"
+              "raw": "{\r\n   \"dimensions\": []\r\n}"
             },
             "description": "Leave [ ] empty in order to get a full list of Dimensions"
           },
