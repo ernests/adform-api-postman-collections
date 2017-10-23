@@ -58,7 +58,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"metrics\": [\"clicks\", \"impressions\"]\r\n}"
+              "raw": "{\r\n    \"metrics\": []\r\n}"
             },
             "description": "Leave [ ] empty in order to get a full list of Metrics"
           },
